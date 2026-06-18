@@ -9,13 +9,13 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarMenuSub,
-  SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "~/components/ui/sidebar";
 import Image from "next/image";
 import { menuItems } from "~/lib/menu-items";
 import { Link } from "next-view-transitions";
 import { Badge } from "./ui/badge";
+import { MenuButton } from "./menu-button";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -42,18 +42,18 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenu>
             {menuItems.map((item) => (
               <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton asChild>
+                <MenuButton url={item.url}>
                   <Link href={item.url} className="font-medium">
                     {item.title}
                   </Link>
-                </SidebarMenuButton>
+                </MenuButton>
                 {item.items?.length ? (
                   <SidebarMenuSub>
                     {item.items.map((item) => (
                       <SidebarMenuSubItem key={item.title}>
-                        <SidebarMenuSubButton asChild isActive={false}>
+                        <MenuButton url={item.url}>
                           <Link href={item.url}>{item.title}</Link>
-                        </SidebarMenuSubButton>
+                        </MenuButton>
                       </SidebarMenuSubItem>
                     ))}
                   </SidebarMenuSub>
