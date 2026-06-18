@@ -14,7 +14,7 @@ import {
 } from "~/components/ui/sidebar";
 import Image from "next/image";
 import { menuItems } from "~/lib/menu-items";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { Badge } from "./ui/badge";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {

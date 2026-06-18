@@ -1,5 +1,14 @@
 import type { MDXComponents } from "mdx/types";
-import Image, { type ImageProps } from "next/image";
+import {
+  Blockquote,
+  H1,
+  H2,
+  H3,
+  H4,
+  InlineCode,
+  List,
+  P,
+} from "~/components/ui/typography";
 
 // This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
@@ -8,17 +17,14 @@ import Image, { type ImageProps } from "next/image";
 
 const components = {
   // Allows customizing built-in components, e.g. to add styling.
-  h1: ({ children }) => (
-    <h1 style={{ color: "red", fontSize: "48px" }}>{children}</h1>
-  ),
-  img: (props: ImageProps) => (
-    <Image
-      sizes="100vw"
-      style={{ width: "100%", height: "auto" }}
-      {...props}
-      alt={props.alt}
-    />
-  ),
+  h1: H1,
+  h2: H2,
+  h3: H3,
+  h4: H4,
+  p: P,
+  blockquote: Blockquote,
+  ul: List,
+  code: InlineCode,
 } satisfies MDXComponents;
 
 export function useMDXComponents(): MDXComponents {
