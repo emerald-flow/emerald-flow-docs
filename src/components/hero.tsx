@@ -10,7 +10,14 @@ export function Hero({
       <div className="flex flex-1 flex-col">{children}</div>
       <div className="shrink-0 self-center">
         {/* eslint-disable-next-line jsx-a11y/alt-text */}
-        <Image width={256} height={256} className="mx-auto" {...props} />
+        <Image
+          width={256}
+          height={256}
+          className="mx-auto"
+          {...props}
+          unoptimized
+          priority
+        />
       </div>
     </section>
   );
