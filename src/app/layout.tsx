@@ -55,7 +55,7 @@ export default function RootLayout({
                     <ModeToggle />
                   </div>
                 </header>
-                <main className="docs">{children}</main>
+                <main>{children}</main>
               </SidebarInset>
             </SidebarProvider>
           </TooltipProvider>

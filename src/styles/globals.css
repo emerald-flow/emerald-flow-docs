@@ -134,29 +134,3 @@
     @apply font-sans;
   }
 }
-
-@layer components {
-  .docs h1 {
-    @apply scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance;
-  }
-
-  .docs h2 {
-    @apply w-full scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0;
-  }
-
-  .docs h3 {
-    @apply mt-4 w-full scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight;
-  }
-
-  .docs h4 {
-    @apply mt-4 w-full scroll-m-20 border-b pb-2 text-xl font-semibold tracking-tight;
-  }
-
-  .docs p {
-    @apply leading-7 text-pretty hyphens-auto not-first:mt-6;
-  }
-
-  .docs ul {
-    @apply ml-4 flex flex-1 list-disc flex-col [&>li]:mt-2;
-  }
-}
