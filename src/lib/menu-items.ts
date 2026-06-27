@@ -8,8 +8,6 @@ const sections = [
   ["Overview"],
   ["Setup", ["Rom Patcher JS", "Hack Dex"]],
   ["Features", featureTitles],
-  ["Credits"],
-  ["Plans"],
 ] as const satisfies Sections;
 
 const getMenuItems = <T extends Sections>(sections: T) =>

@@ -2,6 +2,7 @@ import { HeroMd } from "~/components/hero";
 import { pages } from "~/lib/menu-items";
 import { FeatureNotes } from "~/components/feature-notes";
 import { Md } from "~/components/markdown";
+import { Options } from "~/components/options";
 
 export default function Page() {
   // prettier-ignore
@@ -44,6 +45,35 @@ lead Pokémon can still appear.
 }
 </FeatureNotes.NoteMd>
 </FeatureNotes>
+<Options>
+<Options.OptionMd
+src="/repel.webp" 
+alt="Repel item sprite"
+status="soon"
+>
+{
+`
+**On**
+
+Repel is always active.
+`
+}
+</Options.OptionMd>
+<Options.OptionMd
+src="/repel.webp" 
+alt="Repel item sprite"
+status="ban"
+isDefault
+>
+{
+`
+**Off**
+
+Vanilla gameplay.
+`
+}
+</Options.OptionMd>
+</Options>
 </>
 );
 }

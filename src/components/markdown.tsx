@@ -25,7 +25,7 @@ export function Md(props: Omit<ComponentProps<typeof Markdown>, "components">) {
         ),
         h3: ({ children, node: _, ...rest }) => (
           <h3
-            className="mt-4 w-full scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight"
+            className="mt-4 w-full scroll-m-20 pb-2 text-2xl font-semibold tracking-tight"
             {...rest}
           >
             {children}
@@ -33,7 +33,7 @@ export function Md(props: Omit<ComponentProps<typeof Markdown>, "components">) {
         ),
         h4: ({ children, node: _, ...rest }) => (
           <h4
-            className="mt-4 w-full scroll-m-20 border-b pb-2 text-xl font-semibold tracking-tight"
+            className="mt-4 w-full scroll-m-20 pb-2 text-xl font-semibold tracking-tight"
             {...rest}
           >
             {children}

@@ -10,24 +10,12 @@ export const Note = ({
   children,
   alt,
   src,
-  className,
 }: PropsWithChildren<
   Pick<ComponentProps<typeof Image>, "src" | "alt" | "className">
 >) => {
   return (
     <div className="mt-4 flex flex-1 flex-row items-center gap-4">
-      <Image
-        src={src}
-        alt={alt}
-        unoptimized
-        priority
-        sizes="100vw"
-        width={0}
-        height={0}
-        // Make the image display full width
-        // and preserve its aspect ratio
-        className={cn("size-12", className)}
-      />
+      <Image src={src} alt={alt} unoptimized priority width={48} height={48} />
       <div className="flex flex-1 flex-col text-sm [&_strong]:text-lg">
         {children}
       </div>
@@ -60,7 +48,12 @@ export const FeatureNotes = <T extends TailwindColor>({
 }>) => {
   return (
     <div
-      className={cn("mb-4 w-full rounded-md", bgColor, borderColor, className)}
+      className={cn(
+        "mb-4 w-full rounded-md border",
+        bgColor,
+        borderColor,
+        className,
+      )}
     >
       <div className="bg-background/90 flex flex-1 flex-col rounded-md p-4 [&>p]:mt-2!">
         <div
