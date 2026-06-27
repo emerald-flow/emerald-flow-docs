@@ -6,6 +6,7 @@ import { features } from "~/lib/feature-list";
 
 export default function Page() {
   const feature = features["better-safari"];
+  const img = "/repel.webp";
   // prettier-ignore
   return (
 <>
@@ -17,7 +18,7 @@ export default function Page() {
 }
 </Md>
 <HeroMd 
-src="/repel.webp" 
+src={img}
 alt="Repel item sprite"
 >
 {
@@ -52,7 +53,7 @@ feature.options.map((option, i)=>
 (
 <Options.OptionMd
 key={i}
-src="/repel.webp" 
+src={img}
 alt="Repel item sprite"
 isDefault={option.title == feature.defaultOption}
 >
