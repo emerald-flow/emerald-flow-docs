@@ -26,8 +26,9 @@ export default function Page() {
 `}
 </Md>
 <HeroMd 
-src="/features-rayquaza.webp" 
-alt="Rayquaza sprite"
+src="/bag.webp" 
+alt="Bag sprite"
+blobBgColor="bg-yellow-500"
 >
 {
 `
@@ -44,8 +45,6 @@ similar to that of the original _Pokémon Emerald_.
 <Md>
 {
 `
-## ${pages.features.title}
-
 Below is a list of features with links to their documentation, 
 available options, and the default setting (marked with ✅). 
 Each feature has its own dedicated page with further explanations.
@@ -56,7 +55,8 @@ Each feature has its own dedicated page with further explanations.
 `
 Default settings are applied automatically the first time Pokemon
 Emerald Flow is launched. This initialization only happens once.
-`}
+`
+}
 </AlertMd>
 <FeaturesTable />
 </>
