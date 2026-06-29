@@ -5,6 +5,8 @@ import { Md } from "~/components/markdown";
 import { pages } from "~/lib/menu-items";
 
 export default function Page() {
+  const img = "/sprites/setup.webp";
+  const alt = "Bag and Brendan sprite";
   // prettier-ignore
   return (
 <>
@@ -16,8 +18,8 @@ export default function Page() {
 }
 </Md>
 <HeroMd
-src="/setup.webp"
-alt="Brendan infront of Professor Birch's Bag Sprite"
+src={img}
+alt={alt}
 >
 {
 `

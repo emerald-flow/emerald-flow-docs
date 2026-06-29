@@ -15,7 +15,15 @@ export const Note = ({
 >) => {
   return (
     <div className="flex flex-row items-center gap-4 py-2">
-      <Image src={src} alt={alt} unoptimized priority width={48} height={48} />
+      <Image
+        className="shrink-0"
+        src={src}
+        alt={alt}
+        unoptimized
+        priority
+        width={48}
+        height={48}
+      />
       <div className="flex flex-col text-sm [&_strong]:text-lg">{children}</div>
     </div>
   );

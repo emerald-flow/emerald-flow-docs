@@ -6,7 +6,7 @@ import { features } from "~/lib/feature-list";
 
 export default function Page() {
   const feature = features.running;
-  const img = "/running.webp";
+  const img = "/sprites/running.webp";
   const alt = "Brendan running sprite";
   // prettier-ignore
   return (
@@ -36,7 +36,7 @@ borderColor="border-emerald-600"
 childBorderColor="[&>div]:not-first:border-emerald-600"
 textColor="text-emerald-600"
 >
-<FeatureNotes.NoteMd src="/mom.webp" alt="Mom sprite">
+<FeatureNotes.NoteMd src="/sprites/mom.webp" alt="Mom sprite">
 {
 `
 **Running Shoes** 
@@ -45,7 +45,7 @@ Running shoes must still be obtained by mom at the start of the game.
 `
 }
 </FeatureNotes.NoteMd>
-<FeatureNotes.NoteMd src="/b-button.webp" alt="B-Button sprite">
+<FeatureNotes.NoteMd src="/sprites/b-button.webp" alt="B-Button sprite">
 {
 `
 **B-Button** 

@@ -3,6 +3,8 @@ import { Md } from "~/components/markdown";
 import { pages } from "~/lib/menu-items";
 
 export default function Page() {
+  const img = "/sprites/birch.webp";
+  const alt = "Birch sprite";
   // prettier-ignore
   return (
 <>
@@ -14,8 +16,8 @@ export default function Page() {
 }
 </Md>
 <HeroMd
-src="/birch.webp"
-alt="Professor Birch introduction screen sprite"
+src={img}
+alt={alt}
 blobBgColor="bg-amber-500"
 >
 {

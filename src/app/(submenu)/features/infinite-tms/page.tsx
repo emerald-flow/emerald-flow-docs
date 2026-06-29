@@ -6,7 +6,7 @@ import { features } from "~/lib/feature-list";
 
 export default function Page() {
   const feature = features["infinite-tms"];
-  const img = "/repel.webp";
+  const img = "/sprites/repel.webp";
   const alt = "Repel item sprite";
   // prettier-ignore
   return (
@@ -38,7 +38,7 @@ borderColor="border-emerald-600"
 childBorderColor="[&>div]:not-first:border-emerald-600"
 textColor="text-emerald-600"
 >
-<FeatureNotes.NoteMd src="/pokeball.webp" alt="Pokeball item sprite">
+<FeatureNotes.NoteMd src="/sprites/pokeball.webp" alt="Pokeball item sprite">
 {
 `
 **Encounters** 

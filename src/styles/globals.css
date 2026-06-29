@@ -133,4 +133,12 @@
   html {
     @apply font-sans;
   }
+  img {
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+  }
+}
+
+.non-sprite {
+  image-rendering: auto;
 }

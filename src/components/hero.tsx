@@ -27,9 +27,10 @@ export function Hero({
           alt={alt}
           width={180}
           height={180}
-          className={cn("relative mx-auto", className)}
+          className={cn("relative mx-auto md:mx-0", className)}
           unoptimized
           priority
+          style={{ imageRendering: "pixelated" }}
         />
       </div>
     </section>

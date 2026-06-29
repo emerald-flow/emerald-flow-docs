@@ -16,6 +16,8 @@ import { Md } from "~/components/markdown";
 import { HeroMd } from "~/components/hero";
 
 export default function Page() {
+  const img = "/sprites/bag.webp";
+  const alt = "Bag sprite";
   // prettier-ignore
   return (
 <>
@@ -26,8 +28,8 @@ export default function Page() {
 `}
 </Md>
 <HeroMd 
-src="/bag.webp" 
-alt="Bag sprite"
+src={img} 
+alt={alt}
 blobBgColor="bg-yellow-500"
 >
 {
