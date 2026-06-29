@@ -27,7 +27,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenuButton size="lg" asChild>
               <Link href="/">
                 <div className="text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg border-2">
-                  <Image src={logo} alt="Logo sprite" width={32} height={32} />
+                  <Image
+                    src={logo}
+                    alt="Logo sprite"
+                    width={32}
+                    height={32}
+                    unoptimized
+                    priority
+                  />
                 </div>
                 <div className="flex flex-col gap-1 leading-none">
                   <span className="font-medium">Pokemon Emerald Flow</span>
