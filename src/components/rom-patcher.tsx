@@ -63,7 +63,7 @@ const downloadPatchMutationOptions = mutationOptions({
     ctx,
   ) => {
     const response = await fetch(
-      "https://cdn.jsdelivr.net/gh/officer-kd6-3dot7/X/pokeemerald.ips",
+      "https://cdn.jsdelivr.net/gh/officer-kd6-3dot7/X/pokeemerald.bps",
       {
         cache: "no-store",
       },
@@ -84,7 +84,7 @@ const downloadPatchMutationOptions = mutationOptions({
         total,
       });
     }
-    const patch = new File(chunks, "pokeemerald.ips", {
+    const patch = new File(chunks, "pokeemerald.bps", {
       type: "application/octet-stream",
     });
     ctx.client.setQueryData(patchQueryOptions.queryKey, () => patch);

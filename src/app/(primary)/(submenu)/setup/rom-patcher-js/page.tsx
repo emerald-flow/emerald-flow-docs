@@ -24,7 +24,7 @@ Pokemon Emerald Flow
 { 
 `
 - **Step 2**: Head for the latest release in the **Release** section.
-- **Step 3**: Scroll down and under **Assets** download the latest released **pokemon-emerald-flow.ips** file.
+- **Step 3**: Scroll down and under **Assets** download the latest released **pokemon-emerald-flow.bps** file.
 - **Step 4**: Head to Rom Patcher JS' website by using the link mentioned below.
 `
 }
@@ -36,7 +36,7 @@ ROM Patcher JS
 { 
 `
 - **Step 5**: Submit your **Official Pokémon Emerald** ROM as the ROM file.
-- **Step 6**: Submit the **pokemon-emerald-flow.ips** file as the Patch file.
+- **Step 6**: Submit the **pokemon-emerald-flow.bps** file as the Patch file.
 - **Step 7**: Click on "Apply patch" and you're done!
 `
 }
