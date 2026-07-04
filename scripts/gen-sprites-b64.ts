@@ -1,7 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
-const PUBLIC_DIR = path.resolve("public/sprites");
+const PUBLIC_DIR = path.resolve("assets/sprites");
 const OUTPUT_DIR = path.resolve("src/lib/generated/sprites");
 
 const MIME_TYPES: Record<string, string> = {

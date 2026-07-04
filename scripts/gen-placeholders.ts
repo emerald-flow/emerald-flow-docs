@@ -6,7 +6,7 @@ import sharp from "sharp";
 import { features } from "~/lib/feature-list";
 
 const PUBLIC_DIR = path.resolve("public/gallery");
-const OUTPUT_DIR = path.resolve("public/gallery-placeholders");
+const OUTPUT_DIR = path.resolve("assets/gallery-placeholders");
 
 const IMAGE_EXTENSIONS = new Set([".webp", ".png", ".jpg", ".jpeg", ".gif"]);
 

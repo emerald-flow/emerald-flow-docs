@@ -3,7 +3,7 @@ import path from "node:path";
 
 import { features } from "~/lib/feature-list";
 
-const PUBLIC_DIR = path.resolve("public/gallery-placeholders");
+const PUBLIC_DIR = path.resolve("assets/gallery-placeholders");
 const OUTPUT_DIR = path.resolve("src/lib/generated/placeholders");
 
 const MIME_TYPES: Record<string, string> = {
