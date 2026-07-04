@@ -7,7 +7,6 @@ import { gallery } from "~/lib/generated/gallery";
 import Link from "next/link";
 import Image from "next/image";
 import type { Placeholders } from "~/lib/generated/placeholders/type";
-import { env } from "~/env";
 
 export function Gallery<T extends keyof typeof features>({
   feature,
@@ -23,7 +22,7 @@ export function Gallery<T extends keyof typeof features>({
             key={id}
             alt=""
             href={`/gallery/${feature}/${name}`}
-            src={`${env.NEXT_PUBLIC_STORAGE_URL}/${feature}/${id}`}
+            src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/${feature}/${id}`}
             // @ts-expect-error
             placeholder={placeholders[name]}
           />

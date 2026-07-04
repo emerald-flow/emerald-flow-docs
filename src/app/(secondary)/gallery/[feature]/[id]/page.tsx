@@ -4,7 +4,6 @@ import { Undo2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "~/components/ui/button";
-import { env } from "~/env";
 import { gallery, galleryObj } from "~/lib/generated/gallery";
 import { pages } from "~/lib/menu-items";
 import { entries } from "~/lib/utils";
@@ -38,7 +37,7 @@ export default async function Page({
       <div className="relative w-full">
         <Image
           alt={`Feature ${feature} Showcase #${id}`}
-          src={`${env.NEXT_PUBLIC_STORAGE_URL}/${feature}/${name}.webp`}
+          src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/${feature}/${name}.webp`}
           width={240}
           height={160}
           style={{
