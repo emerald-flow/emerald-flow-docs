@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Undo2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "~/components/ui/button";
-import { gallery } from "~/lib/generated/gallery";
+import { env } from "~/env";
+import { gallery, galleryObj } from "~/lib/generated/gallery";
 import { pages } from "~/lib/menu-items";
 import { entries } from "~/lib/utils";
 
@@ -12,7 +15,7 @@ export const dynamicParams = false;
 export async function generateStaticParams() {
   return entries(gallery).reduce(
     (acc, [feature, ids]) => {
-      ids.forEach((id) => acc.push({ feature, id }));
+      ids.forEach(({ name }) => acc.push({ feature, id: name }));
       return acc;
     },
     [] as Awaited<PageProps<"/gallery/[feature]/[id]">["params"]>[],
@@ -22,13 +25,20 @@ export async function generateStaticParams() {
 export default async function Page({
   params,
 }: PageProps<"/gallery/[feature]/[id]">) {
-  const { id, feature } = await params;
+  const { id, feature } = (await params) as {
+    id: string;
+    feature: keyof typeof galleryObj;
+  };
+
+  //@ts-expect-error
+  const name = galleryObj[feature][id];
+
   return (
     <>
       <div className="relative w-full">
         <Image
           alt={`Feature ${feature} Showcase #${id}`}
-          src={`/gallery/${feature}/${id}.webp`}
+          src={`${env.NEXT_PUBLIC_STORAGE_URL}/${feature}/${name}.webp`}
           width={240}
           height={160}
           style={{

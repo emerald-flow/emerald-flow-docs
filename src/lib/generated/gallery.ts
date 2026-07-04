@@ -1,7 +1,18 @@
 /* AUTO-GENERATED FILE - DO NOT EDIT */
 
 export const gallery = {
-  "permanent-repel": ["1", "2"],
+  "permanent-repel": [
+    {
+      name: "1",
+      id: "1.d82c06d4",
+      path: "/assets/gallery/permanent-repel/1.webp",
+    },
+    {
+      name: "2",
+      id: "2.d82c06d4",
+      path: "/assets/gallery/permanent-repel/2.webp",
+    },
+  ],
   running: [],
   "level-cap": [],
   "no-hm-slave": [],
@@ -29,4 +40,38 @@ export const gallery = {
   "no-fleeing-mons": [],
   "instant-text": [],
   music: [],
+} as const;
+
+export const galleryObj = {
+  "permanent-repel": {
+    "1": "1.d82c06d4",
+    "2": "2.d82c06d4",
+  },
+  running: {},
+  "level-cap": {},
+  "no-hm-slave": {},
+  "better-summary": {},
+  "physical-special-split": {},
+  "pocket-tutor": {},
+  "better-evolutions": {},
+  "adopt-eggs": {},
+  "pocket-pc": {},
+  "pocket-heal": {},
+  "forget-hms": {},
+  "infinite-tms": {},
+  "pocket-mart": {},
+  "one$-items": {},
+  "pocket-bikes": {},
+  "auto-blend": {},
+  "custom-blend": {},
+  "badge-boost": {},
+  "ev-training": {},
+  "perfect-catches": {},
+  "fast-eggs": {},
+  "instant-fishing": {},
+  "always-feebas": {},
+  "better-safari": {},
+  "no-fleeing-mons": {},
+  "instant-text": {},
+  music: {},
 } as const;

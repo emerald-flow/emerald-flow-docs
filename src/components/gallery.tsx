@@ -7,6 +7,7 @@ import { gallery } from "~/lib/generated/gallery";
 import Link from "next/link";
 import Image from "next/image";
 import type { Placeholders } from "~/lib/generated/placeholders/type";
+import { env } from "~/env";
 
 export function Gallery<T extends keyof typeof features>({
   feature,
@@ -17,13 +18,14 @@ export function Gallery<T extends keyof typeof features>({
     <div className="flex w-full flex-col gap-4">
       <H3>Gallery</H3>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        {gallery[feature].map((id) => (
+        {gallery[feature].map(({ name, id }) => (
           <Img
             key={id}
             alt=""
-            href={`/gallery/${feature}/${id}`}
+            href={`/gallery/${feature}/${name}`}
+            src={`${env.NEXT_PUBLIC_STORAGE_URL}/${feature}/${id}`}
             // @ts-expect-error
-            placeholder={placeholders[id]}
+            placeholder={placeholders[name]}
           />
         ))}
       </div>
@@ -32,10 +34,12 @@ export function Gallery<T extends keyof typeof features>({
 }
 
 function Img({
+  src,
   href,
   alt,
   placeholder,
 }: {
+  src: string;
   href: string;
   alt: string;
   placeholder?: string;
@@ -45,7 +49,7 @@ function Img({
       <Image
         placeholder={placeholder ? "blur" : "empty"}
         alt={alt}
-        src={`${href}.webp`}
+        src={`${src}.webp`}
         blurDataURL={placeholder}
         width={240}
         height={160}
