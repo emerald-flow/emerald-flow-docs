@@ -1,19 +1,7 @@
 import { Gallery } from "~/components/gallery";
-import { gallery, type galleryObj } from "~/lib/generated/gallery";
-import { entries } from "~/lib/utils";
+import type { galleryObj } from "~/lib/generated/gallery";
 
-// All posts besides gallery will be a 404
-export const dynamicParams = false;
-
-export async function generateStaticParams() {
-  return entries(gallery).reduce(
-    (acc, [feature, ids]) => {
-      ids.forEach(({ name }) => acc.push({ feature, id: name }));
-      return acc;
-    },
-    [] as Awaited<PageProps<"/gallery/[feature]/[id]">["params"]>[],
-  );
-}
+export * from "~/lib/gallery-static-params";
 
 export default async function Page({
   params,
