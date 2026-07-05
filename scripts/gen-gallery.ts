@@ -4,6 +4,7 @@ import { createHash } from "node:crypto";
 
 import { features } from "~/lib/feature-list";
 import { entries } from "~/lib/utils";
+import { pages } from "~/lib/menu-items";
 
 const GALLERY_DIR = path.resolve("assets/gallery");
 const OUTPUT_FILE = path.resolve("src/lib/generated/gallery.ts");
@@ -62,18 +63,31 @@ async function main() {
     }
   }
 
-  const galleryObj: Record<string, Record<string, string>> = {};
+  const galleryObj: Record<
+    string,
+    Record<string, { id: string; index: number }>
+  > = {};
 
   entries(gallery).forEach(([feature, entries]) => {
     galleryObj[feature] ??= {};
-    entries.forEach(({ id, name }) => (galleryObj[feature]![name] = id));
+    entries.forEach(
+      ({ id, name }, index) => (galleryObj[feature]![name] = { id, index }),
+    );
   });
 
   const source = `/* AUTO-GENERATED FILE - DO NOT EDIT */
 
-export const gallery = ${JSON.stringify(gallery, null, 2)} as const;
+import type { pages } from "~/lib/menu-items";
 
-export const galleryObj = ${JSON.stringify(galleryObj, null, 2)} as const;
+type Features = Exclude<keyof typeof pages.features, "url" | "title">
+
+export const gallery = ${JSON.stringify(gallery, null, 2)} as const satisfies Gallery;
+
+export type Gallery = Record<Features, { id: string; name: string; path: string }[]>;
+
+export const galleryObj = ${JSON.stringify(galleryObj, null, 2)} as const satisfies GalleryObj;
+
+export type GalleryObj = Record<Features, Record<string, { id: string; index: number }>>;
 `;
 
   await fs.writeFile(OUTPUT_FILE, source, "utf8");

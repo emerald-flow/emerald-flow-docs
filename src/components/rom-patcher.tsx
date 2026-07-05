@@ -155,8 +155,9 @@ const usePatcher = () => {
 };
 
 export function RomPatcher() {
+  const patcherValue = usePatcherContext();
   return (
-    <PatcherContext value={usePatcherContext()}>
+    <PatcherContext value={patcherValue}>
       <Example />
     </PatcherContext>
   );

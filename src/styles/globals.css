@@ -167,5 +167,5 @@
 }
 
 .no-js dialog::backdrop {
-  @apply fixed inset-0 z-50 bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-xs;
+  @apply fixed inset-0 z-50 bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-xl;
 }

@@ -5,7 +5,7 @@ import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
 import { repel } from "~/lib/generated/sprites/repel";
 import { pokeball } from "~/lib/generated/sprites/pokeball";
-import { Gallery } from "~/components/gallery";
+import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/permanent-repel";
 
 export default function Page() {
@@ -74,7 +74,7 @@ ${option.description}
 )
 }
 </Options>
-<Gallery feature="permanent-repel" placeholders={placeholder}/>
+<FeaturesGallery feature="permanent-repel" placeholders={placeholder}/>
 </>
 );
 }

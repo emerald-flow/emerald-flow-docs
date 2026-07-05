@@ -19,3 +19,6 @@ export const keys = <T extends Record<string, unknown>>(obj: T) =>
 
 export const entries = <T extends Record<string, unknown>>(obj: T) =>
   Object.entries(obj) as [keyof T, T[keyof T]][];
+
+export const values = <T extends Record<string, unknown>>(obj: T) =>
+  Object.values(obj) as (keyof T)[];

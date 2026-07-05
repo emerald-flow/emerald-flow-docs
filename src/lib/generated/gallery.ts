@@ -1,5 +1,9 @@
 /* AUTO-GENERATED FILE - DO NOT EDIT */
 
+import type { pages } from "~/lib/menu-items";
+
+type Features = Exclude<keyof typeof pages.features, "url" | "title">;
+
 export const gallery = {
   "permanent-repel": [
     {
@@ -40,12 +44,23 @@ export const gallery = {
   "no-fleeing-mons": [],
   "instant-text": [],
   music: [],
-} as const;
+} as const satisfies Gallery;
+
+export type Gallery = Record<
+  Features,
+  { id: string; name: string; path: string }[]
+>;
 
 export const galleryObj = {
   "permanent-repel": {
-    "1": "1.d82c06d4",
-    "2": "2.d82c06d4",
+    "1": {
+      id: "1.d82c06d4",
+      index: 0,
+    },
+    "2": {
+      id: "2.d82c06d4",
+      index: 1,
+    },
   },
   running: {},
   "level-cap": {},
@@ -74,4 +89,9 @@ export const galleryObj = {
   "no-fleeing-mons": {},
   "instant-text": {},
   music: {},
-} as const;
+} as const satisfies GalleryObj;
+
+export type GalleryObj = Record<
+  Features,
+  Record<string, { id: string; index: number }>
+>;

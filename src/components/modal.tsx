@@ -1,9 +1,22 @@
-import type { PropsWithChildren } from "react";
+"use client";
 
-export function Modal(props: PropsWithChildren) {
+import type { PropsWithChildren } from "react";
+import { Dialog, DialogContent } from "./ui/dialog";
+import { usePathname, useRouter } from "next/navigation";
+
+export function Modal(props: PropsWithChildren<{ pathname: string }>) {
+  const router = useRouter();
+  const pathname = usePathname();
+  if (pathname !== props.pathname) return null;
   return (
-    <div className="fixed inset-0 z-50 h-full w-full bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-xs">
-      {props.children}
-    </div>
+    <Dialog
+      defaultOpen
+      modal
+      onOpenChange={(open) => {
+        if (!open) router.back();
+      }}
+    >
+      <DialogContent showCloseButton={false}>{props.children}</DialogContent>
+    </Dialog>
   );
 }

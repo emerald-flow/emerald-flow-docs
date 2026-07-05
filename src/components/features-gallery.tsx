@@ -8,7 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Placeholders } from "~/lib/generated/placeholders/type";
 
-export function Gallery<T extends keyof typeof features>({
+export function FeaturesGallery<T extends keyof typeof features>({
   feature,
   placeholders,
 }: PropsWithChildren<{ feature: T; placeholders: Placeholders[NoInfer<T>] }>) {
