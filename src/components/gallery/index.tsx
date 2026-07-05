@@ -1,4 +1,3 @@
-"use client";
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import Image from "next/image";
 import { gallery, galleryObj, type GalleryObj } from "~/lib/generated/gallery";

@@ -26,7 +26,7 @@ export function GalleryReturn(props: {
       <Button
         variant="secondary"
         className={cn(props.isModal && "pointer-events-auto")}
-        onClick={() => router.back()}
+        onClick={() => props.isModal && router.back()}
       >
         <Undo2 />
       </Button>
