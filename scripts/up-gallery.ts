@@ -1,14 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { list, put } from "@vercel/blob";
 import { gallery } from "~/lib/generated/gallery";
 
 import nextEnv from "@next/env";
+import { hasGalleryChanged } from "./utils/cache-gallery";
 
 const projectDir = process.cwd();
 const { loadEnvConfig } = nextEnv;
@@ -17,6 +13,7 @@ loadEnvConfig(projectDir);
 const ROOT = path.resolve();
 
 async function main() {
+  if (!(await hasGalleryChanged("up:gallery"))) return;
   const desired = new Map<string, string>();
 
   for (const [feature, images] of Object.entries(gallery)) {

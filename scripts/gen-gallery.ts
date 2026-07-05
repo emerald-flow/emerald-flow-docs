@@ -4,13 +4,14 @@ import { createHash } from "node:crypto";
 
 import { features } from "~/lib/feature-list";
 import { entries } from "~/lib/utils";
-import { pages } from "~/lib/menu-items";
-
-const GALLERY_DIR = path.resolve("assets/gallery");
-const OUTPUT_FILE = path.resolve("src/lib/generated/gallery.ts");
-
-const IMAGE_EXTENSIONS = new Set([".webp", ".png", ".jpg", ".jpeg", ".gif"]);
-const HASH_LENGTH = 8;
+import {
+  GALLERY_CACHE,
+  GALLERY_IN_DIR,
+  HASH_LENGTH,
+  IMAGE_EXTENSIONS,
+  GALLERY_OUT_DIR,
+} from "./utils/constants";
+import { hasGalleryChanged } from "./utils/cache-gallery";
 
 async function sha256(file: string) {
   const buffer = await fs.readFile(file);
@@ -22,6 +23,8 @@ async function sha256(file: string) {
 }
 
 async function main() {
+  if (!(await hasGalleryChanged("gen:gallery"))) return;
+
   const gallery: Record<
     string,
     {
@@ -32,7 +35,7 @@ async function main() {
   > = {};
 
   for (const feature of Object.keys(features)) {
-    const featureDir = path.join(GALLERY_DIR, feature);
+    const featureDir = path.join(GALLERY_IN_DIR, feature);
 
     try {
       const files = await fs.readdir(featureDir, {
@@ -90,7 +93,7 @@ export const galleryObj = ${JSON.stringify(galleryObj, null, 2)} as const satisf
 export type GalleryObj = Record<Features, Record<string, { id: string; index: number }>>;
 `;
 
-  await fs.writeFile(OUTPUT_FILE, source, "utf8");
+  await fs.writeFile(GALLERY_OUT_DIR, source, "utf8");
 
   console.log(
     `✓ Generated gallery and galleryObj for ${Object.keys(gallery).length} feature(s).`,

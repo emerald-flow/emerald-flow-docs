@@ -4,27 +4,27 @@ import path from "node:path";
 import sharp from "sharp";
 
 import { features } from "~/lib/feature-list";
-
-const PUBLIC_DIR = path.resolve("assets/gallery");
-const OUTPUT_DIR = path.resolve("assets/gallery-placeholders");
-
-const IMAGE_EXTENSIONS = new Set([".webp", ".png", ".jpg", ".jpeg", ".gif"]);
+import {
+  GALLERY_IN_DIR,
+  GALLERY_PLACEHOLDER_IN_DIR,
+  IMAGE_EXTENSIONS,
+} from "./utils/constants";
 
 async function main() {
-  await fs.rm(OUTPUT_DIR, {
+  await fs.rm(GALLERY_PLACEHOLDER_IN_DIR, {
     recursive: true,
     force: true,
   });
 
-  await fs.mkdir(OUTPUT_DIR, {
+  await fs.mkdir(GALLERY_PLACEHOLDER_IN_DIR, {
     recursive: true,
   });
 
   let generated = 0;
 
   for (const feature of Object.keys(features)) {
-    const inputDir = path.join(PUBLIC_DIR, feature);
-    const outputDir = path.join(OUTPUT_DIR, feature);
+    const inputDir = path.join(GALLERY_IN_DIR, feature);
+    const outputDir = path.join(GALLERY_PLACEHOLDER_IN_DIR, feature);
 
     try {
       const files = await fs.readdir(inputDir, {

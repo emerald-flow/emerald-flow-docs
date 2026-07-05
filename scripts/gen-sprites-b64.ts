@@ -1,18 +1,6 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-
-const PUBLIC_DIR = path.resolve("assets/sprites");
-const OUTPUT_DIR = path.resolve("src/lib/generated/sprites");
-
-const MIME_TYPES: Record<string, string> = {
-  ".webp": "image/webp",
-  ".png": "image/png",
-  ".jpg": "image/jpeg",
-  ".jpeg": "image/jpeg",
-  ".gif": "image/gif",
-  ".svg": "image/svg+xml",
-  ".ico": "image/x-icon",
-};
+import { MIME_TYPES, SPRITES_IN_DIR, SPRITES_OUT_DIR } from "./utils/constants";
 
 async function walk(dir: string): Promise<string[]> {
   const entries = await fs.readdir(dir, {
@@ -36,16 +24,16 @@ async function walk(dir: string): Promise<string[]> {
 
 async function main() {
   // Remove previously generated modules.
-  await fs.rm(OUTPUT_DIR, {
+  await fs.rm(SPRITES_OUT_DIR, {
     recursive: true,
     force: true,
   });
 
-  await fs.mkdir(OUTPUT_DIR, {
+  await fs.mkdir(SPRITES_OUT_DIR, {
     recursive: true,
   });
 
-  const files = await walk(PUBLIC_DIR);
+  const files = await walk(SPRITES_IN_DIR);
 
   let generated = 0;
 
@@ -55,9 +43,12 @@ async function main() {
 
     if (!mime) continue;
 
-    const relative = path.relative(PUBLIC_DIR, input);
+    const relative = path.relative(SPRITES_IN_DIR, input);
 
-    const output = path.join(OUTPUT_DIR, relative.replace(/\.[^.]+$/, ".ts"));
+    const output = path.join(
+      SPRITES_OUT_DIR,
+      relative.replace(/\.[^.]+$/, ".ts"),
+    );
 
     await fs.mkdir(path.dirname(output), {
       recursive: true,

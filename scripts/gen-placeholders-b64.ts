@@ -2,27 +2,20 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 
 import { features } from "~/lib/feature-list";
-
-const PUBLIC_DIR = path.resolve("assets/gallery-placeholders");
-const OUTPUT_DIR = path.resolve("src/lib/generated/placeholders");
-
-const MIME_TYPES: Record<string, string> = {
-  ".webp": "image/webp",
-  ".png": "image/png",
-  ".jpg": "image/jpeg",
-  ".jpeg": "image/jpeg",
-  ".gif": "image/gif",
-};
-
-const IMAGE_EXTENSIONS = new Set(Object.keys(MIME_TYPES));
+import {
+  GALLERY_PLACEHOLDER_IN_DIR,
+  GALLERY_PLACEHOLDER_OUT_DIR,
+  IMAGE_EXTENSIONS,
+  MIME_TYPES,
+} from "./utils/constants";
 
 async function main() {
-  await fs.rm(OUTPUT_DIR, {
+  await fs.rm(GALLERY_PLACEHOLDER_OUT_DIR, {
     recursive: true,
     force: true,
   });
 
-  await fs.mkdir(OUTPUT_DIR, {
+  await fs.mkdir(GALLERY_PLACEHOLDER_OUT_DIR, {
     recursive: true,
   });
 
@@ -32,7 +25,7 @@ async function main() {
   let generated = 0;
 
   for (const feature of Object.keys(features)) {
-    const featureDir = path.join(PUBLIC_DIR, feature);
+    const featureDir = path.join(GALLERY_PLACEHOLDER_IN_DIR, feature);
 
     const placeholders: Record<string, string> = {};
 
@@ -64,7 +57,11 @@ async function main() {
 export const placeholder = ${JSON.stringify(placeholders, null, 2)} as const;
 `;
 
-    await fs.writeFile(path.join(OUTPUT_DIR, `${feature}.ts`), source, "utf8");
+    await fs.writeFile(
+      path.join(GALLERY_PLACEHOLDER_OUT_DIR, `${feature}.ts`),
+      source,
+      "utf8",
+    );
 
     const importName = feature
       .replace(/-([a-z])/g, (_, c: string) => c.toUpperCase())
@@ -88,7 +85,11 @@ ${typeEntries.join("\n")}
 };
 `;
 
-  await fs.writeFile(path.join(OUTPUT_DIR, "type.ts"), typeSource, "utf8");
+  await fs.writeFile(
+    path.join(GALLERY_PLACEHOLDER_OUT_DIR, "type.ts"),
+    typeSource,
+    "utf8",
+  );
 
   console.log(`✓ Generated ${generated} placeholder module(s) and type.ts.`);
 }
