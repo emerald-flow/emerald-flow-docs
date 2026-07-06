@@ -1,6 +1,6 @@
 import { HeroImage } from "~/components/hero";
 import { Md } from "~/components/markdown";
-import { Badge } from "~/components/ui/badge";
+import { VersionPill } from "~/components/pills";
 import { logo } from "~/lib/generated/sprites/logo";
 
 export default function Page() {
@@ -18,7 +18,7 @@ alt="Logo sprite"
 `  
 }  
 </Md>   
-<Badge variant={"outline"}>v1.0.0-beta</Badge>
+<VersionPill />
 </>
 );
 }

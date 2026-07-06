@@ -15,9 +15,9 @@ import {
 import Image from "next/image";
 import { menuItems, pages } from "~/lib/menu-items";
 import Link from "next/link";
-import { Badge } from "./ui/badge";
 import { MenuButton } from "./menu-button";
 import { logo } from "~/lib/generated/sprites/logo";
+import { BestPill, VersionPill } from "./pills";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -52,7 +52,7 @@ function AppSidebarContent() {
                 </div>
                 <div className="flex flex-col gap-1 leading-none">
                   <span className="font-medium">Pokemon Emerald Flow</span>
-                  <Badge variant={"outline"}>v1.0.0-beta</Badge>
+                  <VersionPill />
                 </div>
               </Link>
             </SidebarMenuButton>
@@ -77,9 +77,7 @@ function AppSidebarContent() {
                           <Link href={item.url}>
                             {item.title}
                             {item.title ===
-                              pages.setup["quick-patch"].title && (
-                              <Badge variant="outline">Best ⭐</Badge>
-                            )}
+                              pages.setup["quick-patch"].title && <BestPill />}
                           </Link>
                         </MenuButton>
                       </SidebarMenuSubItem>

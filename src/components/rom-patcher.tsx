@@ -74,7 +74,7 @@ const selectROMQueryOptions = queryOptions<Status>({
 const selectROMMutationOptions = mutationOptions({
   mutationKey: ["selectROM"],
   mutationFn: async (rom: File) => {
-    if (!rom) throw new Error("File missing");
+    if (!rom) throw new Error("ROM file missing");
     return rom;
   },
   onMutate: (_, ctx) =>
@@ -119,7 +119,7 @@ const verifyROMMutationOptions = mutationOptions({
     const hashHex = hashArray
       .map((b) => b.toString(16).padStart(2, "0"))
       .join("");
-    if (hashHex !== EXPECTED_ROM_SHA256) throw new Error("Invalid Game file");
+    if (hashHex !== EXPECTED_ROM_SHA256) throw new Error("Unsupported ROM");
     return rom;
   },
   onMutate: (_, ctx) =>
@@ -168,8 +168,8 @@ const downloadPatchMutationOptions = mutationOptions({
         cache: "no-store",
       },
     );
-    if (!response.ok) throw new Error("Failed to download patch.");
-    if (!response.body) throw new Error("Streaming unsupported.");
+    if (!response.ok) throw new Error("Failed to download patch");
+    if (!response.body) throw new Error("Streaming unsupported");
     const reader = response.body.getReader();
     const chunks: BlobPart[] = [];
     let received = 0;
@@ -413,9 +413,7 @@ function SelectRom() {
     <Step title="Select ROM" data={data}>
       <StepAction data={data} onRetry={() => reset("select")}>
         <FileUploadTrigger asChild>
-          <Button variant="outline" size="sm">
-            Browse files
-          </Button>
+          <Button size="sm">Browse files</Button>
         </FileUploadTrigger>
       </StepAction>
     </Step>
@@ -488,7 +486,6 @@ function Done() {
         onRetry={() => void 0}
       >
         <Button
-          variant="outline"
           size="sm"
           onClick={() => {
             const url = URL.createObjectURL(patchedROM.data!);
@@ -518,7 +515,7 @@ function StepAction({
   switch (status) {
     case "error":
       return (
-        <Button variant="outline" size="sm" onClick={onRetry}>
+        <Button size="sm" onClick={onRetry}>
           <RotateCcw />
           Retry
         </Button>

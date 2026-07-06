@@ -11,9 +11,10 @@ export default function Page() {
 `
 ## ${pages.setup["quick-patch"].title}
 
-Hack Dex is an online web-based ROM hack patch hosting and patching
-platform. Here's a step-by-step process to patch your game with
-Hack Dex.
+Patch your **Pokémon Emerald (USA, Europe) .gba ROM** directly in your browser. 
+Your ROM never leaves your device. 
+Quick Patch automatically verifies your game, 
+downloads the latest patch, and creates your patched ROM in just a few clicks.
 `
 }
 </Md>
