@@ -22,6 +22,7 @@ export function GalleryReturn(props: {
         props.className,
         props.isModal && "pointer-events-none",
       )}
+      target={props.isModal ? "_self" : "_blank"}
     >
       <Button
         variant="secondary"
