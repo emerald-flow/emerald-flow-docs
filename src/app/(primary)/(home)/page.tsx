@@ -14,7 +14,7 @@ alt="Logo sprite"
 <Md>
 {
 `
-# Pokemon Emerald Flow
+# Pokémon Emerald Flow
 `  
 }  
 </Md>   

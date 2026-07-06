@@ -10,7 +10,7 @@ export function PageWrapper({
     <main
       {...props}
       className={cn(
-        "mx-auto mb-18 flex w-full max-w-2xl flex-col items-start px-8 *:mb-4",
+        "mx-auto mb-18 flex w-full max-w-2xl flex-col items-start px-8 *:mb-6",
         props.className,
       )}
     >

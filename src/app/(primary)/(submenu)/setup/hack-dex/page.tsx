@@ -15,7 +15,7 @@ Hack Dex is an online web-based ROM hack patch hosting and patching
 platform. Here's a step-by-step process to patch your game with
 Hack Dex.
 
-- **Step 1**: Head to Pokemon Emerald Flow's Hack Dex page by using the link mentioned below.
+- **Step 1**: Head to Pokémon Emerald Flow's Hack Dex page by using the link mentioned below.
 `
 }
 </Md>

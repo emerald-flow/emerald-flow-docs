@@ -57,7 +57,7 @@ export const FeatureNotes = <T extends TailwindColor>({
   return (
     <div
       className={cn(
-        "mb-4 w-full rounded-md border",
+        "mb-6 w-full rounded-md border",
         bgColor,
         borderColor,
         className,

@@ -13,12 +13,12 @@ export default function Page() {
 ## ${pages.setup["rom-patcher-js"].title}
 Rom Patcher JS is an online web-based ROM patcher. 
 Here's a step-by-step process to patch your game with Rom Patcher JS.
-- **Step 1**: Head to Pokemon Emerald Flow's Github repository by using the link mentioned below.
+- **Step 1**: Head to Pokémon Emerald Flow's Github repository by using the link mentioned below.
 `
 }
 </Md>
 <ExternalLink href="https://www.github.com/officer-kd6-3dot7/pokemon-emerald-flow">
-Pokemon Emerald Flow
+Pokémon Emerald Flow
 </ExternalLink>
 <Md>
 { 

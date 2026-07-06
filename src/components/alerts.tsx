@@ -75,8 +75,8 @@ export const Alert = ({
 }: PropsWithChildren<Props>) => {
   return (
     <div className={cn(backgroundVariants({ variant, className }))}>
-      <div className="bg-background/90 rounded-md p-4 *:not-[&>li]:mb-4">
-        <div className={cn(textVariant({ variant }))}>
+      <div className="bg-background/90 rounded-md p-4 *:not-[&>li]:mb-2">
+        <div className={cn("mb-3", textVariant({ variant }))}>
           <VariantIcon variant={variant} />
           {variant}
         </div>

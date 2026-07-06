@@ -35,7 +35,7 @@ blobBgColor="bg-yellow-500"
 >
 {
 `
-**Pokemon Emerald Flow** includes a variety of optional
+**Pokémon Emerald Flow** includes a variety of optional
 enhancement features designed to reduce unnecessary friction while
 preserving the original Emerald experience.
 
@@ -48,7 +48,7 @@ similar to that of the original _Pokémon Emerald_.
 <AlertMd>
 {
 `
-Default settings are applied automatically the first time Pokemon
+Default settings are applied automatically the first time Pokémon
 Emerald Flow is launched. This initialization only happens once.
 `
 }

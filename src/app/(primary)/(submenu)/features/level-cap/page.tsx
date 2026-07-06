@@ -64,7 +64,7 @@ Only experience gains are capped.
 <FeatureNotes.NoteMd src={pokeball} alt="Pokeball item sprite">
 {
 `
-**Higher-level Pokemon** 
+**Higher-level Pokémon** 
 
 Pokémon above the current cap can still participate in battle.
 `
@@ -77,7 +77,7 @@ Pokémon above the current cap can still participate in battle.
 Need the exact level caps? Check these references that provide a breakdown of the cap progression.
 
 - [Nuzlocke University](https://nuzlockeuniversity.ca/2022/01/18/hardcore-nuzlocke-level-caps-by-generation/#emerald)
-- [PokemonDB](https://pokemondb.net/emerald/gymleaders-elitefour)
+- [PokémonDB](https://pokemondb.net/emerald/gymleaders-elitefour)
 `
 }
 </AlertMd>

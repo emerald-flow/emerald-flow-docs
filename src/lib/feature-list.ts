@@ -99,8 +99,8 @@ export const featureList = [
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
-        ["Lvl.30", "Pokemon evolve at Level 30"],
-        ["Item", "Pokemon evolve during level up with a held item"],
+        ["Lvl.30", "Pokémon evolve at Level 30"],
+        ["Item", "Pokémon evolve during level up with a held item"],
       ],
       defaultOption: "Off",
     } as const),
@@ -231,7 +231,7 @@ export const featureList = [
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
-        ["On", "Pokemon do not escape from Pokeball"],
+        ["On", "Pokémon do not escape from Pokeball"],
       ],
       defaultOption: "Off",
     } as const),
@@ -282,7 +282,7 @@ export const featureList = [
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
-        ["On", "Safari and Roaming Pokemon do not flee"],
+        ["On", "Safari and Roaming Pokémon do not flee"],
       ],
       defaultOption: "Off",
     } as const),
