@@ -9,7 +9,7 @@ export default function Page() {
 <Md>
 {
 `
-## ${pages.setup.native.title}
+## ${pages.setup["quick-patch"].title}
 
 Hack Dex is an online web-based ROM hack patch hosting and patching
 platform. Here's a step-by-step process to patch your game with

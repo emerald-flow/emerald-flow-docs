@@ -1,66 +1,166 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type PropsWithChildren } from "react";
 import {
   mutationOptions,
   queryOptions,
   useMutation,
   useQuery,
+  useQueryClient,
 } from "@tanstack/react-query";
 
-import { Input } from "~/components/ui/input";
 import { patchRom } from "~/lib/rom-patcher";
 
 import { createContext, use } from "react";
 import { Button } from "./ui/button";
+import { Card, CardHeader, CardTitle } from "./ui/card";
+import { CircleCheck, CircleDashed, CircleX, RotateCcw } from "lucide-react";
+import { cn } from "~/lib/utils";
+import { Spinner } from "./ui/spinner";
+import { FileUpload, FileUploadTrigger } from "./ui/file-upload";
+import { Progress } from "./ui/progress";
+import { Field, FieldLabel } from "./ui/field";
+
+import throttle from "lodash.throttle";
+
+type Progress = { received: number; total: number } | null;
+
+type Status = (
+  | {
+      status: "success" | "waiting" | "idle" | "pending";
+      message: null;
+    }
+  | {
+      status: "error";
+      message: string;
+    }
+) & {
+  start: number;
+  end: number;
+};
+
+type StatusType = Status["status"];
 
 const EXPECTED_ROM_SHA256 =
   "a9dec84dfe7f62ab2220bafaef7479da0929d066ece16a6885f6226db19085af";
 
-type UploadInput = FileList | null;
-
-type Progress = { received: number; total: number } | null;
+const PatcherQueryKey = ["patcher"] as const;
 
 const ROMQueryOptions = queryOptions<File | null>({
-  queryKey: ["rom"],
+  queryKey: [...PatcherQueryKey, "rom"],
+  initialData: null,
 });
 
 const patchQueryOptions = queryOptions<File | null>({
-  queryKey: ["patch"],
+  queryKey: [...PatcherQueryKey, "patch"],
+  initialData: null,
 });
 
 const patchedROMQueryOptions = queryOptions<File | null>({
-  queryKey: ["patchedROM"],
+  queryKey: [...PatcherQueryKey, "patchedROM"],
+  initialData: null,
 });
 
-const uploadROMMutationOptions = mutationOptions({
-  mutationKey: ["uploadROM"],
-  mutationFn: async (roms: UploadInput) => {
-    const rom = roms?.[0];
-    if (!rom) throw new Error("File missing");
-    return rom;
+const selectROMQueryOptions = queryOptions<Status>({
+  queryKey: [...PatcherQueryKey, "selectROM"],
+  initialData: {
+    status: "waiting",
+    message: null,
+    start: 0,
+    end: 0,
   },
 });
 
-const validateROMMutationOptions = mutationOptions({
-  mutationKey: ["validateROM"],
-  mutationFn: async (rom: File, ctx) => {
+const selectROMMutationOptions = mutationOptions({
+  mutationKey: ["selectROM"],
+  mutationFn: async (rom: File) => {
+    if (!rom) throw new Error("File missing");
+    return rom;
+  },
+  onMutate: (_, ctx) =>
+    ctx.client.setQueryData(selectROMQueryOptions.queryKey, {
+      message: null,
+      status: "pending" as const,
+      start: Date.now(),
+      end: 0,
+    }),
+  onError: (error, _, __, ctx) =>
+    ctx.client.setQueryData(selectROMQueryOptions.queryKey, {
+      message: error.message,
+      status: "error" as const,
+      start: 0,
+      end: 0,
+    }),
+  onSuccess: (_, __, ___, ctx) =>
+    ctx.client.setQueryData(selectROMQueryOptions.queryKey, (prev) => ({
+      ...prev!,
+      message: null,
+      status: "success" as const,
+      end: Date.now(),
+    })),
+});
+
+const verifyROMQueryOptions = queryOptions<Status>({
+  queryKey: [...PatcherQueryKey, "verifyROM"],
+  initialData: {
+    status: "idle",
+    message: null,
+    start: 0,
+    end: 0,
+  },
+});
+
+const verifyROMMutationOptions = mutationOptions({
+  mutationKey: ["verifyROM"],
+  mutationFn: async (rom: File) => {
     const arrayBuffer = await rom.arrayBuffer();
     const hashBuffer = await crypto.subtle.digest("SHA-256", arrayBuffer);
     const hashArray = Array.from(new Uint8Array(hashBuffer));
     const hashHex = hashArray
       .map((b) => b.toString(16).padStart(2, "0"))
       .join("");
-    if (hashHex !== EXPECTED_ROM_SHA256) throw new Error("Invalid ROM Hash");
-    ctx.client.setQueryData(ROMQueryOptions.queryKey, () => rom);
+    if (hashHex !== EXPECTED_ROM_SHA256) throw new Error("Invalid Game file");
+    return rom;
+  },
+  onMutate: (_, ctx) =>
+    ctx.client.setQueryData(verifyROMQueryOptions.queryKey, {
+      message: null,
+      status: "pending" as const,
+      start: Date.now(),
+      end: 0,
+    }),
+  onError: (error, _, __, ctx) =>
+    ctx.client.setQueryData(verifyROMQueryOptions.queryKey, {
+      message: error.message,
+      status: "error" as const,
+      start: 0,
+      end: 0,
+    }),
+  onSuccess: (rom, __, ___, ctx) => {
+    ctx.client.setQueryData(ROMQueryOptions.queryKey, rom);
+    ctx.client.setQueryData(verifyROMQueryOptions.queryKey, (prev) => ({
+      ...prev!,
+      message: null,
+      status: "success" as const,
+      end: Date.now(),
+    }));
+  },
+});
+
+const downloadPatchQueryOptions = queryOptions<Status>({
+  queryKey: [...PatcherQueryKey, "downloadPatch"],
+  initialData: {
+    status: "idle",
+    message: null,
+    start: 0,
+    end: 0,
   },
 });
 
 const downloadPatchMutationOptions = mutationOptions({
   mutationKey: ["downloadPatch"],
   mutationFn: async (
-    setProgress: React.Dispatch<React.SetStateAction<Progress>>,
-    ctx,
+    setProgress: React.Dispatch<React.SetStateAction<number | null>>,
   ) => {
     const response = await fetch(
       "https://cdn.jsdelivr.net/gh/officer-kd6-3dot7/X/pokeemerald.bps",
@@ -70,7 +170,6 @@ const downloadPatchMutationOptions = mutationOptions({
     );
     if (!response.ok) throw new Error("Failed to download patch.");
     if (!response.body) throw new Error("Streaming unsupported.");
-    const total = Number(response.headers.get("Content-Length") ?? 0);
     const reader = response.body.getReader();
     const chunks: BlobPart[] = [];
     let received = 0;
@@ -79,68 +178,187 @@ const downloadPatchMutationOptions = mutationOptions({
       if (done) break;
       chunks.push(value);
       received += value.byteLength;
-      setProgress({
-        received,
-        total,
-      });
+      setProgress(received);
     }
     const patch = new File(chunks, "pokeemerald.bps", {
       type: "application/octet-stream",
     });
-    ctx.client.setQueryData(patchQueryOptions.queryKey, () => patch);
     return patch;
+  },
+  onMutate: (_, ctx) =>
+    ctx.client.setQueryData(downloadPatchQueryOptions.queryKey, {
+      message: null,
+      status: "pending" as const,
+      start: Date.now(),
+      end: 0,
+    }),
+  onError: (error, _, __, ctx) =>
+    ctx.client.setQueryData(downloadPatchQueryOptions.queryKey, {
+      message: error.message,
+      status: "error" as const,
+      start: 0,
+      end: 0,
+    }),
+  onSuccess: (patch, __, ___, ctx) => {
+    ctx.client.setQueryData(patchQueryOptions.queryKey, patch);
+    ctx.client.setQueryData(downloadPatchQueryOptions.queryKey, (prev) => ({
+      ...prev!,
+      message: null,
+      status: "success" as const,
+      end: Date.now(),
+    }));
+  },
+});
+
+const applyPatchQueryOptions = queryOptions<Status>({
+  queryKey: [...PatcherQueryKey, "applyPatch"],
+  initialData: {
+    status: "idle",
+    message: null,
+    start: 0,
+    end: 0,
   },
 });
 
 const applyPatchMutationOptions = mutationOptions({
   mutationKey: ["applyPatch"],
   mutationFn: async ({ rom, patch }: { rom: File; patch: File }) => {
-    return await patchRom(rom, patch);
+    const patchedROM = await patchRom(rom, patch);
+    return patchedROM;
+  },
+  onMutate: (_, ctx) =>
+    ctx.client.setQueryData(applyPatchQueryOptions.queryKey, {
+      message: null,
+      status: "pending" as const,
+      start: Date.now(),
+      end: 0,
+    }),
+  onError: (error, _, __, ctx) =>
+    ctx.client.setQueryData(applyPatchQueryOptions.queryKey, {
+      message: error.message,
+      status: "error" as const,
+      start: 0,
+      end: 0,
+    }),
+  onSuccess: (patchedROM, __, ___, ctx) => {
+    ctx.client.setQueryData(patchedROMQueryOptions.queryKey, patchedROM);
+    ctx.client.setQueryData(applyPatchQueryOptions.queryKey, (prev) => ({
+      ...prev!,
+      message: null,
+      status: "success" as const,
+      end: Date.now(),
+    }));
   },
 });
 
 const usePatcherContext = () => {
-  const [progress, setProgress] = useState<Progress>(null);
+  const queryClient = useQueryClient();
+
+  const [progress, setProgress] = useState<number | null>(null);
+
   const rom = useQuery(ROMQueryOptions);
   const patch = useQuery(patchQueryOptions);
   const patchedROM = useQuery(patchedROMQueryOptions);
-  const uploadROM = useMutation(uploadROMMutationOptions);
-  const validateROM = useMutation(validateROMMutationOptions);
-  const downloadPatch = useMutation(downloadPatchMutationOptions);
-  const applyPatch = useMutation(applyPatchMutationOptions);
+
+  const selectROMQuery = useQuery(selectROMQueryOptions);
+  const verifyROMQuery = useQuery(verifyROMQueryOptions);
+  const downloadPatchQuery = useQuery(downloadPatchQueryOptions);
+  const applyPatchQuery = useQuery(applyPatchQueryOptions);
+
+  const selectROMMutation = useMutation(selectROMMutationOptions);
+  const verifyROMMutation = useMutation(verifyROMMutationOptions);
+  const downloadPatchMutation = useMutation(downloadPatchMutationOptions);
+  const applyPatchMutation = useMutation(applyPatchMutationOptions);
+
+  const handleSetProgress = throttle(setProgress, 400, {
+    leading: true,
+    trailing: true,
+  });
+
   const patchMutation = useMutation({
     mutationKey: ["patch"],
-    mutationFn: async (roms: UploadInput, ctx) => {
+    mutationFn: async (romInput: File) => {
       let romFile = rom.data;
       if (!romFile) {
-        romFile = await uploadROM.mutateAsync(roms);
-        await validateROM.mutateAsync(romFile);
+        romFile = await selectROMMutation.mutateAsync(romInput);
+        await verifyROMMutation.mutateAsync(romFile);
       }
       const patchFile =
-        patch.data ?? (await downloadPatch.mutateAsync(setProgress));
-      const patchedRomFile = await applyPatch.mutateAsync({
+        patch.data ??
+        (await downloadPatchMutation.mutateAsync(handleSetProgress));
+      const patchedRomFile = await applyPatchMutation.mutateAsync({
         rom: romFile,
         patch: patchFile,
       });
-      ctx.client.setQueryData(
-        patchedROMQueryOptions.queryKey,
-        () => patchedRomFile,
-      );
+
       return patchedRomFile;
     },
-    onMutate: () => setProgress(null),
+    onSuccess: (patchedRomFile, _, __, ctx) =>
+      ctx.client.setQueryData(patchedROMQueryOptions.queryKey, patchedRomFile),
     onSettled: () => setProgress(null),
   });
+
+  const reset = async (stage: "select" | "verify" | "download" | "apply") => {
+    switch (stage) {
+      case "apply": {
+        await Promise.allSettled([
+          queryClient.resetQueries({
+            queryKey: applyPatchQueryOptions.queryKey,
+            exact: true,
+          }),
+          queryClient.resetQueries({
+            queryKey: patchedROMQueryOptions.queryKey,
+            exact: true,
+          }),
+        ]);
+        return;
+      }
+      case "download": {
+        await Promise.allSettled([
+          queryClient.resetQueries({
+            queryKey: downloadPatchQueryOptions.queryKey,
+            exact: true,
+          }),
+          queryClient.resetQueries({
+            queryKey: patchQueryOptions.queryKey,
+            exact: true,
+          }),
+        ]);
+        return;
+      }
+      case "verify":
+      case "select": {
+        await Promise.allSettled([
+          queryClient.resetQueries({
+            queryKey: verifyROMQueryOptions.queryKey,
+            exact: true,
+          }),
+          queryClient.resetQueries({
+            queryKey: patchQueryOptions.queryKey,
+            exact: true,
+          }),
+          queryClient.resetQueries({
+            queryKey: selectROMQueryOptions.queryKey,
+            exact: true,
+          }),
+        ]);
+        return;
+      }
+      default:
+        stage satisfies never;
+    }
+  };
+
   return {
     rom,
-    patch,
+    reset,
     patchedROM,
     progress,
-    uploadROM,
-    validateROM,
-    downloadPatch,
-    applyPatch,
     patchMutation,
+    selectROMQuery,
+    verifyROMQuery,
+    downloadPatchQuery,
+    applyPatchQuery,
   };
 };
 
@@ -158,37 +376,120 @@ export function RomPatcher() {
   const patcherValue = usePatcherContext();
   return (
     <PatcherContext value={patcherValue}>
-      <Example />
+      <Patcher />
     </PatcherContext>
   );
 }
 
-function Example() {
-  const { rom, patchedROM, patchMutation } = usePatcher();
+function Patcher() {
+  const { patchMutation, rom } = usePatcher();
   return (
-    <>
-      <div className="max-w-md space-y-4">
-        <div>
-          <label>ROM</label>
-          <Input
-            type="file"
-            accept=".gba"
-            disabled={
-              Boolean(rom.data) ||
-              Boolean(patchedROM.data) ||
-              patchMutation.isPending ||
-              patchMutation.isSuccess
-            }
-            onChange={(e) => patchMutation.mutate(e.target.files)}
-          />
+    <div className="w-full">
+      <FileUpload
+        value={rom.data ? [rom.data] : []}
+        onFileAccept={patchMutation.mutate}
+        maxFiles={1}
+        accept=".gba"
+        required
+      >
+        <div className="flex w-full flex-col gap-2">
+          <SelectRom />
+          <VerifyRom />
+          <DownloadPatch />
+          <ApplyPatch />
+          <Done />
         </div>
+      </FileUpload>
+    </div>
+  );
+}
 
-        {!Boolean(patchedROM.data) && patchMutation.isError && (
-          <p className="text-red-500">{patchMutation.error.message}</p>
+function SelectRom() {
+  const {
+    reset,
+    selectROMQuery: { data },
+  } = usePatcher();
+  return (
+    <Step title="Select ROM" data={data}>
+      <StepAction data={data} onRetry={() => reset("select")}>
+        <FileUploadTrigger asChild>
+          <Button variant="outline" size="sm">
+            Browse files
+          </Button>
+        </FileUploadTrigger>
+      </StepAction>
+    </Step>
+  );
+}
+
+function VerifyRom() {
+  const {
+    reset,
+    verifyROMQuery: { data },
+  } = usePatcher();
+  return (
+    <Step title="Verify ROM" data={data}>
+      <StepAction data={data} onRetry={() => reset("verify")} />
+    </Step>
+  );
+}
+const formatMB = (bytes: number) => `${(bytes / (1000 * 1000)).toFixed(2)}MB`;
+
+function DownloadPatch() {
+  const {
+    progress,
+    reset,
+    downloadPatchQuery: { data },
+  } = usePatcher();
+  return (
+    <Step title="Download Patch" data={data}>
+      <StepAction data={data} onRetry={() => reset("download")}>
+        {progress && (
+          <Field className="w-full max-w-sm">
+            <FieldLabel htmlFor="progress-upload">
+              <span className="ml-auto text-xs tabular-nums">
+                {formatMB(progress)} / {formatMB(9245050)}
+              </span>
+            </FieldLabel>
+            <Progress id="progress-upload" value={(progress / 9245050) * 100} />
+          </Field>
         )}
+      </StepAction>
+    </Step>
+  );
+}
 
+function ApplyPatch() {
+  const {
+    reset,
+    applyPatchQuery: { data },
+  } = usePatcher();
+  return (
+    <Step title="Apply Patch" data={data}>
+      <StepAction data={data} onRetry={() => reset("apply")} />
+    </Step>
+  );
+}
+
+function Done() {
+  const {
+    patchedROM,
+    applyPatchQuery: { data },
+  } = usePatcher();
+  return (
+    <Step title="Done!" data={data}>
+      <StepAction
+        data={{
+          status: data.status === "success" ? "waiting" : "idle",
+          end: data.end,
+          start: data.start,
+          message: null,
+        }}
+        onRetry={() => void 0}
+      >
         <Button
-          disabled={!Boolean(patchedROM.data)}
+          variant="outline"
+          size="sm"
           onClick={() => {
             const url = URL.createObjectURL(patchedROM.data!);
             const a = document.createElement("a");
@@ -198,9 +499,91 @@ function Example() {
             URL.revokeObjectURL(url);
           }}
         >
-          Download
+          Download!
         </Button>
-      </div>
-    </>
+      </StepAction>
+    </Step>
   );
+}
+
+function StepAction({
+  data: { status, start, end },
+  onRetry,
+  children,
+}: PropsWithChildren<{
+  data: Status;
+  onRetry: () => void;
+}>) {
+  const elapsed = (end - start) / 1000;
+  switch (status) {
+    case "error":
+      return (
+        <Button variant="outline" size="sm" onClick={onRetry}>
+          <RotateCcw />
+          Retry
+        </Button>
+      );
+    case "success":
+      return (
+        <div className="opacity-50">
+          {elapsed < 0.01 ? "<0.01s" : `${elapsed.toFixed(2)}s`}
+        </div>
+      );
+    case "waiting":
+      return <>{children}</>;
+    case "idle":
+      return <></>;
+    case "pending":
+      return <>{children}</>;
+    default:
+      status satisfies never;
+  }
+}
+
+function Step({
+  title,
+  data,
+  children,
+}: PropsWithChildren<{
+  title: string;
+  data: Status;
+}>) {
+  return (
+    <Card
+      className={cn(
+        "w-full py-4 transition-all",
+        data.status === "idle" && "opacity-50",
+      )}
+    >
+      <CardHeader className="w-full px-4">
+        <CardTitle className="flex flex-row items-center gap-2">
+          <StepStatus status={data.status} />
+          <div className="flex flex-col gap-1">
+            <span>{title}</span>
+            <span className="text-red-500 opacity-50">
+              {data.message && `(${data.message})`}
+            </span>
+          </div>
+
+          <div className="ml-auto">{children}</div>
+        </CardTitle>
+      </CardHeader>
+    </Card>
+  );
+}
+
+function StepStatus(props: { status: StatusType }) {
+  switch (props.status) {
+    case "error":
+      return <CircleX className="size-5 text-red-500" />;
+    case "success":
+      return <CircleCheck className="size-5 text-green-500" />;
+    case "pending":
+      return <Spinner className="size-5" />;
+    case "waiting":
+    case "idle":
+      return <CircleDashed className="size-5" />;
+    default:
+      props.status satisfies never;
+  }
 }

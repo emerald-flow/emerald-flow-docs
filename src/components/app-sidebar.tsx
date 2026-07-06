@@ -13,7 +13,7 @@ import {
   SidebarNoJS,
 } from "~/components/ui/sidebar";
 import Image from "next/image";
-import { menuItems } from "~/lib/menu-items";
+import { menuItems, pages } from "~/lib/menu-items";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
 import { MenuButton } from "./menu-button";
@@ -74,7 +74,13 @@ function AppSidebarContent() {
                     {item.items.map((item) => (
                       <SidebarMenuSubItem key={item.title}>
                         <MenuButton url={item.url}>
-                          <Link href={item.url}>{item.title}</Link>
+                          <Link href={item.url}>
+                            {item.title}
+                            {item.title ===
+                              pages.setup["quick-patch"].title && (
+                              <Badge variant="outline">Best ⭐</Badge>
+                            )}
+                          </Link>
                         </MenuButton>
                       </SidebarMenuSubItem>
                     ))}

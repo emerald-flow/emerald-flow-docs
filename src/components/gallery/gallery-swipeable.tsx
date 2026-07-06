@@ -13,7 +13,6 @@ export function GallerySwipeable(
 ) {
   const router = useRouter();
   const featureGallery = gallery[props.feature];
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
   const handlers = useSwipeable({
     onSwipedLeft: () => {
       if (props.index < featureGallery.length - 1)
