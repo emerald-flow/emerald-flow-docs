@@ -6,7 +6,7 @@ import { queryOptions, useQuery, useQueryClient } from "@tanstack/react-query";
 
 const infoQuery = queryOptions({
   queryKey: ["info"],
-  initialData: () => false,
+  initialData: true,
 });
 
 export function GalleryInfo({

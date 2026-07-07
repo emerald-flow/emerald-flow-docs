@@ -54,7 +54,7 @@ export function Gallery<T extends keyof typeof galleryObj>({
           className="top-[1%] left-[1%]"
         />
         <GalleryInfo
-          className="top-[1%] right-[1%]"
+          className="right-[1%] bottom-[1%]"
           description={description}
         />
       </GallerySwipeable>
