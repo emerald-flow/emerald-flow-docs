@@ -10,8 +10,7 @@ type GalleryDescription = {
 
 export const galleryDescription = {
   "permanent-repel": {
-    "1": "Permanent repel in options",
-    "2": "Permanent repel in options 2",
+    "option-menu": "Permanent repel in option menu",
   },
   running: {},
   "level-cap": {},

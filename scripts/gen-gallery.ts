@@ -5,7 +5,6 @@ import { createHash } from "node:crypto";
 import { features } from "~/lib/feature-list";
 import { entries } from "~/lib/utils";
 import {
-  GALLERY_CACHE,
   GALLERY_IN_DIR,
   HASH_LENGTH,
   IMAGE_EXTENSIONS,
@@ -23,7 +22,7 @@ async function sha256(file: string) {
 }
 
 async function main() {
-  if (!(await hasGalleryChanged("gen:gallery"))) return;
+  if (!(await hasGalleryChanged("gen-gallery"))) return;
 
   const gallery: Record<
     string,

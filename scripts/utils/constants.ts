@@ -1,6 +1,7 @@
 import path from "node:path";
 
-export const GALLERY_CACHE = path.resolve(".script-cache/gallery.hash");
+export const GALLERY_CACHE = (str: string) =>
+  path.resolve(`.script-cache/${str}.hash`);
 
 export const GALLERY_IN_DIR = path.resolve("assets/gallery");
 export const GALLERY_OUT_DIR = path.resolve("src/lib/generated/gallery.ts");

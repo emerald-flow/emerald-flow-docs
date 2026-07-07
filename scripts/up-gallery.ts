@@ -13,7 +13,7 @@ loadEnvConfig(projectDir);
 const ROOT = path.resolve();
 
 async function main() {
-  if (!(await hasGalleryChanged("up:gallery"))) return;
+  if (!(await hasGalleryChanged("up-gallery"))) return;
   const desired = new Map<string, string>();
 
   for (const [feature, images] of Object.entries(gallery)) {

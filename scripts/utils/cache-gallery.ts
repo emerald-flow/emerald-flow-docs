@@ -40,11 +40,11 @@ async function fingerprintGallery() {
   return hash.digest("hex");
 }
 
-export async function hasGalleryChanged(source: "gen:gallery" | "up:gallery") {
+export async function hasGalleryChanged(source: "gen-gallery" | "up-gallery") {
   const current = await fingerprintGallery();
 
   try {
-    const previous = await fs.readFile(GALLERY_CACHE, "utf8");
+    const previous = await fs.readFile(GALLERY_CACHE(source), "utf8");
     if (previous === current) {
       console.log(`✓ Gallery unchanged. Skipping generation. (${source})`);
       return false;
@@ -53,8 +53,8 @@ export async function hasGalleryChanged(source: "gen:gallery" | "up:gallery") {
     // First run.
   }
 
-  await fs.mkdir(path.dirname(GALLERY_CACHE), { recursive: true });
-  await fs.writeFile(GALLERY_CACHE, current, "utf8");
+  await fs.mkdir(path.dirname(GALLERY_CACHE(source)), { recursive: true });
+  await fs.writeFile(GALLERY_CACHE(source), current, "utf8");
 
   return true;
 }

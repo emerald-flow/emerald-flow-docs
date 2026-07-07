@@ -55,20 +55,13 @@ lead Pokémon can still appear.
 {
 feature.options.map((option, i)=>
 (
-<Options.OptionMd
+<Options.Option
 key={i}
 src={img}
 alt={alt}
-isDefault={option.title == feature.defaultOption}
->
-{
-`
-**${option.title}**
-
-${option.description}
-`
-}
-</Options.OptionMd>)
+option={option}
+defaultOption={feature.defaultOption}
+/>)
 )
 }
 </Options>

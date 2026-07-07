@@ -7,14 +7,9 @@ type Features = Exclude<keyof typeof pages.features, "url" | "title">;
 export const gallery = {
   "permanent-repel": [
     {
-      name: "1",
-      id: "1.d82c06d4",
-      path: "/assets/gallery/permanent-repel/1.webp",
-    },
-    {
-      name: "2",
-      id: "2.d82c06d4",
-      path: "/assets/gallery/permanent-repel/2.webp",
+      name: "option-menu",
+      id: "option-menu.d82c06d4",
+      path: "/assets/gallery/permanent-repel/option-menu.webp",
     },
   ],
   running: [],
@@ -53,13 +48,9 @@ export type Gallery = Record<
 
 export const galleryObj = {
   "permanent-repel": {
-    "1": {
-      id: "1.d82c06d4",
+    "option-menu": {
+      id: "option-menu.d82c06d4",
       index: 0,
-    },
-    "2": {
-      id: "2.d82c06d4",
-      index: 1,
     },
   },
   running: {},
