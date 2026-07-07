@@ -7,7 +7,7 @@ import { running } from "~/lib/generated/sprites/running";
 import { mom } from "~/lib/generated/sprites/mom";
 import { bButton } from "~/lib/generated/sprites/bButton";
 import { FeaturesGallery } from "~/components/features-gallery";
-import { placeholder } from "~/lib/generated/placeholders/permanent-repel";
+import { placeholder } from "~/lib/generated/placeholders/running";
 
 export default function Page() {
   const feature = features.running;
@@ -74,7 +74,7 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="permanent-repel" placeholders={placeholder}/>
+<FeaturesGallery feature="running" placeholders={placeholder}/>
 </>
 );
 }
