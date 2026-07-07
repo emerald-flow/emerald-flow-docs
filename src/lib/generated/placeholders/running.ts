@@ -2,5 +2,5 @@
 
 export const placeholder = {
   "option-menu":
-    "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAABQBACdASoSAAwAPm0skkWkIqGYBABABsSgCdMoRIBdAAh39XV8JvuD3SgAAP7ohxEmvp9zECfH2YbAxoPzeFbKqj5/ZiMOajHiiFKpIN3aqNfjJ2X9K5p+qrNzXp7zwIg7A+PgLkR2BLQ9gthMA+Mw5KTaFjdKbzr37n+9/88EpO8GH5MxJxu/fzuwlvSeyyNDwjytusx5EAAA",
+    "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAAAwBACdASoSAAwAPm0skkWkIqGYBABABsSgCdMoRIBdAAh39XV8JvtwQSAA/uiHESa+n3MQJ8fZhsDGg/N4VsqqPn9mIw5qMeKIzuJAJIc4Boi1iKZbdJjMgY4IpvtGAX1X4+AuRHYEtD2C2EwD4zDkpNoWN0pvOvfuf73/zwSk7wYfvDY6HHMAaHtG7pRc8sjQz3ggM84AAA==",
 } as const;

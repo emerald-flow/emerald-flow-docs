@@ -15,7 +15,7 @@ export const gallery = {
   running: [
     {
       name: "option-menu",
-      id: "option-menu.54005b93",
+      id: "option-menu.f5fbd625",
       path: "/assets/gallery/running/option-menu.webp",
     },
   ],
@@ -61,7 +61,7 @@ export const galleryObj = {
   },
   running: {
     "option-menu": {
-      id: "option-menu.54005b93",
+      id: "option-menu.f5fbd625",
       index: 0,
     },
   },
