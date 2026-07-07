@@ -1,3 +1,6 @@
 /* AUTO-GENERATED FILE - DO NOT EDIT */
 
-export const placeholder = {} as const;
+export const placeholder = {
+  "option-menu":
+    "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAAAwBACdASoSAAwAPm0skkWkIqGYBABABsSgCdLcAvTAQ8Br6t+YwcMFfkAA/uiHESa+n3MQJ8fZ0UJOL0272U7yzrtwL2JFUvMmnHArjYeVmeQKF3Kdac3737JTIRCJ7PTGtXC58bXX9za6lT/ZJroIlT0m0LG6U3nXv3P97/54JTZRoz1XCRCzqy5lU02s30eC4eE1LTpW2x7b8QAAAA==",
+} as const;

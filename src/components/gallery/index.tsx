@@ -1,6 +1,11 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import Image from "next/image";
-import { gallery, galleryObj, type GalleryObj } from "~/lib/generated/gallery";
+import {
+  gallery,
+  galleryObj,
+  type Gallery,
+  type GalleryObj,
+} from "~/lib/generated/gallery";
 import { GalleryInfo } from "./gallery-info";
 import { GalleryReturn } from "./gallery-return";
 import Link from "next/link";
@@ -10,18 +15,17 @@ import { cn } from "~/lib/utils";
 import { GallerySwipeable } from "./gallery-swipeable";
 import { galleryDescription } from "~/lib/gallery-description";
 
-export function Gallery({
+export function Gallery<T extends keyof typeof galleryObj>({
   id,
   feature,
   isModal = false,
 }: {
-  id: string;
-  feature: keyof typeof galleryObj;
+  feature: T;
+  id: keyof (typeof galleryDescription)[NoInfer<T>];
   isModal?: boolean;
 }) {
   //@ts-expect-error
   const img = galleryObj[feature][id] as GalleryObj[keyof GalleryObj][string];
-  //@ts-expect-error
   const description = galleryDescription[feature][id] as string;
 
   return (
@@ -72,7 +76,7 @@ function GalleryNavigations(props: {
     <>
       {!isFirstIndex && (
         <Link
-          href={`/gallery/${props.feature}/${gallery[props.feature][prevIndex]!.name}`}
+          href={`/gallery/${props.feature}/${gallery[props.feature][prevIndex].name}`}
           replace
           className="absolute top-[50%] left-[1%] opacity-80"
         >
@@ -108,11 +112,13 @@ const range = (start: number, end: number) => {
   return output;
 };
 
-function GalleryCarousal(props: {
+function GalleryCarousal<T extends keyof typeof galleryObj>(props: {
   index: number;
-  feature: keyof typeof galleryObj;
+  feature: T;
 }) {
-  const images = Object.values(galleryObj[props.feature]).filter((img) =>
+  const images = Object.values(
+    galleryObj[props.feature] as GalleryObj[T],
+  ).filter((img) =>
     range(props.index - 2, props.index + 2).includes(img.index),
   );
   return (

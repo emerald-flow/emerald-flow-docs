@@ -64,8 +64,9 @@ export const placeholder = ${JSON.stringify(placeholders, null, 2)} as const;
     );
 
     const importName = feature
-      .replace(/-([a-z])/g, (_, c: string) => c.toUpperCase())
-      .replace(/^[a-z]/, (c) => c.toUpperCase());
+      .split("-")
+      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+      .join("");
 
     imports.push(
       `import type { placeholder as ${importName} } from "./${feature}";`,

@@ -6,10 +6,10 @@ import { features } from "~/lib/feature-list";
 import { repel } from "~/lib/generated/sprites/repel";
 import { pokeball } from "~/lib/generated/sprites/pokeball";
 import { FeaturesGallery } from "~/components/features-gallery";
-import { placeholder } from "~/lib/generated/placeholders/one$-items";
+import { placeholder } from "~/lib/generated/placeholders/one-dollar-items";
 
 export default function Page() {
-  const feature = features["one$-items"];
+  const feature = features["one-dollar-items"];
   const img = repel;
   const alt = "Repel item sprite";
   // prettier-ignore
@@ -67,7 +67,7 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="one$-items" placeholders={placeholder}/>
+<FeaturesGallery feature="one-dollar-items" placeholders={placeholder}/>
 </>
 );
 }

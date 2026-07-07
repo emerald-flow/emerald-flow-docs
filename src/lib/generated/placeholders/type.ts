@@ -14,7 +14,7 @@ import type { placeholder as PocketHeal } from "./pocket-heal";
 import type { placeholder as ForgetHms } from "./forget-hms";
 import type { placeholder as InfiniteTms } from "./infinite-tms";
 import type { placeholder as PocketMart } from "./pocket-mart";
-import type { placeholder as One$Items } from "./one$-items";
+import type { placeholder as OneDollarItems } from "./one-dollar-items";
 import type { placeholder as PocketBikes } from "./pocket-bikes";
 import type { placeholder as AutoBlend } from "./auto-blend";
 import type { placeholder as CustomBlend } from "./custom-blend";
@@ -25,7 +25,7 @@ import type { placeholder as FastEggs } from "./fast-eggs";
 import type { placeholder as InstantFishing } from "./instant-fishing";
 import type { placeholder as AlwaysFeebas } from "./always-feebas";
 import type { placeholder as BetterSafari } from "./better-safari";
-import type { placeholder as NoFleeingMons } from "./no-fleeing-mons";
+import type { placeholder as NoFleeingMon } from "./no-fleeing-mon";
 import type { placeholder as InstantText } from "./instant-text";
 import type { placeholder as Music } from "./music";
 
@@ -44,7 +44,7 @@ export type Placeholders = {
   "forget-hms": typeof ForgetHms;
   "infinite-tms": typeof InfiniteTms;
   "pocket-mart": typeof PocketMart;
-  "one$-items": typeof One$Items;
+  "one-dollar-items": typeof OneDollarItems;
   "pocket-bikes": typeof PocketBikes;
   "auto-blend": typeof AutoBlend;
   "custom-blend": typeof CustomBlend;
@@ -55,7 +55,7 @@ export type Placeholders = {
   "instant-fishing": typeof InstantFishing;
   "always-feebas": typeof AlwaysFeebas;
   "better-safari": typeof BetterSafari;
-  "no-fleeing-mons": typeof NoFleeingMons;
+  "no-fleeing-mon": typeof NoFleeingMon;
   "instant-text": typeof InstantText;
   music: typeof Music;
 };

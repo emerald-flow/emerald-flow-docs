@@ -6,10 +6,10 @@ import { features } from "~/lib/feature-list";
 import { repel } from "~/lib/generated/sprites/repel";
 import { pokeball } from "~/lib/generated/sprites/pokeball";
 import { FeaturesGallery } from "~/components/features-gallery";
-import { placeholder } from "~/lib/generated/placeholders/no-fleeing-mons";
+import { placeholder } from "~/lib/generated/placeholders/no-fleeing-mon";
 
 export default function Page() {
-  const feature = features["no-fleeing-mons"];
+  const feature = features["no-fleeing-mon"];
   const img = repel;
   const alt = "Repel item sprite";
   // prettier-ignore
@@ -67,7 +67,7 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="no-fleeing-mons" placeholders={placeholder}/>
+<FeaturesGallery feature="no-fleeing-mon" placeholders={placeholder}/>
 </>
 );
 }

@@ -8,7 +8,7 @@ export default async function Page({
   params,
 }: PageProps<"/gallery/[feature]/[id]">) {
   const { id, feature } = (await params) as {
-    id: string;
+    id: keyof (typeof galleryObj)[keyof typeof galleryObj];
     feature: keyof typeof galleryObj;
   };
   return (

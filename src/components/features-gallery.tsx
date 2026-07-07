@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import type { PropsWithChildren } from "react";
 import type { features } from "~/lib/feature-list";
 import { H3 } from "./ui/typography";
@@ -13,7 +12,7 @@ export function FeaturesGallery<T extends keyof typeof features>({
   feature,
   placeholders,
 }: PropsWithChildren<{ feature: T; placeholders: Placeholders[NoInfer<T>] }>) {
-  const length = gallery[feature].length;
+  const length: number = gallery[feature].length;
   if (length === 0) return;
   return (
     <div className="flex w-full flex-col gap-4">
@@ -22,9 +21,7 @@ export function FeaturesGallery<T extends keyof typeof features>({
         className={`grid grid-cols-1 gap-4 ${cn("md:grid-cols-2", length < 4 && "md:grid-cols-1")}`}
       >
         {gallery[feature].map(({ name, id }) => {
-          //@ts-expect-error
-          const description = galleryDescription[feature][name] as string;
-          //@ts-expect-error
+          const description = galleryDescription[feature][name];
           const placeholder = placeholders[name] as string;
           return (
             <Link key={id} href={`/gallery/${feature}/${name}`}>

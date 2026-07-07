@@ -166,7 +166,7 @@ export const featureList = [
     } as const),
   ],
   [
-    "One$ Items",
+    "One Dollar Items",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -278,7 +278,7 @@ export const featureList = [
     } as const),
   ],
   [
-    "No Fleeing Mons",
+    "No Fleeing Mon",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
