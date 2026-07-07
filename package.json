@@ -6,11 +6,12 @@
   "scripts": {
     "gen:format": "prettier --write \"src/lib/generated/**/*.{ts,tsx}\"",
     "gen:sprites:b64": "tsx scripts/gen-sprites-b64.ts",
+    "gen:gallery:webp": "tsx scripts/gen-gallery-webp.ts",
     "gen:gallery": "tsx scripts/gen-gallery.ts",
     "up:gallery": "tsx scripts/up-gallery.ts",
     "gen:placeholders": "tsx scripts/gen-placeholders.ts",
     "gen:placeholders:b64": "tsx scripts/gen-placeholders-b64.ts",
-    "prebuild": "pnpm gen:sprites:b64 && pnpm gen:gallery && pnpm up:gallery && pnpm gen:placeholders && pnpm gen:placeholders:b64 && pnpm gen:format",
+    "prebuild": "pnpm gen:sprites:b64 && pnpm gen:gallery:webp && pnpm gen:gallery && pnpm up:gallery && pnpm gen:placeholders && pnpm gen:placeholders:b64 && pnpm gen:format",
     "build": "next build",
     "check": "next lint && tsc --noEmit",
     "dev": "next dev --turbo",

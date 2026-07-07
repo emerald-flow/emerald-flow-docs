@@ -5,6 +5,8 @@ import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
 import { repel } from "~/lib/generated/sprites/repel";
 import { pokeball } from "~/lib/generated/sprites/pokeball";
+import { FeaturesGallery } from "~/components/features-gallery";
+import { placeholder } from "~/lib/generated/placeholders/badge-boost";
 
 export default function Page() {
   const feature = features["badge-boost"];
@@ -65,6 +67,7 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
+<FeaturesGallery feature="badge-boost" placeholders={placeholder}/>
 </>
 );
 }

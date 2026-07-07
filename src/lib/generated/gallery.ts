@@ -12,7 +12,13 @@ export const gallery = {
       path: "/assets/gallery/permanent-repel/option-menu.webp",
     },
   ],
-  running: [],
+  running: [
+    {
+      name: "option-menu",
+      id: "option-menu.54005b93",
+      path: "/assets/gallery/running/option-menu.webp",
+    },
+  ],
   "level-cap": [],
   "no-hm-slave": [],
   "better-summary": [],
@@ -53,7 +59,12 @@ export const galleryObj = {
       index: 0,
     },
   },
-  running: {},
+  running: {
+    "option-menu": {
+      id: "option-menu.54005b93",
+      index: 0,
+    },
+  },
   "level-cap": {},
   "no-hm-slave": {},
   "better-summary": {},

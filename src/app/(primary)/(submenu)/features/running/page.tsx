@@ -6,6 +6,8 @@ import { features } from "~/lib/feature-list";
 import { running } from "~/lib/generated/sprites/running";
 import { mom } from "~/lib/generated/sprites/mom";
 import { bButton } from "~/lib/generated/sprites/bButton";
+import { FeaturesGallery } from "~/components/features-gallery";
+import { placeholder } from "~/lib/generated/placeholders/permanent-repel";
 
 export default function Page() {
   const feature = features.running;
@@ -27,9 +29,9 @@ alt={alt}
 >
 {
 `
-**${feature.title}** can be used to set the type running experience you want to have.
+**${feature.title}** can be used to set the type of running experience you want to have.
 
-This feature lets you run indoors or change how holding the B Button works.
+You can choose to run indoors, and additonally run without the B button.
 `
 }
 </HeroMd>
@@ -53,7 +55,7 @@ Running shoes must still be obtained by mom at the start of the game.
 `
 **B-Button** 
 
-Some options might still require you hold B.
+Some options might still require you to hold B.
 `
 }
 </FeatureNotes.NoteMd>
@@ -72,6 +74,7 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
+<FeaturesGallery feature="permanent-repel" placeholders={placeholder}/>
 </>
 );
 }

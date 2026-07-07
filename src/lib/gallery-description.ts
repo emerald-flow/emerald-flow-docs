@@ -12,7 +12,9 @@ export const galleryDescription = {
   "permanent-repel": {
     "option-menu": "Permanent repel in option menu",
   },
-  running: {},
+  running: {
+    "option-menu": "Running in the option menu",
+  },
   "level-cap": {},
   "no-hm-slave": {},
   "better-summary": {},

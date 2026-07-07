@@ -7,6 +7,8 @@ import { AlertMd } from "~/components/alerts";
 import { rareCandy } from "~/lib/generated/sprites/rareCandy";
 import { gymSign } from "~/lib/generated/sprites/gymSign";
 import { pokeball } from "~/lib/generated/sprites/pokeball";
+import { FeaturesGallery } from "~/components/features-gallery";
+import { placeholder } from "~/lib/generated/placeholders/level-cap";
 
 export default function Page() {
   const feature = features["level-cap"];
@@ -55,9 +57,9 @@ The level cap automatically updates after each major battle to match the next Gy
 <FeatureNotes.NoteMd src={rareCandy} alt="Pokeball item sprite">
 {
 `
-**Experience gains** 
+**Experience/Level gains** 
 
-Only experience gains are capped.
+Only experience and level gains are capped.
 `
 }
 </FeatureNotes.NoteMd>
@@ -95,6 +97,7 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
+<FeaturesGallery feature="level-cap" placeholders={placeholder}/>
 </>
 );
 }
