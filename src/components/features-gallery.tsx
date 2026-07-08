@@ -29,7 +29,11 @@ export function FeaturesGallery<T extends keyof typeof features>({
           //@ts-expect-error
           const placeholder = placeholders[name] as string;
           return (
-            <Link key={id} href={`/gallery/${feature}/${name as string}`}>
+            <Link
+              className="relative overflow-hidden rounded-md"
+              key={id}
+              href={`/gallery/${feature}/${name as string}`}
+            >
               <Image
                 placeholder={placeholder ? "blur" : "empty"}
                 alt={description as string}
@@ -37,9 +41,12 @@ export function FeaturesGallery<T extends keyof typeof features>({
                 blurDataURL={placeholder}
                 width={240}
                 height={160}
-                className="w-full rounded-md"
+                className="relative w-full"
                 unoptimized
               />
+              <div className="absolute bottom-0 w-full overflow-hidden bg-linear-to-b from-black/40 to-black/60 px-2 py-1 text-nowrap text-ellipsis text-white backdrop-blur-[2px]">
+                {description as string}
+              </div>
             </Link>
           );
         })}

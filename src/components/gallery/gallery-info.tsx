@@ -23,21 +23,22 @@ export function GalleryInfo({
   return (
     <div
       className={cn(
-        "absolute flex overflow-hidden rounded-md opacity-80",
+        "absolute ml-1 flex overflow-hidden rounded-md opacity-80",
         className,
       )}
     >
       <div
         className={cn(
-          "bg-secondary text-secondary-foreground flex items-center overflow-hidden px-2 py-1 transition-all",
+          "bg-secondary text-secondary-foreground flex items-center py-1.5 pr-2 pl-4 transition-all",
           !info && "hidden px-0",
         )}
       >
         {description}
       </div>
       <Button
+        aria-haspopup
         variant="secondary"
-        className="rounded-none border-none"
+        className={cn("btn-static rounded-none border-none", info && "h-auto")}
         onClick={() => toggleInfo()}
       >
         <Info className={cn("scale-0 transition-all", !info && "scale-100")} />

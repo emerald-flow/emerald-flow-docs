@@ -28,7 +28,7 @@ export const galleryMeta = {
   },
   "better-summary": {
     "option-menu": "Better Summary in the option menu",
-    stats: "Red for an increased stat, and blue for a decreased stat",
+    "stat-modifier": "Red for an increased stat, and blue for a decreased stat",
     "damage-category": "Damage category of each move",
     "base-stats": "Base stats (BS) of a Pokémon",
     ivs: "IVs of a Pokémon",

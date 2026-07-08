@@ -32,7 +32,7 @@ export function Gallery<T extends keyof typeof galleryObj>({
     <>
       <div
         className={cn(
-          "relative w-full items-center justify-center md:w-[80%]",
+          "dark relative w-full items-center justify-center md:w-[80%]",
           !isModal && "md:w-full",
         )}
       >
@@ -81,7 +81,7 @@ function GalleryNavigations<T extends keyof typeof galleryObj>(props: {
           replace
           className="absolute top-[50%] left-[1%] opacity-80"
         >
-          <Button variant="secondary">
+          <Button variant="secondary" aria-haspopup>
             <ChevronLeft />
           </Button>
         </Link>
@@ -92,7 +92,7 @@ function GalleryNavigations<T extends keyof typeof galleryObj>(props: {
           replace
           className="absolute top-[50%] right-[1%] opacity-80"
         >
-          <Button variant="secondary">
+          <Button variant="secondary" aria-haspopup>
             <ChevronRight />
           </Button>
         </Link>
@@ -101,27 +101,22 @@ function GalleryNavigations<T extends keyof typeof galleryObj>(props: {
   );
 }
 
-const range = (start: number, end: number) => {
-  const output = [];
-  if (typeof end === "undefined") {
-    end = start;
-    start = 0;
-  }
-  for (let i = start; i < end; i += 1) {
-    output.push(i);
-  }
-  return output;
-};
-
 function GalleryCarousal<T extends keyof typeof galleryObj>(props: {
   index: number;
   feature: T;
 }) {
-  const images = entries(galleryMeta[props.feature]).filter((_, i) =>
-    range(props.index - 8, props.index + 8).includes(i),
-  );
+  const allImages = entries(galleryMeta[props.feature]);
+  const windowSize = 5;
+  const start =
+    allImages.length <= windowSize
+      ? 0
+      : Math.min(
+          Math.max(props.index - Math.floor(windowSize / 2), 0),
+          allImages.length - windowSize,
+        );
+  const images = allImages.slice(start, start + windowSize);
   return (
-    <div className="fixed bottom-[5%] flex scale-80 items-center overflow-hidden bg-linear-to-b from-black/0 to-black/60 md:relative md:bottom-0">
+    <div className="fixed bottom-[5%] flex items-center overflow-hidden bg-linear-to-b from-black/0 to-black/60 md:relative md:bottom-0">
       {images.map(([name, description], i) => {
         //@ts-expect-error
         const { id } = galleryObj[props.feature][
@@ -139,7 +134,8 @@ function GalleryCarousal<T extends keyof typeof galleryObj>(props: {
               height={160}
               className={cn(
                 "h-auto w-40 transform object-cover brightness-50 contrast-125 transition hover:brightness-75",
-                i === props.index && "w-48 brightness-110 hover:brightness-110",
+                i + start === props.index &&
+                  "w-48 brightness-110 hover:brightness-110",
               )}
               src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/${props.feature}/${id}.webp`}
               unoptimized

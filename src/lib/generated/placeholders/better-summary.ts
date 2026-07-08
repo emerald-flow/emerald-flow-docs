@@ -10,6 +10,6 @@ export const placeholder = {
   "option-menu":
     "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAAAQBACdASoSAAwAPm0skkWkIqGYBABABsSgCdLcAvLAQ8CNqIqXTXHWMAD+6IcRJr6fcxAnx+sfC9yaKld9W4v97wJbhcpyGoeQbN5rF9YyjRGL3rWwT6WqVvBfJURWs/hNbM6SEp7CorJKzlKYxlpk+P9bD79UF+f+eCV0iYUD8G3kp4pTdOA3WOLs+i596gcqt/NNEYAAAA==",
   pp: "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAAAwBACdASoSAAwAPm0skkWkIqGYBABABsS2AE6ZQjgK/bAbKY7qiu2PaAAA/vJlyUnNDEZBexcro4po2WQhBBqFXcZ+OcP78ZNG9dxrCC1m29pabPto0X5H6ho+X4ikter273xGkhQv/gS0Hn4rUU/zDOi153gzg45WPf35LHUh51j/tG785XxPIN2DSagZEL1+VzWuh1kPCwMzuj+bm/gBWaTP0N8HDNxlHo/iCLIPi4AA",
-  stats:
+  "stat-modifier":
     "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAABQBACdASoSAAwAPm0skkWkIqGYBABABsS2AE6KgAKfEZXf85XLMLQgQaYAAP7yZcht3s+3+dt0LUrnWjdTJ+2enX1/SwMFz8+cVs933DWzgXoht8L0+4bObHrDm+oa/EUlKQAAPYuaDWmzym/Hf0MoW835xlMM+MtNnZf8abX+TMXV/G9epm6Oz8r0DjyuEVuuLuo6fdzfYKr3bbHPK+v5U3rzAj7xC/IUF5t50gEAQAYVQAA=",
 } as const;

@@ -90,9 +90,9 @@ export const gallery = {
       path: "/assets/gallery/better-summary/pp.webp",
     },
     {
-      name: "stats",
-      id: "stats.84af751d",
-      path: "/assets/gallery/better-summary/stats.webp",
+      name: "stat-modifier",
+      id: "stat-modifier.84af751d",
+      path: "/assets/gallery/better-summary/stat-modifier.webp",
     },
   ],
   "physical-special-split": [
@@ -333,8 +333,8 @@ export const galleryObj = {
       id: "pp.b53ef449",
       index: 5,
     },
-    stats: {
-      id: "stats.84af751d",
+    "stat-modifier": {
+      id: "stat-modifier.84af751d",
       index: 6,
     },
   },
