@@ -1,33 +1,38 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import type { PropsWithChildren } from "react";
 import type { features } from "~/lib/feature-list";
 import { H3 } from "./ui/typography";
-import { gallery } from "~/lib/generated/gallery";
+import { galleryObj, type GalleryObj } from "~/lib/generated/gallery";
 import Link from "next/link";
 import Image from "next/image";
 import type { Placeholders } from "~/lib/generated/placeholders/type";
-import { galleryDescription } from "~/lib/gallery-description";
-import { cn } from "~/lib/utils";
+import { galleryMeta } from "~/lib/gallery-meta";
+import { cn, entries } from "~/lib/utils";
 
 export function FeaturesGallery<T extends keyof typeof features>({
   feature,
   placeholders,
 }: PropsWithChildren<{ feature: T; placeholders: Placeholders[NoInfer<T>] }>) {
-  const length: number = gallery[feature].length;
-  if (length === 0) return;
+  const gallery = entries(galleryMeta[feature]);
+  if (gallery.length === 0) return;
   return (
     <div className="flex w-full flex-col gap-4">
-      <H3>Gallery</H3>
+      <H3 className="mt-0">Gallery</H3>
       <div
-        className={`grid grid-cols-1 gap-4 ${cn("md:grid-cols-2", length < 4 && "md:grid-cols-1")}`}
+        className={`grid grid-cols-1 gap-4 ${cn("md:grid-cols-2", gallery.length < 3 && "md:grid-cols-1")}`}
       >
-        {gallery[feature].map(({ name, id }) => {
-          const description = galleryDescription[feature][name];
+        {gallery.map(([name, description]) => {
+          //@ts-expect-error
+          const { id } = galleryObj[feature][
+            name
+          ] as GalleryObj["adopt-eggs"][string];
+          //@ts-expect-error
           const placeholder = placeholders[name] as string;
           return (
-            <Link key={id} href={`/gallery/${feature}/${name}`}>
+            <Link key={id} href={`/gallery/${feature}/${name as string}`}>
               <Image
                 placeholder={placeholder ? "blur" : "empty"}
-                alt={description}
+                alt={description as string}
                 src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/${feature}/${id}.webp`}
                 blurDataURL={placeholder}
                 width={240}

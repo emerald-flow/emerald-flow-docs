@@ -21,6 +21,16 @@ export const gallery = {
   ],
   "level-cap": [
     {
+      name: "level-up-blocked",
+      id: "level-up-blocked.76237026",
+      path: "/assets/gallery/level-cap/level-up-blocked.webp",
+    },
+    {
+      name: "level-up",
+      id: "level-up.166ae6af",
+      path: "/assets/gallery/level-cap/level-up.webp",
+    },
+    {
       name: "option-menu",
       id: "option-menu.d02b1a4e",
       path: "/assets/gallery/level-cap/option-menu.webp",
@@ -222,9 +232,17 @@ export const galleryObj = {
     },
   },
   "level-cap": {
+    "level-up-blocked": {
+      id: "level-up-blocked.76237026",
+      index: 0,
+    },
+    "level-up": {
+      id: "level-up.166ae6af",
+      index: 1,
+    },
     "option-menu": {
       id: "option-menu.d02b1a4e",
-      index: 0,
+      index: 2,
     },
   },
   "no-hm-slave": {

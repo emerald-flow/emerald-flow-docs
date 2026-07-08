@@ -2,13 +2,13 @@ import type { galleryObj } from "./generated/gallery";
 
 type Features = keyof typeof galleryObj;
 
-type GalleryDescription = {
+type GalleryMeta = {
   [T in Features]: {
     [U in keyof (typeof galleryObj)[T]]: string;
   };
 };
 
-export const galleryDescription = {
+export const galleryMeta = {
   "permanent-repel": {
     "option-menu": "Permanent repel in option menu",
   },
@@ -17,6 +17,8 @@ export const galleryDescription = {
   },
   "level-cap": {
     "option-menu": "Level Cap in the option menu",
+    "level-up": "Level up before Gym 3",
+    "level-up-blocked": "Level up blocked before Gym 3",
   },
   "no-hm-slave": {
     "option-menu": "No HM Slave in the option menu",
@@ -93,4 +95,4 @@ export const galleryDescription = {
   music: {
     "option-menu": "Music in the option menu",
   },
-} as const satisfies GalleryDescription;
+} as const satisfies GalleryMeta;

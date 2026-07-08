@@ -28,11 +28,9 @@ alt={alt}
 >
 {
 `
-**Permanent Repel** lets you toggle Repel effects on or
-off without repeatedly using any Repel items.
+**${feature.title}** replaces repeated use of Repel items with a simple toggle.
 
-This feature behaves just like a standard Repel, but stays active until you
-choose otherwise.
+When enabled, Repel remains active indefinitely until you choose to turn it off.
 `
 }
 </HeroMd>
@@ -47,8 +45,7 @@ textColor="text-emerald-600"
 `
 **Encounters** 
 
-Wild Pokémon with a higher level than your
-lead Pokémon can still appear.
+Wild Pokémon with a higher level than your lead Pokémon can still appear.
 `
 }
 </FeatureNotes.NoteMd>

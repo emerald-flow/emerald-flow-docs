@@ -31,10 +31,11 @@ blobBgColor="bg-blue-500"
 >
 {
 `
-**Level Cap** lets you enforce a global level cap that applies to all 
-experience gains, including battles and Rare Candies.
+**${feature.title}** lets you enforce a global level cap 
+across all experience gains, including battles, day care and rare candies.
 
-Train without accidentally overleveling and keep every major battle at its intended difficulty. 
+Train without accidentally overleveling, 
+and keep every major battle at its intended difficulty.
 `
 }
 </HeroMd>
@@ -68,7 +69,7 @@ Only experience and level gains are capped.
 `
 **Higher-level Pokémon** 
 
-Pokémon above the current cap can still participate in battle.
+Pokémon above the current level cap can still participate in battle.
 `
 }
 </FeatureNotes.NoteMd>
@@ -76,7 +77,7 @@ Pokémon above the current cap can still participate in battle.
 <AlertMd variant="tip" className="[&>a]:">
 {
 `
-Need the exact level caps? Check these references that provide a breakdown of the cap progression.
+Need the exact level caps? These references provide a breakdown of the cap progression.
 
 - [Nuzlocke University](https://nuzlockeuniversity.ca/2022/01/18/hardcore-nuzlocke-level-caps-by-generation/#emerald)
 - [PokémonDB](https://pokemondb.net/emerald/gymleaders-elitefour)

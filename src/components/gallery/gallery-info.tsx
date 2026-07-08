@@ -29,7 +29,7 @@ export function GalleryInfo({
     >
       <div
         className={cn(
-          "bg-secondary text-secondary-foreground overflow-hidden px-2 py-1 transition-all",
+          "bg-secondary text-secondary-foreground flex items-center overflow-hidden px-2 py-1 transition-all",
           !info && "hidden px-0",
         )}
       >

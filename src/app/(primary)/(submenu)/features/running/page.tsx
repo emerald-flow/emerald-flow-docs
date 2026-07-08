@@ -29,9 +29,10 @@ alt={alt}
 >
 {
 `
-**${feature.title}** can be used to set the type of running experience you want to have.
+**${feature.title}** lets you customize how your character runs.
 
-You can choose to run indoors, and additonally run without the B button.
+Choose whether running is available indoors, 
+or remove the need to hold the B Button altogether.
 `
 }
 </HeroMd>
@@ -46,7 +47,7 @@ textColor="text-emerald-600"
 `
 **Running Shoes** 
 
-Running shoes must still be obtained by mom at the start of the game.
+Running Shoes must still be obtained from Mom at the start of the game.
 `
 }
 </FeatureNotes.NoteMd>
@@ -55,7 +56,7 @@ Running shoes must still be obtained by mom at the start of the game.
 `
 **B-Button** 
 
-Some options might still require you to hold B.
+Some options may still require you to hold the B Button.
 `
 }
 </FeatureNotes.NoteMd>

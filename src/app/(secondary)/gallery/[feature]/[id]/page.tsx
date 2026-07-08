@@ -10,5 +10,5 @@ export default async function Page({
     id: keyof (typeof galleryObj)[keyof typeof galleryObj];
     feature: keyof typeof galleryObj;
   };
-  return <Gallery id={id} feature={feature} />;
+  return <Gallery name={id} feature={feature} />;
 }

@@ -14,7 +14,7 @@ export default async function Page({
   return (
     <Modal pathname={`/gallery/${feature}/${id}`}>
       <div className="relative flex h-full w-full flex-col items-center justify-center">
-        <Gallery id={id} feature={feature} isModal />
+        <Gallery name={id} feature={feature} isModal />
       </div>
     </Modal>
   );

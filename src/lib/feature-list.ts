@@ -18,7 +18,7 @@ const getOptions = <T>(
 };
 
 const activeText = <T extends string>(str: T) =>
-  `${str} is now active` as const;
+  `${str} remains active until disbled.` as const;
 const startScreenText = <T extends string>(str: T) =>
   `${str} is now available in the start screen` as const;
 
@@ -28,7 +28,7 @@ export const featureList = [
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
-        ["On", activeText("Permanent repel")],
+        ["On", activeText("Repel")],
       ],
       defaultOption: "Off",
     } as const),
@@ -38,8 +38,8 @@ export const featureList = [
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
-        ["Indoor", "Hold B to run including indoors"],
-        ["Perma", "No need to hold B to run"],
+        ["Indoor", "Hold B to run indoors and outdoors."],
+        ["Perma", "Run without holding B indoors or outdoors."],
       ],
       defaultOption: "Off",
     } as const),
@@ -49,7 +49,7 @@ export const featureList = [
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
-        ["On", "Enforces a level cap until the next major battle."],
+        ["On", "Enforce the current level cap until the next major battle."],
       ],
       defaultOption: "Off",
     } as const),
