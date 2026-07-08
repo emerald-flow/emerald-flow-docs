@@ -38,9 +38,24 @@ export const gallery = {
   ],
   "no-hm-slave": [
     {
+      name: "moves-menu",
+      id: "moves-menu.8c18d78b",
+      path: "/assets/gallery/no-hm-slave/moves-menu.webp",
+    },
+    {
       name: "option-menu",
       id: "option-menu.e6594483",
       path: "/assets/gallery/no-hm-slave/option-menu.webp",
+    },
+    {
+      name: "start-menu",
+      id: "start-menu.f1e621e1",
+      path: "/assets/gallery/no-hm-slave/start-menu.webp",
+    },
+    {
+      name: "usage",
+      id: "usage.187a51f5",
+      path: "/assets/gallery/no-hm-slave/usage.webp",
     },
   ],
   "better-summary": [
@@ -246,9 +261,21 @@ export const galleryObj = {
     },
   },
   "no-hm-slave": {
+    "moves-menu": {
+      id: "moves-menu.8c18d78b",
+      index: 0,
+    },
     "option-menu": {
       id: "option-menu.e6594483",
-      index: 0,
+      index: 1,
+    },
+    "start-menu": {
+      id: "start-menu.f1e621e1",
+      index: 2,
+    },
+    usage: {
+      id: "usage.187a51f5",
+      index: 3,
     },
   },
   "better-summary": {

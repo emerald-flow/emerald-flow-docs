@@ -28,7 +28,7 @@ alt={alt}
 >
 {
 `
-**Permanent Repel** lets you toggle Repel effects on or
+**${feature.title}** lets you toggle Repel effects on or
 off without repeatedly using any Repel items.
 
 It behaves just like a standard Repel, but stays active until you

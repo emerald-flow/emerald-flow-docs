@@ -24,7 +24,9 @@ export const Note = ({
         width={48}
         height={48}
       />
-      <div className="flex flex-col text-sm [&_strong]:text-lg">{children}</div>
+      <div className="flex flex-col text-sm [&>p:first-of-type_strong]:text-lg">
+        {children}
+      </div>
     </div>
   );
 };

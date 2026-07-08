@@ -22,6 +22,9 @@ export const galleryMeta = {
   },
   "no-hm-slave": {
     "option-menu": "No HM Slave in the option menu",
+    "start-menu": "Moves in the Start menu",
+    "moves-menu": "Moves menu",
+    usage: "Using ROCK SMASH",
   },
   "better-summary": {
     "option-menu": "Better Summary in the option menu",

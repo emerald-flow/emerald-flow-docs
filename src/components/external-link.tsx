@@ -1,21 +1,24 @@
 import { ExternalLink as Icon } from "lucide-react";
 import type { PropsWithChildren } from "react";
 import { MutedLink } from "~/components/muted-link";
+import { cn } from "~/lib/utils";
 
 export function ExternalLink({
   href,
+  className,
   children,
-}: PropsWithChildren<{ href: string }>) {
+}: PropsWithChildren<{ href: string; className?: string }>) {
   return (
     <MutedLink
       link={{
         href,
-        className: "mx-auto underline underline-offset-2",
+        className: cn("underline underline-offset-2", className),
+        rel: "noopener noreferrer",
         target: "_blank",
       }}
       muted={{
         size: "medium",
-        className: "flex flex-1 flex-row gap-1 items-center",
+        className: "inline-flex flex-1 flex-row gap-0 items-center",
       }}
     >
       {children}

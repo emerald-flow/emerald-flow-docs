@@ -1,0 +1,4 @@
+/* AUTO-GENERATED FILE - DO NOT EDIT */
+
+export const frontierSymbol =
+  "data:image/webp;base64,UklGRpQAAABXRUJQVlA4TIcAAAAvF8AFEBZHbSRJEn8tvsVzdU1fCOofFCIlgUDCk/9+97//E9AXflZ3+O4FiEvy6IJANIBzgQgGMgeYJAJTgpSCc4IquCAYiOCEGhRAiVoI4pMIdreAYyCOgFOTRQCXgQiygmDBHEUgkplgIC3ExYA9jMmQUNrdFhANtT3qoN06aD+qdqnaZwEA" as const;

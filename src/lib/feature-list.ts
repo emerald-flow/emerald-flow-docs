@@ -20,7 +20,7 @@ const getOptions = <T>(
 const activeText = <T extends string>(str: T) =>
   `${str} remains active until disbled.` as const;
 const startScreenText = <T extends string>(str: T) =>
-  `${str} is now available in the start screen` as const;
+  `Access ${str} from the Start menu` as const;
 
 export const featureList = [
   [

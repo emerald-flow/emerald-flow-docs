@@ -26,14 +26,14 @@ export function MutedLink({
 }>) {
   return (
     <Link {...link}>
-      <p
+      <span
         className={cn(
           "text-muted-foreground text-sm underline underline-offset-2",
           mutedVariants({ className: muted?.className, size: muted?.size }),
         )}
       >
         {children}
-      </p>
+      </span>
     </Link>
   );
 }

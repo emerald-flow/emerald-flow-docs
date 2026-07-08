@@ -1,6 +1,11 @@
 import type { ComponentProps } from "react";
 import Markdown from "react-markdown";
 import Link from "next/link";
+import { MutedLink } from "./muted-link";
+import { ExternalLink } from "./external-link";
+
+const isExternalLink = (href: string) =>
+  /^(?:[a-z][a-z\d+.-]*:)?\/\//i.test(href) || /^[a-z][a-z\d+.-]*:/i.test(href);
 
 export function Md(props: Omit<ComponentProps<typeof Markdown>, "components">) {
   return (
@@ -52,14 +57,18 @@ export function Md(props: Omit<ComponentProps<typeof Markdown>, "components">) {
             {children}
           </ul>
         ),
-        a: ({ href, children }) => (
-          <Link
-            href={href!}
-            className="text-muted-foreground underline underline-offset-2"
-          >
-            {children}
-          </Link>
-        ),
+        a: ({ href, children }) =>
+          isExternalLink(href!) ? (
+            <ExternalLink href={href!}>{children}</ExternalLink>
+          ) : (
+            <MutedLink
+              link={{
+                href: href!,
+              }}
+            >
+              {children}
+            </MutedLink>
+          ),
       }}
     />
   );

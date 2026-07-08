@@ -17,7 +17,7 @@ Here's a step-by-step process to patch your game with Rom Patcher JS.
 `
 }
 </Md>
-<ExternalLink href="https://www.github.com/officer-kd6-3dot7/pokemon-emerald-flow">
+<ExternalLink className="mx-auto" href="https://www.github.com/officer-kd6-3dot7/pokemon-emerald-flow">
 Pokémon Emerald Flow
 </ExternalLink>
 <Md>
@@ -29,7 +29,7 @@ Pokémon Emerald Flow
 `
 }
 </Md>
-<ExternalLink href="https://www.marcrobledo.com/RomPatcher.js">
+<ExternalLink className="mx-auto" href="https://www.marcrobledo.com/RomPatcher.js">
 ROM Patcher JS
 </ExternalLink>
 <Md>
