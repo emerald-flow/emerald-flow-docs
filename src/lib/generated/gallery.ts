@@ -60,9 +60,39 @@ export const gallery = {
   ],
   "better-summary": [
     {
+      name: "base-stats",
+      id: "base-stats.0e18777e",
+      path: "/assets/gallery/better-summary/base-stats.webp",
+    },
+    {
+      name: "damage-category",
+      id: "damage-category.96a6217a",
+      path: "/assets/gallery/better-summary/damage-category.webp",
+    },
+    {
+      name: "evs",
+      id: "evs.b2874275",
+      path: "/assets/gallery/better-summary/evs.webp",
+    },
+    {
+      name: "ivs",
+      id: "ivs.061db118",
+      path: "/assets/gallery/better-summary/ivs.webp",
+    },
+    {
       name: "option-menu",
       id: "option-menu.35b02b83",
       path: "/assets/gallery/better-summary/option-menu.webp",
+    },
+    {
+      name: "pp",
+      id: "pp.b53ef449",
+      path: "/assets/gallery/better-summary/pp.webp",
+    },
+    {
+      name: "stats",
+      id: "stats.84af751d",
+      path: "/assets/gallery/better-summary/stats.webp",
     },
   ],
   "physical-special-split": [
@@ -279,9 +309,33 @@ export const galleryObj = {
     },
   },
   "better-summary": {
+    "base-stats": {
+      id: "base-stats.0e18777e",
+      index: 0,
+    },
+    "damage-category": {
+      id: "damage-category.96a6217a",
+      index: 1,
+    },
+    evs: {
+      id: "evs.b2874275",
+      index: 2,
+    },
+    ivs: {
+      id: "ivs.061db118",
+      index: 3,
+    },
     "option-menu": {
       id: "option-menu.35b02b83",
-      index: 0,
+      index: 4,
+    },
+    pp: {
+      id: "pp.b53ef449",
+      index: 5,
+    },
+    stats: {
+      id: "stats.84af751d",
+      index: 6,
     },
   },
   "physical-special-split": {

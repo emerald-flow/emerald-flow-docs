@@ -46,7 +46,7 @@ borderColor="border-amber-600"
 childBorderColor="[&>div]:not-first:border-amber-600"
 textColor="text-amber-600"
 >
-<FeatureNotes.NoteMd src={pokeball} alt="Pokeball item sprite">
+<FeatureNotes.NoteMd src={pokeball} alt="Pokéball item sprite">
 {
 `
 **Requirements** 

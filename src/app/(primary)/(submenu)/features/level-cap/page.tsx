@@ -45,7 +45,7 @@ borderColor="border-blue-600"
 childBorderColor="[&>div]:not-first:border-blue-600"
 textColor="text-blue-600"
 >
-<FeatureNotes.NoteMd src={gymSign} alt="Pokeball item sprite">
+<FeatureNotes.NoteMd src={gymSign} alt="Pokéball item sprite">
 {
 `
 **Cap progression** 
@@ -55,7 +55,7 @@ The level cap automatically updates after each major battle to match the next Gy
 `
 }
 </FeatureNotes.NoteMd>
-<FeatureNotes.NoteMd src={rareCandy} alt="Pokeball item sprite">
+<FeatureNotes.NoteMd src={rareCandy} alt="Pokéball item sprite">
 {
 `
 **Experience/Level gains** 
@@ -64,7 +64,7 @@ Only experience and level gains are capped.
 `
 }
 </FeatureNotes.NoteMd>
-<FeatureNotes.NoteMd src={pokeball} alt="Pokeball item sprite">
+<FeatureNotes.NoteMd src={pokeball} alt="Pokéball item sprite">
 {
 `
 **Higher-level Pokémon** 

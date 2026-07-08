@@ -1,6 +1,5 @@
 import type { ComponentProps } from "react";
 import Markdown from "react-markdown";
-import Link from "next/link";
 import { MutedLink } from "./muted-link";
 import { ExternalLink } from "./external-link";
 

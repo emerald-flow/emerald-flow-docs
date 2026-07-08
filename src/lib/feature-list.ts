@@ -69,7 +69,7 @@ export const featureList = [
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
-        ["On", activeText("Better Summary")],
+        ["On", "Enable the enhanced Summary screen."],
       ],
       defaultOption: "Off",
     } as const),
@@ -231,7 +231,7 @@ export const featureList = [
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
-        ["On", "Pokémon do not escape from Pokeball"],
+        ["On", "Pokémon do not escape from Pokéball"],
       ],
       defaultOption: "Off",
     } as const),

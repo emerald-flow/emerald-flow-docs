@@ -3,15 +3,17 @@ import { FeatureNotes } from "~/components/feature-notes";
 import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
-import { repel } from "~/lib/generated/sprites/repel";
-import { pokeball } from "~/lib/generated/sprites/pokeball";
+import { pokedex } from "~/lib/generated/sprites/pokedex";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/better-summary";
+import { arrows } from "~/lib/generated/sprites/arrows";
+import { physical } from "~/lib/generated/sprites/physical";
+import { ppUp } from "~/lib/generated/sprites/ppUp";
 
 export default function Page() {
   const feature = features["better-summary"];
-  const img = repel;
-  const alt = "Repel item sprite";
+  const img = pokedex;
+  const alt = "Pokédex sprite";
   // prettier-ignore
   return (
 <>
@@ -25,30 +27,55 @@ export default function Page() {
 <HeroMd 
 src={img}
 alt={alt}
+blobBgColor="bg-rose-500"
 >
 {
 `
-**${feature.title}** lets you toggle Repel effects on or
-off without repeatedly using any Repel items.
+**${feature.title}** enhances the Pokémon summary screen with additional information.
 
-It behaves just like a standard Repel, but stays active until you
-choose otherwise.
+View nature modifiers, move damage categories, and hidden Pokémon stats directly from the summary screen.
 `
 }
 </HeroMd>
 <FeatureNotes
-bgColor="bg-emerald-800"
-borderColor="border-emerald-600"
-childBorderColor="[&>div]:not-first:border-emerald-600"
-textColor="text-emerald-600"
+bgColor="bg-rose-800"
+borderColor="border-rose-600"
+childBorderColor="[&>div]:not-first:border-rose-600"
+textColor="text-rose-600"
 >
-<FeatureNotes.NoteMd src={pokeball} alt="Pokeball item sprite">
+<FeatureNotes.NoteMd src={arrows} alt="Arrows sprite">
 {
 `
-**Encounters** 
+**Nature Modifiers** 
 
-Wild Pokémon with a higher level than your
-lead Pokémon can still appear.
+Stats increased and decreased by a Nature are highlighted in red and blue, respectively.
+`
+}
+</FeatureNotes.NoteMd>
+<FeatureNotes.NoteMd src={physical} alt="Physical type sprite">
+{
+`
+**Damange Category** 
+
+Physical, Special, and Status moves are displayed in the Battle Moves section.
+`
+}
+</FeatureNotes.NoteMd>
+<FeatureNotes.NoteMd src={pokedex} alt="Pokédex sprite">
+{
+`
+**Hidden Stats** 
+
+Press A to cycle between Base Stats (BS), EVs, and IVs.
+`
+}
+</FeatureNotes.NoteMd>
+<FeatureNotes.NoteMd src={ppUp} alt="PP Up item sprite">
+{
+`
+**PP Info** 
+
+The original PP information remains available in the Contest Moves section.
 `
 }
 </FeatureNotes.NoteMd>

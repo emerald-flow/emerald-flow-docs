@@ -28,6 +28,12 @@ export const galleryMeta = {
   },
   "better-summary": {
     "option-menu": "Better Summary in the option menu",
+    stats: "Red for an increased stat, and blue for a decreased stat",
+    "damage-category": "Damage category of each move",
+    "base-stats": "Base stats (BS) of a Pokémon",
+    ivs: "IVs of a Pokémon",
+    evs: "EVs of Pokémon",
+    pp: "PP retained in Contest moves",
   },
   "physical-special-split": {
     "option-menu": "Physical Special Split in the option menu",

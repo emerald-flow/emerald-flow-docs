@@ -1,0 +1,4 @@
+/* AUTO-GENERATED FILE - DO NOT EDIT */
+
+export const ppUp =
+  "data:image/webp;base64,UklGRsQAAABXRUJQVlA4TLcAAAAvFUAFEJU4qm03bjAVQmkEVyCYRpehYRjedtIQCJYXko7/QkYiSaHOVyACkgpkg2pn32GNRJLy+ZBfgUzUoBLy7Dts/ydg0o/Qs4rMKc9jurXJnTJrbdYUm9oqVpFcivLIs23btu1ISZyaKzd4QQYA/CEiBRfADIgAYkk6DKeD4X+54v3vtAqvVVXdUAVUO90AAHf8a9ZwUACgCQeqqobjK0SnxjoMx907IGQBAymamcFmTnGykwYA" as const;
