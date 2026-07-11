@@ -3,14 +3,15 @@ import { FeatureNotes } from "~/components/feature-notes";
 import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
-import { repel } from "~/lib/generated/sprites/repel";
-import { pokeball } from "~/lib/generated/sprites/pokeball";
+import { heartscale } from "~/lib/generated/sprites/heartscale";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/pocket-tutor";
+import { tm } from "~/lib/generated/sprites/tm";
+import { egg } from "~/lib/generated/sprites/egg";
 
 export default function Page() {
   const feature = features["pocket-tutor"];
-  const img = repel;
+  const img = heartscale;
   const alt = "Repel item sprite";
   // prettier-ignore
   return (
@@ -25,30 +26,41 @@ export default function Page() {
 <HeroMd 
 src={img}
 alt={alt}
+blobBgColor="bg-sky-500"
 >
 {
 `
-**${feature.title}** lets you toggle Repel effects on or
-off without repeatedly using any Repel items.
+**${feature.title}** lets your Pokémon learn every move 
+they could legitimately know from a single menu.
 
-It behaves just like a standard Repel, but stays active until you
-choose otherwise.
+It only offers moves your Pokémon can legally learn 
+based on its species, evolution stage, and current level.
 `
 }
 </HeroMd>
 <FeatureNotes
-bgColor="bg-emerald-800"
-borderColor="border-emerald-600"
-childBorderColor="[&>div]:not-first:border-emerald-600"
-textColor="text-emerald-600"
+bgColor="bg-sky-800"
+borderColor="border-sky-600"
+childBorderColor="[&>div]:not-first:border-sky-600"
+textColor="text-sky-600"
 >
-<FeatureNotes.NoteMd src={pokeball} alt="Pokéball item sprite">
+<FeatureNotes.NoteMd src={tm} alt="TM item sprite">
 {
 `
-**Encounters** 
+**Legitimate Move Pool** 
 
-Wild Pokémon with a higher level than your
-lead Pokémon can still appear.
+Available legitimate moves are automatically determined using your Pokémon's species, 
+evolution line, evolution stage, current level, and learnsets. 
+`
+}
+</FeatureNotes.NoteMd>
+<FeatureNotes.NoteMd src={egg} alt="Egg sprite">
+{
+`
+**Hatched Pokémon** 
+
+Pokémon hatched from Eggs can also learn their eligible Egg Moves, 
+along with their complete level-up learnset of the base stage.
 `
 }
 </FeatureNotes.NoteMd>

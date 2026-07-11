@@ -74,7 +74,7 @@ Pokémon above the current level cap can still participate in battle.
 }
 </FeatureNotes.NoteMd>
 </FeatureNotes>
-<AlertMd variant="tip" className="[&>a]:">
+<AlertMd variant="tip">
 {
 `
 Need the exact level caps? These references provide a breakdown of the cap progression.

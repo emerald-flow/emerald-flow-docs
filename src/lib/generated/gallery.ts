@@ -97,6 +97,16 @@ export const gallery = {
   ],
   "physical-special-split": [
     {
+      name: "after",
+      id: "after.c3ecfed3",
+      path: "/assets/gallery/physical-special-split/after.webp",
+    },
+    {
+      name: "before",
+      id: "before.2646d85c",
+      path: "/assets/gallery/physical-special-split/before.webp",
+    },
+    {
       name: "option-menu",
       id: "option-menu.b920845f",
       path: "/assets/gallery/physical-special-split/option-menu.webp",
@@ -108,6 +118,16 @@ export const gallery = {
       id: "option-menu.736e602b",
       path: "/assets/gallery/pocket-tutor/option-menu.webp",
     },
+    {
+      name: "start-menu",
+      id: "start-menu.65b9f7a7",
+      path: "/assets/gallery/pocket-tutor/start-menu.webp",
+    },
+    {
+      name: "tutor-menu",
+      id: "tutor-menu.ef21cd60",
+      path: "/assets/gallery/pocket-tutor/tutor-menu.webp",
+    },
   ],
   "better-evolutions": [
     {
@@ -117,6 +137,26 @@ export const gallery = {
     },
   ],
   "adopt-eggs": [
+    {
+      name: "adoption-1",
+      id: "adoption-1.45aeba32",
+      path: "/assets/gallery/adopt-eggs/adoption-1.webp",
+    },
+    {
+      name: "adoption-2",
+      id: "adoption-2.30d4c5d3",
+      path: "/assets/gallery/adopt-eggs/adoption-2.webp",
+    },
+    {
+      name: "hoenn-dex",
+      id: "hoenn-dex.3f50f363",
+      path: "/assets/gallery/adopt-eggs/hoenn-dex.webp",
+    },
+    {
+      name: "national-dex",
+      id: "national-dex.165fcd2f",
+      path: "/assets/gallery/adopt-eggs/national-dex.webp",
+    },
     {
       name: "option-menu",
       id: "option-menu.9ad54b57",
@@ -339,15 +379,31 @@ export const galleryObj = {
     },
   },
   "physical-special-split": {
+    after: {
+      id: "after.c3ecfed3",
+      index: 0,
+    },
+    before: {
+      id: "before.2646d85c",
+      index: 1,
+    },
     "option-menu": {
       id: "option-menu.b920845f",
-      index: 0,
+      index: 2,
     },
   },
   "pocket-tutor": {
     "option-menu": {
       id: "option-menu.736e602b",
       index: 0,
+    },
+    "start-menu": {
+      id: "start-menu.65b9f7a7",
+      index: 1,
+    },
+    "tutor-menu": {
+      id: "tutor-menu.ef21cd60",
+      index: 2,
     },
   },
   "better-evolutions": {
@@ -357,9 +413,25 @@ export const galleryObj = {
     },
   },
   "adopt-eggs": {
+    "adoption-1": {
+      id: "adoption-1.45aeba32",
+      index: 0,
+    },
+    "adoption-2": {
+      id: "adoption-2.30d4c5d3",
+      index: 1,
+    },
+    "hoenn-dex": {
+      id: "hoenn-dex.3f50f363",
+      index: 2,
+    },
+    "national-dex": {
+      id: "national-dex.165fcd2f",
+      index: 3,
+    },
     "option-menu": {
       id: "option-menu.9ad54b57",
-      index: 0,
+      index: 4,
     },
   },
   "pocket-pc": {

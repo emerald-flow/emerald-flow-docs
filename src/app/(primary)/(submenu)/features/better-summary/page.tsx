@@ -7,7 +7,7 @@ import { pokedex } from "~/lib/generated/sprites/pokedex";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/better-summary";
 import { arrows } from "~/lib/generated/sprites/arrows";
-import { physical } from "~/lib/generated/sprites/physical";
+import { physicalSpecial } from "~/lib/generated/sprites/physicalSpecial";
 import { ppUp } from "~/lib/generated/sprites/ppUp";
 
 export default function Page() {
@@ -52,7 +52,7 @@ Stats increased and decreased by a Nature are highlighted in red and blue, respe
 `
 }
 </FeatureNotes.NoteMd>
-<FeatureNotes.NoteMd src={physical} alt="Physical type sprite">
+<FeatureNotes.NoteMd src={physicalSpecial} alt="Physical-Special sprite">
 {
 `
 **Damange Category** 

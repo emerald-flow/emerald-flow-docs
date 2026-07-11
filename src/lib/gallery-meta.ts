@@ -22,8 +22,8 @@ export const galleryMeta = {
   },
   "no-hm-slave": {
     "option-menu": "No HM Slave in the option menu",
-    "start-menu": "Moves in the Start menu",
-    "moves-menu": "Moves menu",
+    "start-menu": "MOVES in the Start menu",
+    "moves-menu": "MOVES menu",
     usage: "Using ROCK SMASH",
   },
   "better-summary": {
@@ -37,15 +37,23 @@ export const galleryMeta = {
   },
   "physical-special-split": {
     "option-menu": "Physical Special Split in the option menu",
+    before: "Before - Gen III type based split",
+    after: "After - Gen IV Physical-Special split",
   },
   "pocket-tutor": {
     "option-menu": "Pocket Tutor in the option menu",
+    "start-menu": "TUTOR in the Start menu",
+    "tutor-menu": "TUTOR menu",
   },
   "better-evolutions": {
     "option-menu": "Better Evolutions in the option menu",
   },
   "adopt-eggs": {
     "option-menu": "Adopt Eggs in the option menu",
+    "adoption-1": "Day care lady offering adoption (1)",
+    "adoption-2": "Day care lady offering adoption (2)",
+    "hoenn-dex": "Hoenn dex Pokémon up for adoption",
+    "national-dex": "National dex Pokémon up for adoption",
   },
   "pocket-pc": {
     "option-menu": "Pocket PC in the option menu",

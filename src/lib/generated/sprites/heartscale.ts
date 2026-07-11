@@ -1,0 +1,4 @@
+/* AUTO-GENERATED FILE - DO NOT EDIT */
+
+export const heartscale =
+  "data:image/webp;base64,UklGRoQAAABXRUJQVlA4THcAAAAvEUAEEDW4iiSpktbS6DuN2OBzPDyBOAXVAoEklf2hVhEIJKnsD7XK/Cts27aR43TPM3iUUdLNSwFd7CzpjC9w5KfNYJSkUa4s+YKcS406jMzAmG3n/lJFx2kM9i8d6asv+DrP7N+gU64P6nSDUR+KqfEzOok/CgA=" as const;

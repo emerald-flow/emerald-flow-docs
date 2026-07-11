@@ -12,12 +12,14 @@ import {
 import { Ban } from "lucide-react";
 import type { features } from "~/lib/feature-list";
 import { DefaultPill } from "./pills";
+import { cn } from "~/lib/utils";
 
 export const Option = ({
   alt,
   src,
   option,
   defaultOption,
+  className,
 }: Pick<ComponentProps<typeof Image>, "src" | "alt" | "className"> & {
   option: (typeof features)[keyof typeof features]["options"][number];
   defaultOption: (typeof features)[keyof typeof features]["defaultOption"];
@@ -34,7 +36,7 @@ export const Option = ({
         </div>
       </TableCell>
       <TableCell>
-        <div className="bg-background hover:bg-muted hover:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50 pointer-events-auto flex cursor-pointer flex-col items-center gap-1 rounded-md border p-4 text-center text-wrap">
+        <div className="bg-background hover:bg-muted hover:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50 pointer-events-auto flex cursor-pointer flex-col items-center gap-2 rounded-md border p-4 text-center text-wrap">
           <div className="relative flex items-center justify-center grayscale">
             <Image
               src={src}
@@ -43,6 +45,7 @@ export const Option = ({
               loading="lazy"
               width={48}
               height={48}
+              className={cn(className)}
             />
             {isDefault && (
               <Ban className="absolute scale-250 opacity-50" strokeWidth={1} />
