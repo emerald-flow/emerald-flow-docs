@@ -221,9 +221,9 @@ export const featureList = [
       options: [
         ["Off", "Any EV gains are turned off"],
         ["On", VANILLA_GAMEPLAY],
-        ["Vitamin", "Vitamins cap at 252EV, Berries at -1EV"],
+        ["Vitamin", "Vitamins cap at 252EV, Berries remove 1EV"],
       ],
-      defaultOption: "Off",
+      defaultOption: "On",
     } as const),
   ],
   [
