@@ -8,6 +8,7 @@ import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/pocket-tutor";
 import { tm } from "~/lib/generated/sprites/tm";
 import { egg } from "~/lib/generated/sprites/egg";
+import { startButton } from "~/lib/generated/sprites/startButton";
 
 export default function Page() {
   const feature = features["pocket-tutor"];
@@ -44,6 +45,15 @@ borderColor="border-sky-600"
 childBorderColor="[&>div]:not-first:border-sky-600"
 textColor="text-sky-600"
 >
+<FeatureNotes.NoteMd src={startButton} alt="Start button sprite">
+{
+`
+**Start screen option** 
+
+**TUTOR** appears in the Start Menu after obtaining the Running Shoes.
+`
+}
+</FeatureNotes.NoteMd>
 <FeatureNotes.NoteMd src={tm} alt="TM item sprite">
 {
 `

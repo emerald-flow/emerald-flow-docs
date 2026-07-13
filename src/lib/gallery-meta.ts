@@ -61,6 +61,8 @@ export const galleryMeta = {
   },
   "pocket-pc": {
     "option-menu": "Pocket PC in the option menu",
+    "start-menu": "PC in the start menu",
+    usage: "Using Pocket PC",
   },
   "pocket-heal": {
     "option-menu": "Pocket Heal in the option menu",

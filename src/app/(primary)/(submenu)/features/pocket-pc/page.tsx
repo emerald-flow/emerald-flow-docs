@@ -3,15 +3,15 @@ import { FeatureNotes } from "~/components/feature-notes";
 import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
-import { repel } from "~/lib/generated/sprites/repel";
-import { pokeball } from "~/lib/generated/sprites/pokeball";
+import { pc } from "~/lib/generated/sprites/pc";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/pocket-pc";
+import { startButton } from "~/lib/generated/sprites/startButton";
 
 export default function Page() {
   const feature = features["pocket-pc"];
-  const img = repel;
-  const alt = "Repel item sprite";
+  const img = pc;
+  const alt = "PC sprite";
   // prettier-ignore
   return (
 <>
@@ -28,11 +28,8 @@ alt={alt}
 >
 {
 `
-**${feature.title}** lets you toggle Repel effects on or
-off without repeatedly using any Repel items.
-
-It behaves just like a standard Repel, but stays active until you
-choose otherwise.
+**${feature.title}** lets you use the PC available in the 
+Pokémon Center, remotely.
 `
 }
 </HeroMd>
@@ -42,13 +39,12 @@ borderColor="border-emerald-600"
 childBorderColor="[&>div]:not-first:border-emerald-600"
 textColor="text-emerald-600"
 >
-<FeatureNotes.NoteMd src={pokeball} alt="Pokéball item sprite">
+<FeatureNotes.NoteMd src={startButton} alt="Start button sprite">
 {
 `
-**Encounters** 
+**Start screen option** 
 
-Wild Pokémon with a higher level than your
-lead Pokémon can still appear.
+**PC** appears in the Start Menu after obtaining the Running Shoes.
 `
 }
 </FeatureNotes.NoteMd>

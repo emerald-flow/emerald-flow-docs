@@ -189,6 +189,16 @@ export const gallery = {
       id: "option-menu.055d3060",
       path: "/assets/gallery/pocket-pc/option-menu.webp",
     },
+    {
+      name: "start-menu",
+      id: "start-menu.3db9f08f",
+      path: "/assets/gallery/pocket-pc/start-menu.webp",
+    },
+    {
+      name: "usage",
+      id: "usage.044b3bd1",
+      path: "/assets/gallery/pocket-pc/usage.webp",
+    },
   ],
   "pocket-heal": [
     {
@@ -474,6 +484,14 @@ export const galleryObj = {
     "option-menu": {
       id: "option-menu.055d3060",
       index: 0,
+    },
+    "start-menu": {
+      id: "start-menu.3db9f08f",
+      index: 1,
+    },
+    usage: {
+      id: "usage.044b3bd1",
+      index: 2,
     },
   },
   "pocket-heal": {
