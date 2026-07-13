@@ -280,9 +280,19 @@ export const gallery = {
   ],
   "one-dollar-items": [
     {
+      name: "mart",
+      id: "mart.f1e6aadb",
+      path: "/assets/gallery/one-dollar-items/mart.webp",
+    },
+    {
       name: "option-menu",
       id: "option-menu.59714071",
       path: "/assets/gallery/one-dollar-items/option-menu.webp",
+    },
+    {
+      name: "pocket-mart",
+      id: "pocket-mart.73bf8fe1",
+      path: "/assets/gallery/one-dollar-items/pocket-mart.webp",
     },
   ],
   "pocket-bikes": [
@@ -609,9 +619,17 @@ export const galleryObj = {
     },
   },
   "one-dollar-items": {
+    mart: {
+      id: "mart.f1e6aadb",
+      index: 0,
+    },
     "option-menu": {
       id: "option-menu.59714071",
-      index: 0,
+      index: 1,
+    },
+    "pocket-mart": {
+      id: "pocket-mart.73bf8fe1",
+      index: 2,
     },
   },
   "pocket-bikes": {

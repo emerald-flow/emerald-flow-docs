@@ -7,6 +7,8 @@ import { clerk } from "~/lib/generated/sprites/clerk";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/pocket-mart";
 import { startButton } from "~/lib/generated/sprites/startButton";
+import { amuletCoin } from "~/lib/generated/sprites/amuletCoin";
+import { pages } from "~/lib/menu-items";
 
 export default function Page() {
   const feature = features["pocket-mart"];
@@ -46,6 +48,15 @@ textColor="text-blue-600"
 **Start screen option** 
 
 **MART** appears in the Start Menu after obtaining the Running Shoes.
+`
+}
+</FeatureNotes.NoteMd>
+<FeatureNotes.NoteMd src={amuletCoin} alt="Amulet Coin item sprite">
+{
+`
+**${pages.features["one-dollar-items"].title}** 
+
+This feature can be used alongside [${pages.features["one-dollar-items"].title}](${pages.features["one-dollar-items"].url}) for easy item access.
 `
 }
 </FeatureNotes.NoteMd>

@@ -3,15 +3,17 @@ import { FeatureNotes } from "~/components/feature-notes";
 import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
-import { repel } from "~/lib/generated/sprites/repel";
+import { amuletCoin } from "~/lib/generated/sprites/amuletCoin";
 import { pokeball } from "~/lib/generated/sprites/pokeball";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/one-dollar-items";
+import { clerk } from "~/lib/generated/sprites/clerk";
+import { pages } from "~/lib/menu-items";
 
 export default function Page() {
   const feature = features["one-dollar-items"];
-  const img = repel;
-  const alt = "Repel item sprite";
+  const img = amuletCoin;
+  const alt = "Amulet coin item sprite";
   // prettier-ignore
   return (
 <>
@@ -25,30 +27,26 @@ export default function Page() {
 <HeroMd 
 src={img}
 alt={alt}
+blobBgColor="bg-yellow-500"
 >
 {
 `
-**${feature.title}** lets you toggle Repel effects on or
-off without repeatedly using any Repel items.
-
-It behaves just like a standard Repel, but stays active until you
-choose otherwise.
+**${feature.title}** lets you purchase every item sold in a PokéMart for $1.
 `
 }
 </HeroMd>
 <FeatureNotes
-bgColor="bg-emerald-800"
-borderColor="border-emerald-600"
-childBorderColor="[&>div]:not-first:border-emerald-600"
-textColor="text-emerald-600"
+bgColor="bg-yellow-800"
+borderColor="border-yellow-600"
+childBorderColor="[&>div]:not-first:border-yellow-600"
+textColor="text-yellow-600"
 >
-<FeatureNotes.NoteMd src={pokeball} alt="Pokéball item sprite">
+<FeatureNotes.NoteMd src={clerk} alt="Amulet Coin item sprite">
 {
 `
-**Encounters** 
+**${pages.features["pocket-mart"].title}** 
 
-Wild Pokémon with a higher level than your
-lead Pokémon can still appear.
+This feature can be used alongside [${pages.features["pocket-mart"].title}](${pages.features["pocket-mart"].url}) for easy item access.
 `
 }
 </FeatureNotes.NoteMd>

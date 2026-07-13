@@ -88,6 +88,8 @@ export const galleryMeta = {
   },
   "one-dollar-items": {
     "option-menu": "One Dollar Items in the option menu",
+    mart: "1$ Items in PokéMarts",
+    "pocket-mart": "1$ Items in Pocket-Mart",
   },
   "pocket-bikes": {
     "option-menu": "Pocket Bikes in the option menu",
