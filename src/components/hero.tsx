@@ -12,8 +12,8 @@ export function Hero({
     ComponentProps<typeof HeroBackground>
 >) {
   return (
-    <section className="flex flex-col-reverse gap-6 md:flex-row md:gap-4">
-      <div className="flex flex-1 flex-col self-center md:pt-4 [&>p]:not-last:mb-4">
+    <section className="flex w-full flex-col-reverse gap-6 md:flex-row md:gap-4">
+      <div className="flex flex-1 flex-col md:self-center md:pt-4 [&>p]:not-last:mb-4">
         {children}
       </div>
       <HeroImage {...props} />

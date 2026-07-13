@@ -3,15 +3,15 @@ import { FeatureNotes } from "~/components/feature-notes";
 import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
-import { repel } from "~/lib/generated/sprites/repel";
-import { pokeball } from "~/lib/generated/sprites/pokeball";
+import { clerk } from "~/lib/generated/sprites/clerk";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/pocket-mart";
+import { startButton } from "~/lib/generated/sprites/startButton";
 
 export default function Page() {
   const feature = features["pocket-mart"];
-  const img = repel;
-  const alt = "Repel item sprite";
+  const img = clerk;
+  const alt = "Clerk sprite";
   // prettier-ignore
   return (
 <>
@@ -25,30 +25,27 @@ export default function Page() {
 <HeroMd 
 src={img}
 alt={alt}
+blobBgColor="bg-blue-500"
 >
 {
 `
-**${feature.title}** lets you toggle Repel effects on or
-off without repeatedly using any Repel items.
-
-It behaves just like a standard Repel, but stays active until you
-choose otherwise.
+**${feature.title}** lets you access the
+PokéMart, remotely.
 `
 }
 </HeroMd>
 <FeatureNotes
-bgColor="bg-emerald-800"
-borderColor="border-emerald-600"
-childBorderColor="[&>div]:not-first:border-emerald-600"
-textColor="text-emerald-600"
+bgColor="bg-blue-800"
+borderColor="border-blue-600"
+childBorderColor="[&>div]:not-first:border-blue-600"
+textColor="text-blue-600"
 >
-<FeatureNotes.NoteMd src={pokeball} alt="Pokéball item sprite">
+<FeatureNotes.NoteMd src={startButton} alt="Start button sprite">
 {
 `
-**Encounters** 
+**Start screen option** 
 
-Wild Pokémon with a higher level than your
-lead Pokémon can still appear.
+**MART** appears in the Start Menu after obtaining the Running Shoes.
 `
 }
 </FeatureNotes.NoteMd>

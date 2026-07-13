@@ -1,6 +1,12 @@
 /* AUTO-GENERATED FILE - DO NOT EDIT */
 
 export const placeholder = {
+  after:
+    "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAADwAwCdASoSAAwAPm0skkWkIqGYBABABsSxAE6XrkC87JJuTtDQZPGAAP3S1ojIzp3dt49fdnyQOiDe6Ya79Z9aBsswgC7YaCFU96oeefSDQkLcVZPbNB0T2crZ0ta5ZWqpDqd37n9f7fR+YA908Nq8+LBzhYpT9/vPKv/6w/bV29xWnMj7irOrWeD3Yo5RorwfYsaq8FQ5l+HrlF4AAA==",
+  before:
+    "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAAAQBACdASoSAAwAPm0skkWkIqGYBABABsSyAFYAxdxzYjVCrgChGPTUgAD+ZZhmjcjvPV/8kCC7590Tr5HnRaBft6BspEniCcJnFR7ApdG53Mw4mHp7/AqOAJZep8kXp9hKuFSK5sVgUeCR11/rFV/q7f5gDvQhN+Wnozcm5mX/izVgDf96d0wbe4qt/jhp/93sBQP4kbBMvmyEVcSnW2rXdMQAAA==",
   "option-menu":
     "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAADwAwCdASoSAAwAPm0skkWkIqGYBABABsSgCdLcAugAQ79Cy+gSbXQAAP7ohxEmvp9zECfH6xapd0/GGzl6rLsGi/IvpL8F2qDL1flx9oswx3kyZ6Z0xKgy25DImFbBiVQmw7CKtNsGU/2R11tVq/e44dvcZz58UQ9/88ErJB7NnwBpAW22VlADmjF8PCalp3lbeRFihgAAAA==",
+  usage:
+    "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADwAwCdASoSAAwAPm0skkWkIqGYBABABsSyAE6XrkDWpNClOFFf9QlwAP7iaq58JLqlFdfNO18Im/VQy+3HcRKzwL2y9+K0aT1rUPUamxVMBPfRyEf7W6/7fX9WgUUH+5xRFHsRBbjANt2B2KmzoexHQxK1oQaU9xf7E5vR7vrN1iuK93LibFeiU1pC+Faol5AAAA==",
 } as const;

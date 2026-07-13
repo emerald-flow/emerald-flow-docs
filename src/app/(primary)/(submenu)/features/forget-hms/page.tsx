@@ -24,6 +24,7 @@ export default function Page() {
 src={img}
 alt={alt}
 blobBgColor="bg-sky-500"
+className="scale-80"
 >
 {
 `

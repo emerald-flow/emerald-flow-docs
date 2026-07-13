@@ -236,16 +236,46 @@ export const gallery = {
   ],
   "infinite-tms": [
     {
+      name: "after",
+      id: "after.a3e62120",
+      path: "/assets/gallery/infinite-tms/after.webp",
+    },
+    {
+      name: "before",
+      id: "before.607597d6",
+      path: "/assets/gallery/infinite-tms/before.webp",
+    },
+    {
       name: "option-menu",
       id: "option-menu.5e1c418f",
       path: "/assets/gallery/infinite-tms/option-menu.webp",
     },
+    {
+      name: "usage",
+      id: "usage.4f851299",
+      path: "/assets/gallery/infinite-tms/usage.webp",
+    },
   ],
   "pocket-mart": [
+    {
+      name: "buy-menu",
+      id: "buy-menu.1083ddf2",
+      path: "/assets/gallery/pocket-mart/buy-menu.webp",
+    },
+    {
+      name: "menu",
+      id: "menu.e66e332a",
+      path: "/assets/gallery/pocket-mart/menu.webp",
+    },
     {
       name: "option-menu",
       id: "option-menu.16042a0b",
       path: "/assets/gallery/pocket-mart/option-menu.webp",
+    },
+    {
+      name: "start-menu",
+      id: "start-menu.7f77b0a1",
+      path: "/assets/gallery/pocket-mart/start-menu.webp",
     },
   ],
   "one-dollar-items": [
@@ -543,15 +573,39 @@ export const galleryObj = {
     },
   },
   "infinite-tms": {
+    after: {
+      id: "after.a3e62120",
+      index: 0,
+    },
+    before: {
+      id: "before.607597d6",
+      index: 1,
+    },
     "option-menu": {
       id: "option-menu.5e1c418f",
-      index: 0,
+      index: 2,
+    },
+    usage: {
+      id: "usage.4f851299",
+      index: 3,
     },
   },
   "pocket-mart": {
+    "buy-menu": {
+      id: "buy-menu.1083ddf2",
+      index: 0,
+    },
+    menu: {
+      id: "menu.e66e332a",
+      index: 1,
+    },
     "option-menu": {
       id: "option-menu.16042a0b",
-      index: 0,
+      index: 2,
+    },
+    "start-menu": {
+      id: "start-menu.7f77b0a1",
+      index: 3,
     },
   },
   "one-dollar-items": {

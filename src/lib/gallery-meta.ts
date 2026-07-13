@@ -71,14 +71,20 @@ export const galleryMeta = {
   },
   "forget-hms": {
     "option-menu": "Forget HMs in the option menu",
-    "usage-1": "Using Forget HMs (1)",
-    "usage-2": "Using Forget HMs (2)",
+    "usage-1": "Forgetting an HM",
+    "usage-2": "Replaced by a TM",
   },
   "infinite-tms": {
     "option-menu": "Infinite TMs in the option menu",
+    before: "Bulk Up TM before use",
+    usage: "Using Bulk Up",
+    after: "Bulk UP TM after use",
   },
   "pocket-mart": {
     "option-menu": "Pocket Mart in the option menu",
+    "start-menu": "MART in the start menu",
+    menu: "MART menu",
+    "buy-menu": "BUY menu",
   },
   "one-dollar-items": {
     "option-menu": "One Dollar Items in the option menu",

@@ -4,7 +4,6 @@ import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
 import { joy } from "~/lib/generated/sprites/joy";
-import { pokeball } from "~/lib/generated/sprites/pokeball";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/pocket-heal";
 import { startButton } from "~/lib/generated/sprites/startButton";

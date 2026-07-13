@@ -1,6 +1,11 @@
 /* AUTO-GENERATED FILE - DO NOT EDIT */
 
 export const placeholder = {
+  "buy-menu":
+    "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAAAQBACdASoSAAwAPm0qkkWkIqGYBABABsSxAE6ZQjFYBXKPGcuRh/QaoAD+6IQqi4/xR5reh1jVHp5+C/K+qhEHtebtap1zGirLEoajVN6hJLaTo+u8s1e8mZI8nTtdO9kcyNbZgX6V99d+mUXGL8BQkcGM9ewvIZzYEa9zpoWUJtINZ5IdlDFORoyqDwoAAAA=",
+  menu: "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABQBACdASoSAAwAPm0qkkWkIqGYBABABsSzAF2I//AU/v20TNNGEQhYYuoAAP74Ra2r87Ex8GaYNrx0f2HcVbHzhpjJc9BuEwxC1QtCQ/F8P8hRrLH+pdIH4fP72fz0DtfCN+nA5zYGZrKv/oA4QjIgd/dhWR29VNXidpc1EV0NBEAA",
   "option-menu":
     "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADwAwCdASoSAAwAPm0qkUWkIqGYBABABsSgCdLcAugAQ79Yl3kci5AAAP7ohxEmvp9zECfH2YT70Zumz+YDPTixzFM3EFxfqekIZJ71L6nBppidIQJOjJI6bkCESsRoBGrfH0hH380/HwWsp4LiZxVjj/Ww+/VBfn/nglZIPZs9/woiD6RGReux/OWRthOcM94gixQwAAA=",
+  "start-menu":
+    "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAACwAwCdASoSAAwAPm0qkUWkIqGYBABABsSxAF2ADpy6elEDGfF3AAD+2EpinwMEJDhYPzq4oErH/BnwPq4sV0zZDr5x4QDfYxTfLNLCC1bl7jQ3sd4FrjCXqM1OGvt/yCHEYtaGZmrkLZ+qL8d+u2BeLzeC9xfYVm7jfl4d1axCeoejKZ1azJB8jxhxndfkPLQAAA==",
 } as const;
