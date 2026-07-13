@@ -4,15 +4,16 @@ import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
 import { AlertMd } from "~/components/alerts";
-import { gymSign } from "~/lib/generated/sprites/gymSign";
+import { badges } from "~/lib/generated/sprites/badges";
 import { pokeball } from "~/lib/generated/sprites/pokeball";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/level-cap";
 import { rareCandy } from "~/lib/generated/sprites/rareCandy";
+import { gymSign } from "~/lib/generated/sprites/gymSign";
 
 export default function Page() {
   const feature = features["level-cap"];
-  const img = gymSign;
+  const img = badges;
   const alt = "Gym sign sprite";
   // prettier-ignore
   return (

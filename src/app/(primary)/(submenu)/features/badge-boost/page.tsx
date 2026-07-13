@@ -3,15 +3,15 @@ import { FeatureNotes } from "~/components/feature-notes";
 import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
-import { repel } from "~/lib/generated/sprites/repel";
+import { badges } from "~/lib/generated/sprites/badges";
 import { pokeball } from "~/lib/generated/sprites/pokeball";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/badge-boost";
 
 export default function Page() {
   const feature = features["badge-boost"];
-  const img = repel;
-  const alt = "Repel item sprite";
+  const img = badges;
+  const alt = "Badges sprite";
   // prettier-ignore
   return (
 <>
@@ -28,31 +28,15 @@ alt={alt}
 >
 {
 `
-**${feature.title}** lets you toggle Repel effects on or
-off without repeatedly using any Repel items.
+**${feature.title}** lets you toggle the stat boosts 
+provided by Gym badges on the player's Pokémon.
 
-It behaves just like a standard Repel, but stays active until you
-choose otherwise.
+Disabling badge boosts makes in-game battles more closely 
+match Link Battles and Battle Frontier battles, where badge boosts 
+are not applied.
 `
 }
 </HeroMd>
-<FeatureNotes
-bgColor="bg-emerald-800"
-borderColor="border-emerald-600"
-childBorderColor="[&>div]:not-first:border-emerald-600"
-textColor="text-emerald-600"
->
-<FeatureNotes.NoteMd src={pokeball} alt="Pokéball item sprite">
-{
-`
-**Encounters** 
-
-Wild Pokémon with a higher level than your
-lead Pokémon can still appear.
-`
-}
-</FeatureNotes.NoteMd>
-</FeatureNotes>
 <Options>
 {
 feature.options.map((option, i)=>
