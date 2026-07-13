@@ -1,0 +1,4 @@
+/* AUTO-GENERATED FILE - DO NOT EDIT */
+
+export const pc =
+  "data:image/webp;base64,UklGRpAAAABXRUJQVlA4TIQAAAAvH8AHEFU4COA2bsCOUnCFxmD8UbQHQE4afCJtm8m4fyGzdDrY/wk48sXE4+3UQN6SWopcQ7NZww2b/2hKm7JseiqaOirWlY/d8LF8itElrlGWxxSuviSWRq4jlWO5QTYRQkjrWoOnNxBCeKll14CGZdMyFUgSSH6iWh1UxnCK3OOsfNY=" as const;

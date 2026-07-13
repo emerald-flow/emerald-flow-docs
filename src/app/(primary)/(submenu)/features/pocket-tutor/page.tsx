@@ -12,7 +12,7 @@ import { egg } from "~/lib/generated/sprites/egg";
 export default function Page() {
   const feature = features["pocket-tutor"];
   const img = heartscale;
-  const alt = "Repel item sprite";
+  const alt = "Heartscale item sprite";
   // prettier-ignore
   return (
 <>

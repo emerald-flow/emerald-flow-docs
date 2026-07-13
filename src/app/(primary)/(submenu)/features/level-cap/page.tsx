@@ -4,16 +4,16 @@ import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
 import { AlertMd } from "~/components/alerts";
-import { rareCandy } from "~/lib/generated/sprites/rareCandy";
 import { gymSign } from "~/lib/generated/sprites/gymSign";
 import { pokeball } from "~/lib/generated/sprites/pokeball";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/level-cap";
+import { rareCandy } from "~/lib/generated/sprites/rareCandy";
 
 export default function Page() {
   const feature = features["level-cap"];
-  const img = rareCandy;
-  const alt = "Rare candy item sprite";
+  const img = gymSign;
+  const alt = "Gym sign sprite";
   // prettier-ignore
   return (
 <>
@@ -27,7 +27,7 @@ export default function Page() {
 <HeroMd 
 src={img}
 alt={alt}
-blobBgColor="bg-blue-500"
+blobBgColor="bg-zinc-500"
 >
 {
 `
@@ -40,12 +40,12 @@ and keep every major battle at its intended difficulty.
 }
 </HeroMd>
 <FeatureNotes
-bgColor="bg-blue-800"
-borderColor="border-blue-600"
-childBorderColor="[&>div]:not-first:border-blue-600"
-textColor="text-blue-600"
+bgColor="bg-zinc-800"
+borderColor="border-zinc-600"
+childBorderColor="[&>div]:not-first:border-zinc-600"
+textColor="text-zinc-600"
 >
-<FeatureNotes.NoteMd src={gymSign} alt="Pokéball item sprite">
+<FeatureNotes.NoteMd src={gymSign} alt="Gym sign sprite">
 {
 `
 **Cap progression** 
@@ -55,7 +55,7 @@ The level cap automatically updates after each major battle to match the next Gy
 `
 }
 </FeatureNotes.NoteMd>
-<FeatureNotes.NoteMd src={rareCandy} alt="Pokéball item sprite">
+<FeatureNotes.NoteMd src={rareCandy} alt="Rare candy item sprite">
 {
 `
 **Experience/Level gains** 

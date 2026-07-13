@@ -47,6 +47,10 @@ export const galleryMeta = {
   },
   "better-evolutions": {
     "option-menu": "Better Evolutions in the option menu",
+    "kadabra-29": "Kadabra at Level 29",
+    "alakazam-30": "Evolved Alakazam at Level 30",
+    "kadabra-16": "Kadabra at Level 16 holding a Twisted Spoon",
+    "alakazam-17": "Evolved Alakazam at Level 17 holding a Twisted Spoon",
   },
   "adopt-eggs": {
     "option-menu": "Adopt Eggs in the option menu",

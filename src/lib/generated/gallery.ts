@@ -131,6 +131,26 @@ export const gallery = {
   ],
   "better-evolutions": [
     {
+      name: "alakazam-17",
+      id: "alakazam-17.156af7f6",
+      path: "/assets/gallery/better-evolutions/alakazam-17.webp",
+    },
+    {
+      name: "alakazam-30",
+      id: "alakazam-30.4a05a19d",
+      path: "/assets/gallery/better-evolutions/alakazam-30.webp",
+    },
+    {
+      name: "kadabra-16",
+      id: "kadabra-16.30389e2d",
+      path: "/assets/gallery/better-evolutions/kadabra-16.webp",
+    },
+    {
+      name: "kadabra-29",
+      id: "kadabra-29.c873e335",
+      path: "/assets/gallery/better-evolutions/kadabra-29.webp",
+    },
+    {
       name: "option-menu",
       id: "option-menu.57d55cfa",
       path: "/assets/gallery/better-evolutions/option-menu.webp",
@@ -407,9 +427,25 @@ export const galleryObj = {
     },
   },
   "better-evolutions": {
+    "alakazam-17": {
+      id: "alakazam-17.156af7f6",
+      index: 0,
+    },
+    "alakazam-30": {
+      id: "alakazam-30.4a05a19d",
+      index: 1,
+    },
+    "kadabra-16": {
+      id: "kadabra-16.30389e2d",
+      index: 2,
+    },
+    "kadabra-29": {
+      id: "kadabra-29.c873e335",
+      index: 3,
+    },
     "option-menu": {
       id: "option-menu.57d55cfa",
-      index: 0,
+      index: 4,
     },
   },
   "adopt-eggs": {
