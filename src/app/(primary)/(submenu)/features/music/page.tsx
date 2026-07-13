@@ -3,15 +3,16 @@ import { FeatureNotes } from "~/components/feature-notes";
 import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
-import { repel } from "~/lib/generated/sprites/repel";
+import { flute } from "~/lib/generated/sprites/flute";
 import { pokeball } from "~/lib/generated/sprites/pokeball";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/music";
+import { signPost } from "~/lib/generated/sprites/signPost";
 
 export default function Page() {
   const feature = features.music;
-  const img = repel;
-  const alt = "Repel item sprite";
+  const img = flute;
+  const alt = "PokéFlute item sprite";
   // prettier-ignore
   return (
 <>
@@ -25,30 +26,37 @@ export default function Page() {
 <HeroMd 
 src={img}
 alt={alt}
+blobBgColor="bg-orange-500"
 >
 {
 `
-**${feature.title}** lets you toggle Repel effects on or
-off without repeatedly using any Repel items.
+**${feature.title}** lets you toggle the game's background music on or off.
 
-It behaves just like a standard Repel, but stays active until you
-choose otherwise.
+Turn off background music while keeping all sound effects, Pokémon cries, and menu sounds.
 `
 }
 </HeroMd>
 <FeatureNotes
-bgColor="bg-emerald-800"
-borderColor="border-emerald-600"
-childBorderColor="[&>div]:not-first:border-emerald-600"
-textColor="text-emerald-600"
+bgColor="bg-orange-800"
+borderColor="border-orange-600"
+childBorderColor="[&>div]:not-first:border-orange-600"
+textColor="text-orange-600"
 >
-<FeatureNotes.NoteMd src={pokeball} alt="Pokéball item sprite">
+<FeatureNotes.NoteMd src={flute} alt={alt}>
 {
 `
-**Encounters** 
+**Background Music** 
 
-Wild Pokémon with a higher level than your
-lead Pokémon can still appear.
+Only background music is affected. Sound effects are unaffected.
+`
+}
+</FeatureNotes.NoteMd>
+<FeatureNotes.NoteMd src={signPost} alt="Sign post sprite">
+{
+`
+**Map Transition** 
+
+Changes take effect after entering a new map or area.
 `
 }
 </FeatureNotes.NoteMd>

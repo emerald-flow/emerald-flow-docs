@@ -1,0 +1,4 @@
+/* AUTO-GENERATED FILE - DO NOT EDIT */
+
+export const flute =
+  "data:image/webp;base64,UklGRswAAABXRUJQVlA4TL8AAAAvFAAFEHW4iSTbVqxggfDZuBKwQPgsYYXw2iAk/d6PhX33DGfNtG2TdxBCYxRT4GbattlZ4juLa1A8GP1XmLYN4ySdn2imMwNoKqp9XpenpgTsmzsxXnZJTMDL4NO+BwAvD4EHkaSdGKqNyCbtJOlOdkK13Z8sgezcRVzzYv5RktnQp+RHezyONqKECAByQhvyGJKZDdvkgLy5q1pnyQyqtSOyhG2cgwRERNpjLn9AT5MGQci26dJaAMNJEqCpAAA=" as const;

@@ -60,12 +60,12 @@ function HeroBackground({
   blobBgColor,
   blobTranslateX,
   blobTranslateY,
-  blocScale,
+  blobScale,
 }: {
   blobBgColor?: `bg-${TailwindColor}-500`;
   blobTranslateX?: `translate-x-[calc(-50%-${number}px)]`;
   blobTranslateY?: `translate-y-[calc(-50%-${number}px)]`;
-  blocScale?: `scale-${number}000`;
+  blobScale?: `scale-${number}`;
 }) {
   return (
     <div
@@ -74,7 +74,7 @@ function HeroBackground({
         blobBgColor,
         blobTranslateX,
         blobTranslateY,
-        blocScale,
+        blobScale,
       )}
     />
   );
