@@ -3,15 +3,16 @@ import { FeatureNotes } from "~/components/feature-notes";
 import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
-import { repel } from "~/lib/generated/sprites/repel";
-import { pokeball } from "~/lib/generated/sprites/pokeball";
+import { blender } from "~/lib/generated/sprites/blender";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/auto-blend";
+import { pages } from "~/lib/menu-items";
+import { oran } from "~/lib/generated/sprites/oran";
 
 export default function Page() {
   const feature = features["auto-blend"];
-  const img = repel;
-  const alt = "Repel item sprite";
+  const img = blender;
+  const alt = "Blender sprite";
   // prettier-ignore
   return (
 <>
@@ -25,30 +26,29 @@ export default function Page() {
 <HeroMd 
 src={img}
 alt={alt}
+blobBgColor="bg-sky-500"
+className="scale-80"
 >
 {
 `
-**${feature.title}** lets you toggle Repel effects on or
-off without repeatedly using any Repel items.
+**${feature.title}** automates the berry blending mini game.
 
-It behaves just like a standard Repel, but stays active until you
-choose otherwise.
+It applies to both the player and the NPCs, resulting in perfect berry blends.
 `
 }
 </HeroMd>
 <FeatureNotes
-bgColor="bg-emerald-800"
-borderColor="border-emerald-600"
-childBorderColor="[&>div]:not-first:border-emerald-600"
-textColor="text-emerald-600"
+bgColor="bg-sky-800"
+borderColor="border-sky-600"
+childBorderColor="[&>div]:not-first:border-sky-600"
+textColor="text-sky-600"
 >
-<FeatureNotes.NoteMd src={pokeball} alt="Pokéball item sprite">
+<FeatureNotes.NoteMd src={oran} alt="Oran berry item sprite">
 {
 `
-**Encounters** 
+**${pages.features["custom-blend"].title}** 
 
-Wild Pokémon with a higher level than your
-lead Pokémon can still appear.
+This feature can be used alongside [${pages.features["custom-blend"].title}](${pages.features["custom-blend"].url}) for a better blending experience.
 `
 }
 </FeatureNotes.NoteMd>

@@ -36,12 +36,13 @@ export function HeroImage({
   alt,
   src,
   className,
+  hideBlob = false,
   ...blob
 }: Pick<ComponentProps<typeof Image>, "src" | "alt" | "className"> &
-  ComponentProps<typeof HeroBackground>) {
+  ComponentProps<typeof HeroBackground> & { hideBlob?: boolean }) {
   return (
     <div className="relative flex items-center justify-center">
-      <HeroBackground {...blob} />
+      {!hideBlob && <HeroBackground {...blob} />}
       <Image
         src={src}
         alt={alt}

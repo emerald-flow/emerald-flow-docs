@@ -10,6 +10,8 @@ export default function Page() {
 <HeroImage
 src={logo}
 alt="Logo sprite"
+hideBlob
+className="overflow-hidden rounded-lg border-4"
 />
 <Md>
 {

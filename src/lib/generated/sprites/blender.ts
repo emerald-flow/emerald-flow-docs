@@ -1,0 +1,4 @@
+/* AUTO-GENERATED FILE - DO NOT EDIT */
+
+export const blender =
+  "data:image/webp;base64,UklGRoIAAABXRUJQVlA4THUAAAAvD8ADEBY3kWzLih6sYAUJWEETlv6+SHgCTv1oJrl1A4JsG7cxjmsIVzmZgEXHnV6nOjqKof8TMN7k4uBnp/8zqnerOkBX/VuSWCWQ1rQaNQcm51DljADu0a/0uPs8ckdUk0Q1kEB2Ibd89UXIRQYXx2YcbgAA" as const;

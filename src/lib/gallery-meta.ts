@@ -98,9 +98,13 @@ export const galleryMeta = {
   },
   "auto-blend": {
     "option-menu": "Auto Blend in the option menu",
+    "perfect-hits": "Perfect hits by participants",
+    results: "Auto Blend results",
   },
   "custom-blend": {
     "option-menu": "Custom Blend in the option menu",
+    "choice-screen": "Berry choice screen",
+    result: "Custom Blend results",
   },
   "badge-boost": {
     "option-menu": "Badge Boost in the option menu",

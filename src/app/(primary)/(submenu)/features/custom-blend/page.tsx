@@ -3,15 +3,16 @@ import { FeatureNotes } from "~/components/feature-notes";
 import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
-import { repel } from "~/lib/generated/sprites/repel";
-import { pokeball } from "~/lib/generated/sprites/pokeball";
+import { oran } from "~/lib/generated/sprites/oran";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/custom-blend";
+import { blender } from "~/lib/generated/sprites/blender";
+import { pages } from "~/lib/menu-items";
 
 export default function Page() {
   const feature = features["custom-blend"];
-  const img = repel;
-  const alt = "Repel item sprite";
+  const img = oran;
+  const alt = "Oran berry item sprite";
   // prettier-ignore
   return (
 <>
@@ -25,30 +26,38 @@ export default function Page() {
 <HeroMd 
 src={img}
 alt={alt}
+blobBgColor="bg-blue-500"
+className="scale-80"
 >
 {
 `
-**${feature.title}** lets you toggle Repel effects on or
-off without repeatedly using any Repel items.
+**${feature.title}** lets you choose berries on behalf of the NPCs.
 
-It behaves just like a standard Repel, but stays active until you
-choose otherwise.
+This allows you to craft Pokéblocks of your choice.
 `
 }
 </HeroMd>
 <FeatureNotes
-bgColor="bg-emerald-800"
-borderColor="border-emerald-600"
-childBorderColor="[&>div]:not-first:border-emerald-600"
-textColor="text-emerald-600"
+bgColor="bg-blue-800"
+borderColor="border-blue-600"
+childBorderColor="[&>div]:not-first:border-blue-600"
+textColor="text-blue-600"
 >
-<FeatureNotes.NoteMd src={pokeball} alt="Pokéball item sprite">
+<FeatureNotes.NoteMd src={oran} alt="Oran berry item sprite">
 {
 `
-**Encounters** 
+**No consumption** 
 
-Wild Pokémon with a higher level than your
-lead Pokémon can still appear.
+Berries are not consumed in this mode.
+`
+}
+</FeatureNotes.NoteMd>
+<FeatureNotes.NoteMd src={blender} alt="Berry blender sprite">
+{
+`
+**${pages.features["auto-blend"].title}** 
+
+This feature can be used alongside [${pages.features["auto-blend"].title}](${pages.features["auto-blend"].url}) for a better blending experience.
 `
 }
 </FeatureNotes.NoteMd>

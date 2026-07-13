@@ -318,12 +318,32 @@ export const gallery = {
       id: "option-menu.6977d2a5",
       path: "/assets/gallery/auto-blend/option-menu.webp",
     },
+    {
+      name: "perfect-hits",
+      id: "perfect-hits.efaf465e",
+      path: "/assets/gallery/auto-blend/perfect-hits.webp",
+    },
+    {
+      name: "results",
+      id: "results.f58f36fb",
+      path: "/assets/gallery/auto-blend/results.webp",
+    },
   ],
   "custom-blend": [
+    {
+      name: "choice-screen",
+      id: "choice-screen.0df0dd74",
+      path: "/assets/gallery/custom-blend/choice-screen.webp",
+    },
     {
       name: "option-menu",
       id: "option-menu.03520baf",
       path: "/assets/gallery/custom-blend/option-menu.webp",
+    },
+    {
+      name: "result",
+      id: "result.0b6486ed",
+      path: "/assets/gallery/custom-blend/result.webp",
     },
   ],
   "badge-boost": [
@@ -661,11 +681,27 @@ export const galleryObj = {
       id: "option-menu.6977d2a5",
       index: 0,
     },
+    "perfect-hits": {
+      id: "perfect-hits.efaf465e",
+      index: 1,
+    },
+    results: {
+      id: "results.f58f36fb",
+      index: 2,
+    },
   },
   "custom-blend": {
+    "choice-screen": {
+      id: "choice-screen.0df0dd74",
+      index: 0,
+    },
     "option-menu": {
       id: "option-menu.03520baf",
-      index: 0,
+      index: 1,
+    },
+    result: {
+      id: "result.0b6486ed",
+      index: 2,
     },
   },
   "badge-boost": {
