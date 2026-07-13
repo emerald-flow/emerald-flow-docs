@@ -1,0 +1,4 @@
+/* AUTO-GENERATED FILE - DO NOT EDIT */
+
+export const rydel =
+  "data:image/webp;base64,UklGRt4AAABXRUJQVlA4TNIAAAAvE8AEELXAbUBXYpIRsk7KtIzBGqxBySqUjMA81z9msC1beqksHjdYsmHIVh7PR/jHf0whhPxCSCEdI5GkXJWPQAaykQ1JhLfIj9D/CZDxmJw6MZXtuJ6/XHyMHQmfRsRWuMd8FfEof0dEfH/vHCC+l4HF2dyW8eDroRtWq2qgG+haSZn11KxkXWaDWcn69Hu/zTIzKyo3bm6YrGIyV0xSn+AO/X8pmZxVU6n//0pl147yinqj7kiRqpmqZMmayWlSNoFMMhPYcnfA3bcEgAgAGQE=" as const;

@@ -301,6 +301,16 @@ export const gallery = {
       id: "option-menu.f440d36c",
       path: "/assets/gallery/pocket-bikes/option-menu.webp",
     },
+    {
+      name: "start-menu",
+      id: "start-menu.a2ea86d4",
+      path: "/assets/gallery/pocket-bikes/start-menu.webp",
+    },
+    {
+      name: "swap",
+      id: "swap.c88a5266",
+      path: "/assets/gallery/pocket-bikes/swap.webp",
+    },
   ],
   "auto-blend": [
     {
@@ -636,6 +646,14 @@ export const galleryObj = {
     "option-menu": {
       id: "option-menu.f440d36c",
       index: 0,
+    },
+    "start-menu": {
+      id: "start-menu.a2ea86d4",
+      index: 1,
+    },
+    swap: {
+      id: "swap.c88a5266",
+      index: 2,
     },
   },
   "auto-blend": {

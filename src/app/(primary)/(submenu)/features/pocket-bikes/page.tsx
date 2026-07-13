@@ -3,15 +3,16 @@ import { FeatureNotes } from "~/components/feature-notes";
 import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
-import { repel } from "~/lib/generated/sprites/repel";
-import { pokeball } from "~/lib/generated/sprites/pokeball";
+import { bike } from "~/lib/generated/sprites/bike";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/pocket-bikes";
+import { rydel } from "~/lib/generated/sprites/rydel";
+import { startButton } from "~/lib/generated/sprites/startButton";
 
 export default function Page() {
   const feature = features["pocket-bikes"];
-  const img = repel;
-  const alt = "Repel item sprite";
+  const img = bike;
+  const alt = "Bike item sprite";
   // prettier-ignore
   return (
 <>
@@ -25,30 +26,37 @@ export default function Page() {
 <HeroMd 
 src={img}
 alt={alt}
+blobBgColor="bg-amber-500"
 >
 {
 `
-**${feature.title}** lets you toggle Repel effects on or
-off without repeatedly using any Repel items.
+**${feature.title}** lets you swap Bikes, remotely.
 
-It behaves just like a standard Repel, but stays active until you
-choose otherwise.
+Swap bikes without travelling to Rydel's shop in Mauville City.
 `
 }
 </HeroMd>
 <FeatureNotes
-bgColor="bg-emerald-800"
-borderColor="border-emerald-600"
-childBorderColor="[&>div]:not-first:border-emerald-600"
-textColor="text-emerald-600"
+bgColor="bg-amber-800"
+borderColor="border-amber-600"
+childBorderColor="[&>div]:not-first:border-amber-600"
+textColor="text-amber-600"
 >
-<FeatureNotes.NoteMd src={pokeball} alt="Pokéball item sprite">
+<FeatureNotes.NoteMd src={rydel} alt="Rydel sprite">
 {
 `
-**Encounters** 
+**Rydel's Shop** 
 
-Wild Pokémon with a higher level than your
-lead Pokémon can still appear.
+A bike must be obtained first, from Rydel for the **BIKES** option to appear in the start menu.
+`
+}
+</FeatureNotes.NoteMd>
+<FeatureNotes.NoteMd src={startButton} alt="Start button sprite">
+{
+`
+**Start screen option** 
+
+**BIKES** appears in the Start Menu after obtaining a bike from Rydel.
 `
 }
 </FeatureNotes.NoteMd>

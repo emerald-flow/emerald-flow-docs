@@ -93,6 +93,8 @@ export const galleryMeta = {
   },
   "pocket-bikes": {
     "option-menu": "Pocket Bikes in the option menu",
+    "start-menu": "BIKES in the start menu",
+    swap: "Swapping bikes with Pocket Bikes",
   },
   "auto-blend": {
     "option-menu": "Auto Blend in the option menu",
