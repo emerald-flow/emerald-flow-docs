@@ -33,6 +33,7 @@ export function FeaturesGallery<T extends keyof typeof features>({
               className="relative overflow-hidden rounded-md"
               key={id}
               href={`/gallery/${feature}/${name as string}`}
+              prefetch={false}
             >
               <Image
                 placeholder={placeholder ? "blur" : "empty"}
