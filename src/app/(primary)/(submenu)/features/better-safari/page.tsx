@@ -4,7 +4,6 @@ import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
 import { safariball } from "~/lib/generated/sprites/safariball";
-import { pokeball } from "~/lib/generated/sprites/pokeball";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/better-safari";
 import { running } from "~/lib/generated/sprites/running";

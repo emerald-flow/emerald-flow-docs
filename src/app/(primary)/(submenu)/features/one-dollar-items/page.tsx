@@ -4,7 +4,6 @@ import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
 import { amuletCoin } from "~/lib/generated/sprites/amuletCoin";
-import { pokeball } from "~/lib/generated/sprites/pokeball";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/one-dollar-items";
 import { clerk } from "~/lib/generated/sprites/clerk";

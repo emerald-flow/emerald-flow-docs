@@ -1,10 +1,8 @@
 import { HeroMd } from "~/components/hero";
-import { FeatureNotes } from "~/components/feature-notes";
 import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
 import { badges } from "~/lib/generated/sprites/badges";
-import { pokeball } from "~/lib/generated/sprites/pokeball";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/badge-boost";
 

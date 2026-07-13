@@ -4,7 +4,6 @@ import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
 import { fluffyTail } from "~/lib/generated/sprites/fluffyTail";
-import { pokeball } from "~/lib/generated/sprites/pokeball";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/no-fleeing-mon";
 import { latios } from "~/lib/generated/sprites/latios";
