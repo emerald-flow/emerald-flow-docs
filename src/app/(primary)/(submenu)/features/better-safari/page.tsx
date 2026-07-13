@@ -9,6 +9,7 @@ import { placeholder } from "~/lib/generated/placeholders/better-safari";
 import { running } from "~/lib/generated/sprites/running";
 import { fluffyTail } from "~/lib/generated/sprites/fluffyTail";
 import { pages } from "~/lib/menu-items";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["better-safari"];
@@ -86,7 +87,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="better-safari" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

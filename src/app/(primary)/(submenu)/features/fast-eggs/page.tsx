@@ -10,6 +10,7 @@ import { egg } from "~/lib/generated/sprites/egg";
 import { slugma } from "~/lib/generated/sprites/slugma";
 import { oldman } from "~/lib/generated/sprites/oldman";
 import { pages } from "~/lib/menu-items";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["fast-eggs"];
@@ -92,7 +93,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="fast-eggs" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

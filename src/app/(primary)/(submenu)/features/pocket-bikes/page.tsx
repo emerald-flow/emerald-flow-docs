@@ -8,6 +8,7 @@ import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/pocket-bikes";
 import { rydel } from "~/lib/generated/sprites/rydel";
 import { startButton } from "~/lib/generated/sprites/startButton";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["pocket-bikes"];
@@ -75,7 +76,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="pocket-bikes" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

@@ -8,6 +8,7 @@ import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/one-dollar-items";
 import { clerk } from "~/lib/generated/sprites/clerk";
 import { pages } from "~/lib/menu-items";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["one-dollar-items"];
@@ -64,7 +65,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="one-dollar-items" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

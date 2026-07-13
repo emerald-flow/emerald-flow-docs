@@ -8,6 +8,7 @@ import { pokeball } from "~/lib/generated/sprites/pokeball";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/better-evolutions";
 import { sootheBell } from "~/lib/generated/sprites/sootheBell";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["better-evolutions"];
@@ -91,7 +92,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="better-evolutions" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

@@ -8,6 +8,7 @@ import { mom } from "~/lib/generated/sprites/mom";
 import { bButton } from "~/lib/generated/sprites/bButton";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/running";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features.running;
@@ -75,7 +76,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="running" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

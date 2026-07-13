@@ -7,6 +7,7 @@ import { pc } from "~/lib/generated/sprites/pc";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/pocket-pc";
 import { startButton } from "~/lib/generated/sprites/startButton";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["pocket-pc"];
@@ -63,7 +64,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="pocket-pc" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

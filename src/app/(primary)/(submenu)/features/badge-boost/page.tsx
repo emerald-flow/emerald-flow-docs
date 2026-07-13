@@ -5,6 +5,7 @@ import { features } from "~/lib/feature-list";
 import { badges } from "~/lib/generated/sprites/badges";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/badge-boost";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["badge-boost"];
@@ -49,7 +50,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="badge-boost" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

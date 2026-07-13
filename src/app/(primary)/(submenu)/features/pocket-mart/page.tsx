@@ -9,6 +9,7 @@ import { placeholder } from "~/lib/generated/placeholders/pocket-mart";
 import { startButton } from "~/lib/generated/sprites/startButton";
 import { amuletCoin } from "~/lib/generated/sprites/amuletCoin";
 import { pages } from "~/lib/menu-items";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["pocket-mart"];
@@ -75,7 +76,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="pocket-mart" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

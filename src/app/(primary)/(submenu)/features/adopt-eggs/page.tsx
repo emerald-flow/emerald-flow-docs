@@ -10,6 +10,7 @@ import { birch } from "~/lib/generated/sprites/birch";
 import { oak } from "~/lib/generated/sprites/oak";
 import { pages } from "~/lib/menu-items";
 import { cycling } from "~/lib/generated/sprites/cycling";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["adopt-eggs"];
@@ -91,7 +92,8 @@ className="scale-90"
 )
 }
 </Options>
-<FeaturesGallery feature="adopt-eggs" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

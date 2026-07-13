@@ -314,6 +314,7 @@ const getFeatures = <T extends FeatureList>(sections: T) => {
     (acc, [section, { defaultOption, options }]) => {
       const sectionName = getKebabCase(section);
       acc[sectionName] = {
+        id: sectionName,
         title: section,
         options: options.map(([title, description]) => ({
           title,
@@ -395,6 +396,7 @@ type Features<
         U & {
           [key in `${KebabCase<R[0]>}`]: Prettify<
             {
+              id: `${KebabCase<R[0]>}`;
               title: R[0];
               defaultOption: R[1]["defaultOption"];
               options: CleanOptions<R[1]["options"]>;

@@ -11,6 +11,7 @@ import { boulder } from "~/lib/generated/sprites/boulder";
 import { tm } from "~/lib/generated/sprites/tm";
 import { frontierSymbol } from "~/lib/generated/sprites/frontierSymbol";
 import { startButton } from "~/lib/generated/sprites/startButton";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["no-hm-slave"];
@@ -107,7 +108,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="no-hm-slave" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

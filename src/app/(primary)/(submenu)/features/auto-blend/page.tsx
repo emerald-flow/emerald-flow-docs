@@ -8,6 +8,7 @@ import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/auto-blend";
 import { pages } from "~/lib/menu-items";
 import { oran } from "~/lib/generated/sprites/oran";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["auto-blend"];
@@ -67,7 +68,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="auto-blend" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

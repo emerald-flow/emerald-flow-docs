@@ -8,6 +8,7 @@ import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/instant-fishing";
 import { feebas } from "~/lib/generated/sprites/feebas";
 import { pages } from "~/lib/menu-items";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["instant-fishing"];
@@ -73,7 +74,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="instant-fishing" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

@@ -8,6 +8,7 @@ import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/ev-training";
 import { noEv } from "~/lib/generated/sprites/noEv";
 import { pomeg } from "~/lib/generated/sprites/pomeg";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["ev-training"];
@@ -89,7 +90,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="ev-training" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

@@ -9,6 +9,7 @@ import { placeholder } from "~/lib/generated/placeholders/pocket-tutor";
 import { tm } from "~/lib/generated/sprites/tm";
 import { egg } from "~/lib/generated/sprites/egg";
 import { startButton } from "~/lib/generated/sprites/startButton";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["pocket-tutor"];
@@ -89,7 +90,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="pocket-tutor" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

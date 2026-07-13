@@ -5,6 +5,7 @@ import { features } from "~/lib/feature-list";
 import { interrobang } from "~/lib/generated/sprites/interrobang";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/instant-text";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["instant-text"];
@@ -47,7 +48,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="instant-text" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

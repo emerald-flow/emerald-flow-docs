@@ -10,6 +10,7 @@ import { latios } from "~/lib/generated/sprites/latios";
 import { camper } from "~/lib/generated/sprites/camper";
 import { pages } from "~/lib/menu-items";
 import { safariball } from "~/lib/generated/sprites/safariball";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["no-fleeing-mon"];
@@ -84,7 +85,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="no-fleeing-mon" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

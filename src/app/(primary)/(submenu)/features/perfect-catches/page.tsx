@@ -7,6 +7,7 @@ import { masterball } from "~/lib/generated/sprites/masterball";
 import { pokeball } from "~/lib/generated/sprites/pokeball";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/perfect-catches";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["perfect-catches"];
@@ -65,7 +66,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="perfect-catches" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

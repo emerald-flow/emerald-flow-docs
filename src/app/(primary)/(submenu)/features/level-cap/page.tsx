@@ -10,6 +10,7 @@ import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/level-cap";
 import { rareCandy } from "~/lib/generated/sprites/rareCandy";
 import { gymSign } from "~/lib/generated/sprites/gymSign";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["level-cap"];
@@ -99,7 +100,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="level-cap" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

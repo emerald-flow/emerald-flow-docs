@@ -7,6 +7,7 @@ import { repel } from "~/lib/generated/sprites/repel";
 import { pokeball } from "~/lib/generated/sprites/pokeball";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/permanent-repel";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["permanent-repel"];
@@ -64,7 +65,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="permanent-repel" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

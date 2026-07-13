@@ -5,6 +5,7 @@ import { features } from "~/lib/feature-list";
 import { hm } from "~/lib/generated/sprites/hm";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/forget-hms";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["forget-hms"];
@@ -47,7 +48,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="forget-hms" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

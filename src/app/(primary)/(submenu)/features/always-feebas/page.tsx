@@ -10,6 +10,7 @@ import { surfing } from "~/lib/generated/sprites/surfing";
 import { fishingRod } from "~/lib/generated/sprites/fishingRod";
 import { pages } from "~/lib/menu-items";
 import { signPost } from "~/lib/generated/sprites/signPost";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["always-feebas"];
@@ -86,7 +87,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="always-feebas" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

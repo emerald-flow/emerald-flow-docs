@@ -9,6 +9,7 @@ import { placeholder } from "~/lib/generated/placeholders/physical-special-split
 import { AlertMd } from "~/components/alerts";
 import { pokedex } from "~/lib/generated/sprites/pokedex";
 import { cn } from "~/lib/utils";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["physical-special-split"];
@@ -93,7 +94,8 @@ className={cn(option.title === feature.defaultOption && "pb-8 translate-y-4")}
 )
 }
 </Options>
-<FeaturesGallery feature="physical-special-split" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

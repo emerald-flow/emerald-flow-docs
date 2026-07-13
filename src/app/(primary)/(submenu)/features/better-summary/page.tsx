@@ -9,6 +9,7 @@ import { placeholder } from "~/lib/generated/placeholders/better-summary";
 import { arrows } from "~/lib/generated/sprites/arrows";
 import { physicalSpecial } from "~/lib/generated/sprites/physicalSpecial";
 import { ppUp } from "~/lib/generated/sprites/ppUp";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["better-summary"];
@@ -94,7 +95,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="better-summary" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

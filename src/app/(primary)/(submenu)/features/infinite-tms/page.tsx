@@ -5,6 +5,7 @@ import { features } from "~/lib/feature-list";
 import { tm } from "~/lib/generated/sprites/tm";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/infinite-tms";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["infinite-tms"];
@@ -47,7 +48,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="infinite-tms" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }

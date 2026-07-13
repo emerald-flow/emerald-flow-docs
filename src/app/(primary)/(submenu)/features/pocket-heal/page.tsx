@@ -7,6 +7,7 @@ import { joy } from "~/lib/generated/sprites/joy";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/pocket-heal";
 import { startButton } from "~/lib/generated/sprites/startButton";
+import { SeeAlso } from "~/components/see-also";
 
 export default function Page() {
   const feature = features["pocket-heal"];
@@ -64,7 +65,8 @@ defaultOption={feature.defaultOption}
 )
 }
 </Options>
-<FeaturesGallery feature="pocket-heal" placeholders={placeholder}/>
+<FeaturesGallery feature={feature.id} placeholders={placeholder} />
+<SeeAlso feature={feature.id} />
 </>
 );
 }
