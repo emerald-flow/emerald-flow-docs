@@ -1,0 +1,4 @@
+/* AUTO-GENERATED FILE - DO NOT EDIT */
+
+export const camper =
+  "data:image/webp;base64,UklGRtYAAABXRUJQVlA4TMoAAAAvE8AEEJXAbSTJdsMQmA5NukyJachUKs+UKVPxfG8vhtm9B4wGB82aadsmeAqh584BDoRRGB3TkKw8hYcQQgzHFlufITyFEPo/ARjffoeY1vPmkCE1IZK/SGounBE1pCau8xIPAUCpgnv1kdTWcNd28Nar/bK5oMwzd3UAZ/e599mdRuzM7u5MY1JyZqaliQf9iSTblvZf5FdKfMdrLerfgdvkIWuBdDtIS4cAkJwBLGpIGWFZpETKFaGcbXe6MFN2lV1TqCqgqjAE" as const;

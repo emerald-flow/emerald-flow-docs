@@ -397,9 +397,19 @@ export const gallery = {
   ],
   "no-fleeing-mon": [
     {
+      name: "go-near",
+      id: "go-near.53644415",
+      path: "/assets/gallery/no-fleeing-mon/go-near.webp",
+    },
+    {
       name: "option-menu",
       id: "option-menu.e2b484b9",
       path: "/assets/gallery/no-fleeing-mon/option-menu.webp",
+    },
+    {
+      name: "result",
+      id: "result.eb400598",
+      path: "/assets/gallery/no-fleeing-mon/result.webp",
     },
   ],
   "instant-text": [
@@ -747,9 +757,17 @@ export const galleryObj = {
     },
   },
   "no-fleeing-mon": {
+    "go-near": {
+      id: "go-near.53644415",
+      index: 0,
+    },
     "option-menu": {
       id: "option-menu.e2b484b9",
-      index: 0,
+      index: 1,
+    },
+    result: {
+      id: "result.eb400598",
+      index: 2,
     },
   },
   "instant-text": {

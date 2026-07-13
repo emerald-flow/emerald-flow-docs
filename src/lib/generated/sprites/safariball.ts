@@ -1,0 +1,4 @@
+/* AUTO-GENERATED FILE - DO NOT EDIT */
+
+export const safariball =
+  "data:image/webp;base64,UklGRugAAABXRUJQVlA4TNsAAAAvEUAEEBY4kWzLbjCJikKFoiEahmAIj4bDj8fblTDcenW9nXonut5O/ROgiSQ1FrCCjZdBSUuJlS9jJTbOCmZq2xBDDaMaL4IafzTKpZJV/ycgw0NGmDeS46c0zJ0K5BVCkm3pPMaAGD27BG/IUjEzqf3x3hsSYFuX8slXjl6fIiaTAnYLV1aRMiDEVVXkMBsygGEMSFF5QxaGsaWqWmcZeRRfXt0tqarWarK7+/7t4z1aNb+6u5m8bHfb7ngykw+cJ4xg/oKZyV/POX9DMF8TvzHAjEmEZN7IMEMA" as const;

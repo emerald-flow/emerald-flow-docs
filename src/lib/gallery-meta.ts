@@ -129,6 +129,8 @@ export const galleryMeta = {
   },
   "no-fleeing-mon": {
     "option-menu": "No Fleeing Mons in the option menu",
+    "go-near": "Reaching maximum proximity with a Safari encounter",
+    result: "Safari Pokémon not fleeing",
   },
   "instant-text": {
     "option-menu": "Instant Text in the option menu",
