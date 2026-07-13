@@ -3,4 +3,8 @@
 export const placeholder = {
   "option-menu":
     "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAAAQBACdASoSAAwAPm0skkWkIqGYBABABsSgCdLcAugAQ79iuCs8NZSEAAD+6IcRJr6fcxAnx+sz6xuIfIyVlRTVmzgXr1kCcdraiBo++vxG22rBuLRJ/A0rIkCWM+RZXOM6NqD4+kI+/mhwEqAgFe2PM3Sm869+5/vf/PBKoRavubOFcD/2DWDyl+4Opad6gbf+PYixQwAAAA==",
+  "usage-1":
+    "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADwAwCdASoSAAwAPm0skkWkIqGYBABABsSxAE6V34BWZ2pgwU02tD6AAP7YLyDWisnHg5uR45Aom32nxZXRp7hefOMV3uCAz8e77f72JkalLDQQSnpH+38cz/2+3lWqikTcF5ecVjO+IpIH9R+GcPd9XANQAr5vCJdirwqnpkqc+PGeDnW+DfcCa8jgNZThaOuKg3bXwAA=",
+  "usage-2":
+    "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAAAQBACdASoSAAwAPm0skUWkIqGYBABABsSxAE6QOAFx/0IRFg3eLWoStAD+2C+Fm4Z4NGKhppNQccUHV0I2aMH85VL+iGlT8rmE42x3KLvL9nRaBvb39bX/3fbyrVRSJuC4eiBN74ikgf1ERqMBKce3ToIkQmup1LM4dNeQV5KvkhET8zOIE1ycBJ3yBthrilWe2pqKAAA=",
 } as const;

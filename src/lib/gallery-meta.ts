@@ -71,6 +71,8 @@ export const galleryMeta = {
   },
   "forget-hms": {
     "option-menu": "Forget HMs in the option menu",
+    "usage-1": "Using Forget HMs (1)",
+    "usage-2": "Using Forget HMs (2)",
   },
   "infinite-tms": {
     "option-menu": "Infinite TMs in the option menu",

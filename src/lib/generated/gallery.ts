@@ -223,6 +223,16 @@ export const gallery = {
       id: "option-menu.17587228",
       path: "/assets/gallery/forget-hms/option-menu.webp",
     },
+    {
+      name: "usage-1",
+      id: "usage-1.0d0acaa4",
+      path: "/assets/gallery/forget-hms/usage-1.webp",
+    },
+    {
+      name: "usage-2",
+      id: "usage-2.ae541e39",
+      path: "/assets/gallery/forget-hms/usage-2.webp",
+    },
   ],
   "infinite-tms": [
     {
@@ -522,6 +532,14 @@ export const galleryObj = {
     "option-menu": {
       id: "option-menu.17587228",
       index: 0,
+    },
+    "usage-1": {
+      id: "usage-1.0d0acaa4",
+      index: 1,
+    },
+    "usage-2": {
+      id: "usage-2.ae541e39",
+      index: 2,
     },
   },
   "infinite-tms": {

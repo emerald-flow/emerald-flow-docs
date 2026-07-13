@@ -1,17 +1,15 @@
 import { HeroMd } from "~/components/hero";
-import { FeatureNotes } from "~/components/feature-notes";
 import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
-import { repel } from "~/lib/generated/sprites/repel";
-import { pokeball } from "~/lib/generated/sprites/pokeball";
+import { hm } from "~/lib/generated/sprites/hm";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/forget-hms";
 
 export default function Page() {
   const feature = features["forget-hms"];
-  const img = repel;
-  const alt = "Repel item sprite";
+  const img = hm;
+  const alt = "HM item sprite";
   // prettier-ignore
   return (
 <>
@@ -25,34 +23,15 @@ export default function Page() {
 <HeroMd 
 src={img}
 alt={alt}
+blobBgColor="bg-sky-500"
 >
 {
 `
-**${feature.title}** lets you toggle Repel effects on or
-off without repeatedly using any Repel items.
-
-It behaves just like a standard Repel, but stays active until you
-choose otherwise.
+**${feature.title}** lets you replace HM moves on 
+a Pokémon learning a new move.
 `
 }
 </HeroMd>
-<FeatureNotes
-bgColor="bg-emerald-800"
-borderColor="border-emerald-600"
-childBorderColor="[&>div]:not-first:border-emerald-600"
-textColor="text-emerald-600"
->
-<FeatureNotes.NoteMd src={pokeball} alt="Pokéball item sprite">
-{
-`
-**Encounters** 
-
-Wild Pokémon with a higher level than your
-lead Pokémon can still appear.
-`
-}
-</FeatureNotes.NoteMd>
-</FeatureNotes>
 <Options>
 {
 feature.options.map((option, i)=>
