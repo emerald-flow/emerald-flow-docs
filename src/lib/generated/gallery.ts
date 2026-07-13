@@ -206,6 +206,16 @@ export const gallery = {
       id: "option-menu.f4831bcf",
       path: "/assets/gallery/pocket-heal/option-menu.webp",
     },
+    {
+      name: "start-menu",
+      id: "start-menu.4358b1fe",
+      path: "/assets/gallery/pocket-heal/start-menu.webp",
+    },
+    {
+      name: "usage",
+      id: "usage.76845881",
+      path: "/assets/gallery/pocket-heal/usage.webp",
+    },
   ],
   "forget-hms": [
     {
@@ -498,6 +508,14 @@ export const galleryObj = {
     "option-menu": {
       id: "option-menu.f4831bcf",
       index: 0,
+    },
+    "start-menu": {
+      id: "start-menu.4358b1fe",
+      index: 1,
+    },
+    usage: {
+      id: "usage.76845881",
+      index: 2,
     },
   },
   "forget-hms": {

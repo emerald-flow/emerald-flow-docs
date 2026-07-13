@@ -1,0 +1,4 @@
+/* AUTO-GENERATED FILE - DO NOT EDIT */
+
+export const joy =
+  "data:image/webp;base64,UklGRugAAABXRUJQVlA4TNsAAAAvFAAFEJVAaiRJkjSU9rnPorPfgdHfhbBUGsLiuauaQmaplYpQShGmIVl5n7GEcAgphBDsIaRiEGCaITyEI5Q/w4+QSv8nIKYvv//GRXyFfjuxG5dI8soY4dRNtlErVaRtk1UrrI8d7s1dvMAii0sDPrvV1VVdXa3ZyZf7EbrvdnlS1Ps0fdu3M8X6b1OZtp0p7tmmlJkpcU+iSECSALJiWjj1YSBBRsUidPIekPZhEIsQBtiycBgsnforDMhUeyng7gHqNmL1NX3WHca29azDUkACJMRFIAKI/wEA" as const;

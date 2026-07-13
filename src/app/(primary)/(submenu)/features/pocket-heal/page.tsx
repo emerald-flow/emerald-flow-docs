@@ -3,15 +3,16 @@ import { FeatureNotes } from "~/components/feature-notes";
 import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
-import { repel } from "~/lib/generated/sprites/repel";
+import { joy } from "~/lib/generated/sprites/joy";
 import { pokeball } from "~/lib/generated/sprites/pokeball";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/pocket-heal";
+import { startButton } from "~/lib/generated/sprites/startButton";
 
 export default function Page() {
   const feature = features["pocket-heal"];
-  const img = repel;
-  const alt = "Repel item sprite";
+  const img = joy;
+  const alt = "Nurse joy sprite";
   // prettier-ignore
   return (
 <>
@@ -25,30 +26,27 @@ export default function Page() {
 <HeroMd 
 src={img}
 alt={alt}
+blobBgColor="bg-pink-500"
 >
 {
 `
-**${feature.title}** lets you toggle Repel effects on or
-off without repeatedly using any Repel items.
-
-It behaves just like a standard Repel, but stays active until you
-choose otherwise.
+**${feature.title}** lets you Heal your party like in the 
+Pokémon Center, remotely.
 `
 }
 </HeroMd>
 <FeatureNotes
-bgColor="bg-emerald-800"
-borderColor="border-emerald-600"
-childBorderColor="[&>div]:not-first:border-emerald-600"
-textColor="text-emerald-600"
+bgColor="bg-pink-800"
+borderColor="border-pink-600"
+childBorderColor="[&>div]:not-first:border-pink-600"
+textColor="text-pink-600"
 >
-<FeatureNotes.NoteMd src={pokeball} alt="Pokéball item sprite">
+<FeatureNotes.NoteMd src={startButton} alt="Start button sprite">
 {
 `
-**Encounters** 
+**Start screen option** 
 
-Wild Pokémon with a higher level than your
-lead Pokémon can still appear.
+**HEAL** appears in the Start Menu after obtaining the Running Shoes.
 `
 }
 </FeatureNotes.NoteMd>

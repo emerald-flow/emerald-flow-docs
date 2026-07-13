@@ -27,7 +27,7 @@ export default function Page() {
 <HeroMd 
 src={img}
 alt={alt}
-blobBgColor="bg-zinc-500"
+blobBgColor="bg-sky-500"
 >
 {
 `
@@ -40,10 +40,10 @@ and keep every major battle at its intended difficulty.
 }
 </HeroMd>
 <FeatureNotes
-bgColor="bg-zinc-800"
-borderColor="border-zinc-600"
-childBorderColor="[&>div]:not-first:border-zinc-600"
-textColor="text-zinc-600"
+bgColor="bg-sky-800"
+borderColor="border-sky-600"
+childBorderColor="[&>div]:not-first:border-sky-600"
+textColor="text-sky-600"
 >
 <FeatureNotes.NoteMd src={gymSign} alt="Gym sign sprite">
 {

@@ -66,6 +66,8 @@ export const galleryMeta = {
   },
   "pocket-heal": {
     "option-menu": "Pocket Heal in the option menu",
+    "start-menu": "HEAL in the start menu",
+    usage: "Using Pocket Heal",
   },
   "forget-hms": {
     "option-menu": "Forget HMs in the option menu",
