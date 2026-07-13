@@ -3,15 +3,18 @@ import { FeatureNotes } from "~/components/feature-notes";
 import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
-import { repel } from "~/lib/generated/sprites/repel";
-import { pokeball } from "~/lib/generated/sprites/pokeball";
+import { feebas } from "~/lib/generated/sprites/feebas";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/always-feebas";
+import { surfing } from "~/lib/generated/sprites/surfing";
+import { fishingRod } from "~/lib/generated/sprites/fishingRod";
+import { pages } from "~/lib/menu-items";
+import { signPost } from "~/lib/generated/sprites/signPost";
 
 export default function Page() {
   const feature = features["always-feebas"];
-  const img = repel;
-  const alt = "Repel item sprite";
+  const img = feebas;
+  const alt = "Feebas sprite";
   // prettier-ignore
   return (
 <>
@@ -25,30 +28,46 @@ export default function Page() {
 <HeroMd 
 src={img}
 alt={alt}
+blobBgColor="bg-yellow-500"
 >
 {
 `
-**${feature.title}** lets you toggle Repel effects on or
-off without repeatedly using any Repel items.
+**${feature.title}** lets you encounter Feebas by fishing anywhere on Route 119.
 
-It behaves just like a standard Repel, but stays active until you
-choose otherwise.
+All tiles on the Route 119 river are now capable of triggering a Feebas encounter.
 `
 }
 </HeroMd>
 <FeatureNotes
-bgColor="bg-emerald-800"
-borderColor="border-emerald-600"
-childBorderColor="[&>div]:not-first:border-emerald-600"
-textColor="text-emerald-600"
+bgColor="bg-yellow-800"
+borderColor="border-yellow-600"
+childBorderColor="[&>div]:not-first:border-yellow-600"
+textColor="text-yellow-600"
 >
-<FeatureNotes.NoteMd src={pokeball} alt="Pokéball item sprite">
+<FeatureNotes.NoteMd src={signPost} alt="Sign Post sprite">
 {
 `
-**Encounters** 
+**Route 119** 
 
-Wild Pokémon with a higher level than your
-lead Pokémon can still appear.
+This feature only affects fishing encounters on Route 119.
+`
+}
+</FeatureNotes.NoteMd>
+<FeatureNotes.NoteMd src={surfing} alt="Brendan surfing sprite">
+{
+`
+**Surfing** 
+
+Surfing will not result in a Feebas encounter.
+`
+}
+</FeatureNotes.NoteMd>
+<FeatureNotes.NoteMd src={fishingRod} alt="Super Rod item sprite">
+{
+`
+**${pages.features["instant-fishing"].title}** 
+
+This feature can be used alongside [${pages.features["instant-fishing"].title}](${pages.features["instant-fishing"].url}) for a better fishing experience.
 `
 }
 </FeatureNotes.NoteMd>

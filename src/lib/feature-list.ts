@@ -231,7 +231,7 @@ export const featureList = [
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
-        ["On", "Pokémon do not escape from Pokéball"],
+        ["On", "Every Pokéball catches successfully"],
       ],
       defaultOption: "Off",
     } as const),
@@ -252,7 +252,7 @@ export const featureList = [
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
-        ["On", "Dot and hook games are skipped"],
+        ["On", "Fishing timing mini-game is skipped"],
       ],
       defaultOption: "Off",
     } as const),
@@ -262,7 +262,7 @@ export const featureList = [
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
-        ["On", "Fishing encounters on Route 119 are always Feebas"],
+        ["On", "All fishing encounters on Route 119 are Feebas."],
       ],
       defaultOption: "Off",
     } as const),

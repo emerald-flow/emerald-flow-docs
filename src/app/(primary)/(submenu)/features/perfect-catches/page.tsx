@@ -3,15 +3,15 @@ import { FeatureNotes } from "~/components/feature-notes";
 import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
-import { repel } from "~/lib/generated/sprites/repel";
+import { masterball } from "~/lib/generated/sprites/masterball";
 import { pokeball } from "~/lib/generated/sprites/pokeball";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/perfect-catches";
 
 export default function Page() {
   const feature = features["perfect-catches"];
-  const img = repel;
-  const alt = "Repel item sprite";
+  const img = masterball;
+  const alt = "Master ball item sprite";
   // prettier-ignore
   return (
 <>
@@ -25,30 +25,28 @@ export default function Page() {
 <HeroMd 
 src={img}
 alt={alt}
+blobBgColor="bg-purple-500"
+className="scale-80"
 >
 {
 `
-**${feature.title}** lets you toggle Repel effects on or
-off without repeatedly using any Repel items.
-
-It behaves just like a standard Repel, but stays active until you
-choose otherwise.
+**${feature.title}** guarantees that every Poké Ball 
+successfully catches a wild Pokémon.
 `
 }
 </HeroMd>
 <FeatureNotes
-bgColor="bg-emerald-800"
-borderColor="border-emerald-600"
-childBorderColor="[&>div]:not-first:border-emerald-600"
-textColor="text-emerald-600"
+bgColor="bg-purple-800"
+borderColor="border-purple-600"
+childBorderColor="[&>div]:not-first:border-purple-600"
+textColor="text-purple-600"
 >
 <FeatureNotes.NoteMd src={pokeball} alt="Pokéball item sprite">
 {
 `
-**Encounters** 
+**All Pokéballs** 
 
-Wild Pokémon with a higher level than your
-lead Pokémon can still appear.
+Every Pokéball, Great Ball, Ultra Ball, and other catchable Ball now has a 100% catch rate.
 `
 }
 </FeatureNotes.NoteMd>

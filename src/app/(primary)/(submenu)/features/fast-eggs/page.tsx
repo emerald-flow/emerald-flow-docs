@@ -3,15 +3,18 @@ import { FeatureNotes } from "~/components/feature-notes";
 import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
-import { repel } from "~/lib/generated/sprites/repel";
-import { pokeball } from "~/lib/generated/sprites/pokeball";
+import { cycling } from "~/lib/generated/sprites/cycling";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/fast-eggs";
+import { egg } from "~/lib/generated/sprites/egg";
+import { slugma } from "~/lib/generated/sprites/slugma";
+import { oldman } from "~/lib/generated/sprites/oldman";
+import { pages } from "~/lib/menu-items";
 
 export default function Page() {
   const feature = features["fast-eggs"];
-  const img = repel;
-  const alt = "Repel item sprite";
+  const img = cycling;
+  const alt = "May cycling sprite";
   // prettier-ignore
   return (
 <>
@@ -28,11 +31,7 @@ alt={alt}
 >
 {
 `
-**${feature.title}** lets you toggle Repel effects on or
-off without repeatedly using any Repel items.
-
-It behaves just like a standard Repel, but stays active until you
-choose otherwise.
+**${feature.title}** speeds up both Egg generation and Egg hatching.
 `
 }
 </HeroMd>
@@ -42,13 +41,39 @@ borderColor="border-emerald-600"
 childBorderColor="[&>div]:not-first:border-emerald-600"
 textColor="text-emerald-600"
 >
-<FeatureNotes.NoteMd src={pokeball} alt="Pokéball item sprite">
+<FeatureNotes.NoteMd src={oldman} alt="Old man sprite">
 {
 `
-**Encounters** 
+**Egg Generation** 
 
-Wild Pokémon with a higher level than your
-lead Pokémon can still appear.
+Egg generation is sped up in the Day care.
+`
+}
+</FeatureNotes.NoteMd>
+<FeatureNotes.NoteMd src={cycling} alt={alt}>
+{
+`
+**Egg Hatching** 
+
+Eggs require fewer steps to hatch.
+`
+}
+</FeatureNotes.NoteMd>
+<FeatureNotes.NoteMd src={slugma} alt="Slugma sprite">
+{
+`
+**Flame Body & Magma Armor** 
+
+The selected multiplier stacks with Flame Body and Magma Armor, reducing hatch times even further.
+`
+}
+</FeatureNotes.NoteMd>
+<FeatureNotes.NoteMd src={egg} alt="Egg item sprite">
+{
+`
+**${pages.features["adopt-eggs"].title}** 
+
+This feature can be used alongside [${pages.features["adopt-eggs"].title}](${pages.features["adopt-eggs"].url}) for a better breeding experience.
 `
 }
 </FeatureNotes.NoteMd>

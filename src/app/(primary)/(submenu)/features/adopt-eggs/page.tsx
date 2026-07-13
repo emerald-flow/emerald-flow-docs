@@ -8,6 +8,8 @@ import { placeholder } from "~/lib/generated/placeholders/adopt-eggs";
 import { egg } from "~/lib/generated/sprites/egg";
 import { birch } from "~/lib/generated/sprites/birch";
 import { oak } from "~/lib/generated/sprites/oak";
+import { pages } from "~/lib/menu-items";
+import { cycling } from "~/lib/generated/sprites/cycling";
 
 export default function Page() {
   const feature = features["adopt-eggs"];
@@ -61,6 +63,15 @@ from the Hoenn Pokédex are available for adoption.
 
 After unlocking the National Dex, the adoption program expands to 
 include every eligible Generation I, II, and III Pokémon.
+`
+}
+</FeatureNotes.NoteMd>
+<FeatureNotes.NoteMd src={cycling} alt="May cycling sprite">
+{
+`
+**${pages.features["fast-eggs"].title}** 
+
+This feature can be used alongside [${pages.features["fast-eggs"].title}](${pages.features["fast-eggs"].url}) for a better breeding experience.
 `
 }
 </FeatureNotes.NoteMd>

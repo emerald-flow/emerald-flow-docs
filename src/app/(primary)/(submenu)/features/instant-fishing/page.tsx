@@ -3,15 +3,16 @@ import { FeatureNotes } from "~/components/feature-notes";
 import { Md } from "~/components/markdown";
 import { Options } from "~/components/options";
 import { features } from "~/lib/feature-list";
-import { repel } from "~/lib/generated/sprites/repel";
-import { pokeball } from "~/lib/generated/sprites/pokeball";
+import { fishingRod } from "~/lib/generated/sprites/fishingRod";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/instant-fishing";
+import { feebas } from "~/lib/generated/sprites/feebas";
+import { pages } from "~/lib/menu-items";
 
 export default function Page() {
   const feature = features["instant-fishing"];
-  const img = repel;
-  const alt = "Repel item sprite";
+  const img = fishingRod;
+  const alt = "Super rod item sprite";
   // prettier-ignore
   return (
 <>
@@ -25,30 +26,35 @@ export default function Page() {
 <HeroMd 
 src={img}
 alt={alt}
+blobBgColor="bg-blue-500"
 >
 {
 `
-**${feature.title}** lets you toggle Repel effects on or
-off without repeatedly using any Repel items.
-
-It behaves just like a standard Repel, but stays active until you
-choose otherwise.
+**${feature.title}** automates the fishing timing mini game.
 `
 }
 </HeroMd>
 <FeatureNotes
-bgColor="bg-emerald-800"
-borderColor="border-emerald-600"
-childBorderColor="[&>div]:not-first:border-emerald-600"
-textColor="text-emerald-600"
+bgColor="bg-blue-800"
+borderColor="border-blue-600"
+childBorderColor="[&>div]:not-first:border-blue-600"
+textColor="text-blue-600"
 >
-<FeatureNotes.NoteMd src={pokeball} alt="Pokéball item sprite">
+<FeatureNotes.NoteMd src={fishingRod} alt={alt}>
 {
 `
-**Encounters** 
+**Encounter rates** 
 
-Wild Pokémon with a higher level than your
-lead Pokémon can still appear.
+Fishing encounter rates are unchanged. You can still fail to get a bite.
+`
+}
+</FeatureNotes.NoteMd>
+<FeatureNotes.NoteMd src={feebas} alt="Feebas sprite">
+{
+`
+**${pages.features["always-feebas"].title}** 
+
+This feature can be used alongside [${pages.features["always-feebas"].title}](${pages.features["always-feebas"].url}) for a better fishing experience.
 `
 }
 </FeatureNotes.NoteMd>
