@@ -16,7 +16,7 @@ className="overflow-hidden rounded-lg border-4"
 <Md>
 {
 `
-# Pokémon Emerald Flow
+# Emerald Flow
 `  
 }  
 </Md>   

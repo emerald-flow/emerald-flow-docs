@@ -51,7 +51,7 @@ function AppSidebarContent() {
                   />
                 </div>
                 <div className="flex flex-col gap-1 leading-none">
-                  <span className="font-medium">Pokémon Emerald Flow</span>
+                  <span className="font-medium">Emerald Flow</span>
                   <VersionPill />
                 </div>
               </Link>

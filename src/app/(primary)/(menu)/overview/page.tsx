@@ -23,7 +23,7 @@ blobBgColor="bg-amber-500"
 >
 {
 `
-**Pokémon Emerald Flow** is an enhancement project built
+**Emerald Flow** is an enhancement project built
 for and on top of _Pokémon Emerald_. Its goal is simple:
 respect player choices, reduce friction, modernize when necessary, and
 retain the core experience.

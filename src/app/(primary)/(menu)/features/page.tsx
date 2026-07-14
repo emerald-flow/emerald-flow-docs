@@ -35,7 +35,7 @@ blobBgColor="bg-yellow-500"
 >
 {
 `
-**Pokémon Emerald Flow** includes a variety of optional
+**Emerald Flow** includes a variety of optional
 enhancement features designed to reduce unnecessary friction while
 preserving the original Emerald experience.
 

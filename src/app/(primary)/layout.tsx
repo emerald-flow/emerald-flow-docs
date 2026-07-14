@@ -7,6 +7,7 @@ import {
 } from "~/components/ui/sidebar";
 import { AppSidebar } from "~/components/app-sidebar";
 import { ModeToggle } from "~/components/mode-toggle";
+import { Footer } from "~/components/footer";
 
 export default function Layout({
   children,
@@ -26,6 +27,7 @@ export default function Layout({
           </div>
         </header>
         {children}
+        <Footer />
       </SidebarInset>
     </SidebarProvider>
   );
