@@ -7,18 +7,18 @@ export function SeeAlso(props: { feature: keyof typeof seeAlso }) {
   const count: number = seeAlso[props.feature].length;
   if (count === 0) return;
   return (
-    <div className="flex w-full flex-col gap-4">
-      <H3 className="mt-0">See also</H3>
-      <div className="flex flex-row flex-wrap gap-4 md:gap-8">
+    <div className="min-h-28 w-full">
+      <H3 className="mt-0 mb-4">See also</H3>
+      <ul className="grid grid-cols-2 gap-x-8 gap-y-4">
         {seeAlso[props.feature].map((feature) => {
           const page = pages.features[feature];
           return (
-            <MutedLink key={page.url} link={{ href: page.url }}>
-              {page.title}
-            </MutedLink>
+            <li key={page.url}>
+              <MutedLink link={{ href: page.url }}>{page.title}</MutedLink>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 }

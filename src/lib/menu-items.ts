@@ -41,37 +41,46 @@ const getPages = <T extends Sections>(sections: T) => {
   ) as PageData<T>;
 };
 
-const getPageTitles = <T extends Sections>(sections: T) => {
-  return sections.reduce(
-    (acc, [section, subSections]) => {
-      acc[getUrl(section)] = section;
-      subSections?.forEach((subSection) => {
-        acc[`${getUrl(section)}${getUrl(subSection)}`] = subSection;
-      });
-      return acc;
-    },
-    {} as Record<string, string>,
-  ) as UrlToPage<T>;
-};
-
 export const menuItems = getMenuItems(sections);
+
+export const flatMenuItems = menuItems.reduce((acc, { items, ...rest }) => {
+  acc.push({ ...rest, index: acc.length });
+  items.forEach((item) => acc.push({ ...item, index: acc.length }));
+  return acc;
+}, [] as unknown[]) as unknown as FlatMenuData<typeof sections>;
+
+export const flatMenuUrlToIndex = flatMenuItems.reduce(
+  (acc, { index, url }) => {
+    acc[url] = index;
+    return acc;
+  },
+  {} as Record<string, number>,
+) as unknown as UrlToIndex<typeof flatMenuItems>;
 
 export const pages = getPages(sections);
 
-export const pageTitles = getPageTitles(sections);
-
-export type Urls = (typeof pageTitles)[keyof typeof pageTitles];
-
-export type Section = [string] | [string, string[]];
+type Section = [string] | [string, string[]];
 
 type Sections = Section[];
 
-type MenuItemContent<T extends string = string, U extends string = ""> = {
+type MenuItemContent<T extends string = string, U extends string = string> = {
   title: T;
   url: U extends ""
     ? `${KebabCaseUrl<T>}`
     : `${KebabCaseUrl<U>}${KebabCaseUrl<T>}`;
 };
+
+type FlatMenuItemContentStructure = {
+  title: string;
+  url: string;
+  index: number;
+};
+
+type FlatMenuItemContent<
+  T extends string = string,
+  U extends string = string,
+  V extends number = number,
+> = MenuItemContent<T, U> & { index: V };
 
 type MenuSubItems<
   T extends string[] = string[],
@@ -81,13 +90,39 @@ type MenuSubItems<
   ? MenuSubItems<Rest, S, [...U, Prettify<MenuItemContent<R, S>>]>
   : U;
 
+type FlatMenuSubItems<
+  T extends string[] = string[],
+  S extends string = "",
+  U extends unknown[] = [],
+  V extends unknown[] = [],
+> = T extends [infer R extends string, ...infer Rest extends string[]]
+  ? FlatMenuSubItems<
+      Rest,
+      S,
+      [...U, Prettify<FlatMenuItemContent<R, S, [...U, ...V, 0]["length"]>>],
+      V
+    >
+  : U;
+
 type MenuItem<T extends Section> = T extends [
   infer R extends string,
   infer S extends string[],
 ]
-  ? Prettify<MenuItemContent<R> & { items: MenuSubItems<S, R> }>
+  ? Prettify<MenuItemContent<R, ""> & { items: MenuSubItems<S, R> }>
   : T extends [infer R extends string]
-    ? Prettify<MenuItemContent<R> & { items: [] }>
+    ? Prettify<MenuItemContent<R, ""> & { items: [] }>
+    : never;
+
+type FlatMenuItem<T extends Section, U extends unknown[] = []> = T extends [
+  infer R extends string,
+  infer S extends string[],
+]
+  ? [
+      Prettify<FlatMenuItemContent<R, "", U["length"]>>,
+      ...Prettify<FlatMenuSubItems<S, R, [], U>>,
+    ]
+  : T extends [infer R extends string]
+    ? [Prettify<FlatMenuItemContent<R, "", U["length"]>>]
     : never;
 
 type MenuData<T extends Sections, U extends unknown[] = []> = T extends [
@@ -95,6 +130,13 @@ type MenuData<T extends Sections, U extends unknown[] = []> = T extends [
   ...infer S extends Sections,
 ]
   ? MenuData<S, [...U, MenuItem<R>]>
+  : U;
+
+type FlatMenuData<T extends Sections, U extends unknown[] = []> = T extends [
+  infer R extends Section,
+  ...infer S extends Sections,
+]
+  ? FlatMenuData<S, [...U, ...FlatMenuItem<R, U>]>
   : U;
 
 type Page = { title: string; url: string };
@@ -141,38 +183,12 @@ type PageData<
     : U
 >;
 
-type UrlToPageSubTitles<
-  T extends string[] = string[],
-  S extends string = "",
-  U extends object = {},
-> = T extends [infer R extends string, ...infer Rest extends string[]]
-  ? UrlToPageSubTitles<
-      Rest,
-      S,
-      U & {
-        [key in `${KebabCaseUrl<S>}${KebabCaseUrl<R>}`]: R;
-      }
-    >
-  : U;
-
-type UrlToPageTitle<T extends Section> = T extends [
-  infer R extends string,
-  infer S extends string[],
+type UrlToIndex<
+  T extends FlatMenuItemContentStructure[],
+  U extends Record<string, number> = {},
+> = T extends [
+  infer R extends FlatMenuItemContentStructure,
+  ...infer Rest extends FlatMenuItemContentStructure[],
 ]
-  ? {
-      [key in `${KebabCaseUrl<R>}`]: R;
-    } & UrlToPageSubTitles<S, R>
-  : T extends [infer R extends string]
-    ? {
-        [key in `${KebabCaseUrl<R>}`]: R;
-      }
-    : never;
-
-type UrlToPage<
-  T extends Sections,
-  U extends Record<string, Page> = {},
-> = Prettify<
-  T extends [infer R extends Section, ...infer S extends Sections]
-    ? UrlToPage<S, U & UrlToPageTitle<R>>
-    : U
->;
+  ? UrlToIndex<Rest, Prettify<U & { [k in R["url"]]: R["index"] }>>
+  : U;
