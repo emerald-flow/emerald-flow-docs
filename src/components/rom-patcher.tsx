@@ -22,6 +22,7 @@ import { Progress } from "./ui/progress";
 import { Field, FieldLabel } from "./ui/field";
 
 import throttle from "lodash.throttle";
+import { RELEASE_URL } from "~/lib/project-meta";
 
 type Progress = { received: number; total: number } | null;
 
@@ -162,12 +163,9 @@ const downloadPatchMutationOptions = mutationOptions({
   mutationFn: async (
     setProgress: React.Dispatch<React.SetStateAction<number | null>>,
   ) => {
-    const response = await fetch(
-      "https://cdn.jsdelivr.net/gh/officer-kd6-3dot7/X/pokeemerald.bps",
-      {
-        cache: "no-store",
-      },
-    );
+    const response = await fetch(RELEASE_URL, {
+      cache: "no-store",
+    });
     if (!response.ok) throw new Error("Failed to download patch");
     if (!response.body) throw new Error("Streaming unsupported");
     const reader = response.body.getReader();
