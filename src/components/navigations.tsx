@@ -15,7 +15,7 @@ export function Navigations() {
   const next = flatMenuItems[index + 1];
   return (
     <div className="sticky bottom-0 flex h-20 w-full items-center justify-stretch p-0">
-      {prev && (
+      {prev ? (
         <NavButton
           href={prev.url}
           className="absolute left-[-15.5] origin-left scale-85 md:left-0"
@@ -25,6 +25,17 @@ export function Navigations() {
         >
           <span className="text-xs text-gray-400">Previous</span>
           {prev.title}
+        </NavButton>
+      ) : (
+        <NavButton
+          href="/"
+          className="absolute left-[-15.5] origin-left scale-85 md:left-0"
+          aClassName="py-6!"
+          bClassName="items-end"
+          leftIcon={<ChevronLeft />}
+        >
+          <span className="text-xs text-gray-400">Previous</span>
+          Home
         </NavButton>
       )}
       {next && (
