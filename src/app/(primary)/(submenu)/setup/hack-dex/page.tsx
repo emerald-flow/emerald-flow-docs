@@ -1,6 +1,7 @@
 import { ExternalLink } from "~/components/external-link";
 import { Md } from "~/components/markdown";
 import { pages } from "~/lib/menu-items";
+import { TITLE } from "~/lib/project-meta";
 
 export default function Page() {
   // prettier-ignore
@@ -15,7 +16,7 @@ Hack Dex is an online web-based ROM hack patch hosting and patching
 platform. Here's a step-by-step process to patch your game with
 Hack Dex.
 
-- **Step 1**: Head to Emerald Flow's Hack Dex page by using the link mentioned below.
+- **Step 1**: Head to ${TITLE}'s Hack Dex page by using the link mentioned below.
 `
 }
 </Md>

@@ -4,6 +4,7 @@ import { Md } from "~/components/markdown";
 
 import { pages } from "~/lib/menu-items";
 import { setup } from "~/lib/generated/sprites/setup";
+import { TITLE } from "~/lib/project-meta";
 
 export default function Page() {
   const img = setup;
@@ -24,19 +25,19 @@ alt={alt}
 >
 {
 `
-**Emerald Flow** is designed to be reverse
+**${TITLE}** is designed to be reverse
 compatible with the original _Pokémon Emerald_.
 
 However, save data is valuable, and mistakes happen. Make regular
 backups of your save files and always create one before moving an
-existing game to Emerald Flow.
+existing game to ${TITLE}.
 `
 }
 </HeroMd>
 <AlertMd variant="important">
 {
 `
-- Since Emerald Flow is distributed as a patch, you'll need a
+- Since ${TITLE} is distributed as a patch, you'll need a
 **LEGALLY OBTAINED CLEAN COPY OF AN ORIGINAL POKÉMON EMERALD ROM**.
 
 - This website does not distribute any ROM files. 
@@ -54,7 +55,7 @@ Patches are made available in **.bps** formats.
 <AlertMd>
 {
 `
-When launching Emerald Flow for the first time, all game options
+When launching ${TITLE} for the first time, all game options
 will be **RESET** to their **DEFAULT VALUES**.
 This reset only happens **ONCE**, at first launch. If you&apos;re curious about
 the default settings, head over to the Features section for a complete

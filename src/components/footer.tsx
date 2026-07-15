@@ -1,5 +1,6 @@
 import { menuItems } from "~/lib/menu-items";
 import { MutedLink } from "./muted-link";
+import { TITLE } from "~/lib/project-meta";
 
 export function Footer() {
   return (
@@ -9,11 +10,11 @@ export function Footer() {
       </div>
       <div className="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-start md:justify-between">
         <div className="text-muted-foreground max-w-md space-y-3 text-sm">
-          <p>© 2026 Emerald Flow</p>
+          <p>© 2026 {TITLE}</p>
           <p>
-            Emerald Flow is an independent fan project and is not affiliated
-            with, endorsed by, or sponsored by Nintendo, GAME FREAK, or The
-            Pokémon Company.
+            {TITLE} is an independent fan project and is not affiliated with,
+            endorsed by, or sponsored by Nintendo, GAME FREAK, or The Pokémon
+            Company.
           </p>
           <p>
             This project distributes BPS patches only and does not host or

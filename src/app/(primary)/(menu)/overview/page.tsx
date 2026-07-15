@@ -2,6 +2,7 @@ import { HeroMd } from "~/components/hero";
 import { Md } from "~/components/markdown";
 import { pages } from "~/lib/menu-items";
 import { birch } from "~/lib/generated/sprites/birch";
+import { TITLE } from "~/lib/project-meta";
 
 export default function Page() {
   const img = birch;
@@ -23,7 +24,7 @@ blobBgColor="bg-amber-500"
 >
 {
 `
-**Emerald Flow** is an enhancement project built
+**${TITLE}** is an enhancement project built
 for and on top of _Pokémon Emerald_. Its goal is simple:
 respect player choices, reduce friction, modernize when necessary, and
 retain the core experience.

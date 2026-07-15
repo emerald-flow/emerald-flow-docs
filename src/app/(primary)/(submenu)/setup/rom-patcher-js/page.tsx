@@ -2,6 +2,7 @@ import { ExternalLink } from "~/components/external-link";
 import { Md } from "~/components/markdown";
 
 import { pages } from "~/lib/menu-items";
+import { TITLE } from "~/lib/project-meta";
 
 export default function Page() {
   // prettier-ignore
@@ -13,12 +14,12 @@ export default function Page() {
 ## ${pages.setup["rom-patcher-js"].title}
 Rom Patcher JS is an online web-based ROM patcher. 
 Here's a step-by-step process to patch your game with Rom Patcher JS.
-- **Step 1**: Head to Emerald Flow's Github repository by using the link mentioned below.
+- **Step 1**: Head to ${TITLE}'s Github repository by using the link mentioned below.
 `
 }
 </Md>
 <ExternalLink className="mx-auto" href="https://www.github.com/officer-kd6-3dot7/pokemon-emerald-flow">
-Emerald Flow
+{TITLE}
 </ExternalLink>
 <Md>
 { 

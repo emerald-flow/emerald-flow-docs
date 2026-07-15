@@ -18,6 +18,7 @@ import Link from "next/link";
 import { MenuButton } from "./menu-button";
 import { logo } from "~/lib/generated/sprites/logo";
 import { BestPill, VersionPill } from "./pills";
+import { TITLE } from "~/lib/project-meta";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -51,7 +52,7 @@ function AppSidebarContent() {
                   />
                 </div>
                 <div className="flex flex-col gap-1 leading-none">
-                  <span className="font-medium">Emerald Flow</span>
+                  <span className="font-medium">{TITLE}</span>
                   <VersionPill />
                 </div>
               </Link>

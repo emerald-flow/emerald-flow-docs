@@ -15,6 +15,7 @@ import { AlertMd } from "~/components/alerts";
 import { Md } from "~/components/markdown";
 import { HeroMd } from "~/components/hero";
 import { bag } from "~/lib/generated/sprites/bag";
+import { TITLE } from "~/lib/project-meta";
 
 export default function Page() {
   const img = bag;
@@ -35,7 +36,7 @@ blobBgColor="bg-yellow-500"
 >
 {
 `
-**Emerald Flow** includes a variety of optional
+**${TITLE}** includes a variety of optional
 enhancement features designed to reduce unnecessary friction while
 preserving the original Emerald experience.
 
@@ -49,7 +50,7 @@ similar to that of the original _Pokémon Emerald_.
 {
 `
 Default settings are applied automatically the first time Pokémon
-Emerald Flow is launched. This initialization only happens once.
+${TITLE} is launched. This initialization only happens once.
 `
 }
 </AlertMd>
