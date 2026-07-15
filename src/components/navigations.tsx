@@ -18,7 +18,7 @@ export function Navigations() {
       {prev && (
         <NavButton
           href={prev.url}
-          className="absolute left-[-15.5] origin-left scale-80 md:left-0"
+          className="absolute left-[-15.5] origin-left scale-90 md:left-0"
           leftIcon={<ChevronLeft />}
         >
           {prev.title}
@@ -27,7 +27,7 @@ export function Navigations() {
       {next && (
         <NavButton
           href={next.url}
-          className="absolute right-[-15.5] origin-right scale-80 md:right-0"
+          className="absolute right-[-15.5] origin-right scale-90 md:right-0"
           bClassName="text-transparent bg-gradient-to-r from-emerald-400 to-lime-400"
           rightIcon={<ChevronRight className="text-lime-500" />}
         >

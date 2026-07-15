@@ -24,15 +24,31 @@ blobBgColor="bg-amber-500"
 >
 {
 `
-**${TITLE}** is an enhancement project built
+**${TITLE}** is an open-source enhancement project built
 for and on top of _Pokémon Emerald_. Its goal is simple:
-respect player choices, reduce friction, modernize when necessary, and
-retain the core experience.
+respect player choice, reduce friction, enhance where it
+makes sense, and preserve the core experience and story.
+
+Every feature is optional. Enable only the improvements you
+want and keep everything else as close to vanilla Emerald
+as you prefer.
+`
+}
+</HeroMd>
+<Md>
+{
+`
+Emerald Flow, along with its documentation, is developed as
+an open-source, ad-free project. It distributes BPS patches
+only and will always remain freely available to the community.
+
+No ROMs ever leave your browser. No ROMs are uploaded to a
+server. Patching is performed entirely on the client side.
 
 Just classic Emerald, but you set the flow of the game.
 `
 }
-</HeroMd>
+</Md>
 </>
 );
 }

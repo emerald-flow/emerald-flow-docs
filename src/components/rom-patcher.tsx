@@ -22,7 +22,7 @@ import { Progress } from "./ui/progress";
 import { Field, FieldLabel } from "./ui/field";
 
 import throttle from "lodash.throttle";
-import { RELEASE_URL } from "~/lib/project-meta";
+import { RELEASE, RELEASE_URL } from "~/lib/project-meta";
 
 type Progress = { received: number; total: number } | null;
 
@@ -178,7 +178,7 @@ const downloadPatchMutationOptions = mutationOptions({
       received += value.byteLength;
       setProgress(received);
     }
-    const patch = new File(chunks, "pokeemerald.bps", {
+    const patch = new File(chunks, RELEASE, {
       type: "application/octet-stream",
     });
     return patch;
