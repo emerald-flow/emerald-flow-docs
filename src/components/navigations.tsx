@@ -19,7 +19,8 @@ export function Navigations() {
         <NavButton
           href={prev.url}
           className="absolute left-[-15.5] origin-left scale-85 md:left-0"
-          bClassName="items-end py-4"
+          aClassName="py-6!"
+          bClassName="items-end"
           leftIcon={<ChevronLeft />}
         >
           <span className="text-xs text-gray-400">Previous</span>
@@ -30,7 +31,8 @@ export function Navigations() {
         <NavButton
           href={next.url}
           className="absolute right-[-15.5] origin-right scale-85 md:right-0"
-          bClassName="text-transparent bg-gradient-to-r from-emerald-400 to-lime-400 items-start"
+          aClassName="py-6!"
+          bClassName="text-transparent bg-linear-to-r from-emerald-400 to-lime-400 items-start bg-clip-text"
           rightIcon={<ChevronRight className="text-lime-500" />}
         >
           <span className="text-xs text-gray-400">Next</span>
@@ -41,15 +43,17 @@ export function Navigations() {
   );
 }
 
-function NavButton({
+export function NavButton({
   href,
   children,
   className,
+  aClassName,
   bClassName,
   leftIcon,
   rightIcon,
 }: PropsWithChildren<
   {
+    aClassName?: string;
     bClassName?: string;
     className?: string;
     href: string;
@@ -59,20 +63,16 @@ function NavButton({
   )
 >) {
   return (
-    <Link href={href} className={cn(className)}>
+    <Link href={href} className={cn("rounded-md", className)} role="button">
       <Button
         variant="outline"
-        className="dark:bg-sidebar hover:dark:bg-sidebar m-0! py-6! md:scale-100"
+        className={cn(
+          "dark:bg-sidebar dark:hover:bg-sidebar-accent scale-100",
+          aClassName,
+        )}
       >
         {leftIcon}
-        <span
-          className={cn(
-            "flex flex-col bg-linear-to-r bg-clip-text",
-            bClassName,
-          )}
-        >
-          {children}
-        </span>
+        <span className={cn("flex flex-col", bClassName)}>{children}</span>
         {rightIcon}
       </Button>
     </Link>
