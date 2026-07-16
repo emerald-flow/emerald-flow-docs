@@ -27,7 +27,7 @@ Hack Dex.
 `
 }
 </Md>
-<ExternalLink className="mx-auto" href="https://www.hackdex.app/hack/pokemon-emerald-flow">
+<ExternalLink className="mx-auto" href="https://www.hackdex.app/hack/emerald-flow">
 Hack Dex
 </ExternalLink>
 <Md>
