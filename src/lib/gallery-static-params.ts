@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/consistent-indexed-object-style */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import type { Metadata } from "next";
 import { gallery } from "./generated/gallery";
 import { entries } from "./utils";
@@ -19,12 +21,27 @@ export async function generateStaticParams() {
 const kebabToString = (str: string) =>
   str.charAt(0).toUpperCase() + str.slice(1).replaceAll("-", " ");
 
-export async function generateMetadata<T extends keyof typeof gallery>(props: {
-  params: { feature: T; id: keyof (typeof galleryMeta)[T] };
-}): Promise<Metadata> {
-  const { feature, id } = await props.params;
+type Props = {
+  params: Promise<{ feature: string; id: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+function getMetadata<T extends keyof typeof gallery>({
+  feature,
+  id,
+}: {
+  feature: T;
+  id: keyof (typeof galleryMeta)[T];
+}): Metadata {
   return {
     title: `${kebabToString(id as string)} | ${features[feature].title} | Gallery`,
     description: galleryMeta[feature][id] as string,
   };
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // read route params
+  const { id, feature } = await params;
+  //@ts-ignore
+  return getMetadata({ id, feature });
 }

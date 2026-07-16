@@ -119,14 +119,13 @@ function FeaturesTable() {
       <TableBody>
         {featureList.map(([title, _, option], i) => (
           <TableRow key={`feature_${i}`}>
-            <TableCell className="border-r">
+            <TableCell className="text-muted-foreground overflow-hidden border-r text-ellipsis whitespace-nowrap">
               <MutedLink
                 link={{
                   href: `${pages.features[getKebabCase(title)].url}`,
                 }}
                 muted={{
-                  className:
-                    "overflow-hidden font-medium text-ellipsis whitespace-nowrap",
+                  className: "font-medium",
                 }}
               >
                 {title}

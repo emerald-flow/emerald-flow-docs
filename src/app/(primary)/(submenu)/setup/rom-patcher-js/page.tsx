@@ -24,7 +24,7 @@ Here's a step-by-step process to patch your game with Rom Patcher JS.
 `
 }
 </Md>
-<ExternalLink className="mx-auto" href="https://www.github.com/officer-kd6-3dot7/pokemon-emerald-flow">
+<ExternalLink className="mx-auto" href="https://github.com/emerald-flow/emerald-flow-release/releases/tag/v1.0.0-beta.0">
 {TITLE}
 </ExternalLink>
 <Md>
