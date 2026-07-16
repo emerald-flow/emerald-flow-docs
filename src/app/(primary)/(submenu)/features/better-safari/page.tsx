@@ -17,6 +17,9 @@ const feature = features["better-safari"];
 export const metadata: Metadata = {
   title: feature.title,
   description: `${feature.title} ${feature.description}`,
+  alternates: {
+    canonical: pages.features["better-safari"].url,
+  },
 };
 
 export default function Page() {

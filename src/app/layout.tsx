@@ -18,16 +18,26 @@ export const metadata: Metadata = {
     default: "Emerald Flow",
     template: "%s | Emerald Flow",
   },
+  alternates: {
+    canonical: "/",
+  },
   description:
     "An open-source, opt-in enhancement project that modernizes Pokémon Emerald while preserving its original experience.",
   applicationName: "Emerald Flow",
   openGraph: {
     type: "website",
+    url: "/",
     siteName: "Emerald Flow",
+    title: "Emerald Flow",
+    description:
+      "An open-source, opt-in enhancement project that modernizes Pokémon Emerald while preserving its original experience.",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
+    title: "Emerald Flow",
+    description:
+      "An open-source, opt-in enhancement project that modernizes Pokémon Emerald while preserving its original experience.",
   },
 };
 

@@ -18,6 +18,9 @@ const feature = features["always-feebas"];
 export const metadata: Metadata = {
   title: feature.title,
   description: `${feature.title} ${feature.description}`,
+  alternates: {
+    canonical: pages.features["always-feebas"].url,
+  },
 };
 
 export default function Page() {

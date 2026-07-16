@@ -11,12 +11,16 @@ import { physicalSpecial } from "~/lib/generated/sprites/physicalSpecial";
 import { ppUp } from "~/lib/generated/sprites/ppUp";
 import { SeeAlso } from "~/components/see-also";
 import type { Metadata } from "next";
+import { pages } from "~/lib/menu-items";
 
 const feature = features["better-summary"];
 
 export const metadata: Metadata = {
   title: feature.title,
   description: `${feature.title} ${feature.description}`,
+  alternates: {
+    canonical: pages.features["better-summary"].url,
+  },
 };
 
 export default function Page() {

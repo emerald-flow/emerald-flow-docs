@@ -18,6 +18,9 @@ const feature = features["adopt-eggs"];
 export const metadata: Metadata = {
   title: feature.title,
   description: `${feature.title} ${feature.description}`,
+  alternates: {
+    canonical: pages.features["adopt-eggs"].url,
+  },
 };
 
 export default function Page() {

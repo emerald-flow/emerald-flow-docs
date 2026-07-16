@@ -18,6 +18,9 @@ const feature = features["no-fleeing-mon"];
 export const metadata: Metadata = {
   title: feature.title,
   description: `${feature.title} ${feature.description}`,
+  alternates: {
+    canonical: pages.features["no-fleeing-mon"].url,
+  },
 };
 
 export default function Page() {

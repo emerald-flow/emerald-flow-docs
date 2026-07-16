@@ -7,6 +7,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Overview",
+  alternates: {
+    canonical: pages.overview.url,
+  },
 };
 
 export default function Page() {

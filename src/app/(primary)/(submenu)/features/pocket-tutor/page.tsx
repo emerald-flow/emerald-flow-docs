@@ -11,12 +11,16 @@ import { egg } from "~/lib/generated/sprites/egg";
 import { startButton } from "~/lib/generated/sprites/startButton";
 import { SeeAlso } from "~/components/see-also";
 import type { Metadata } from "next";
+import { pages } from "~/lib/menu-items";
 
 const feature = features["pocket-tutor"];
 
 export const metadata: Metadata = {
   title: feature.title,
   description: `${feature.title} ${feature.description}`,
+  alternates: {
+    canonical: pages.features["pocket-tutor"].url,
+  },
 };
 
 export default function Page() {

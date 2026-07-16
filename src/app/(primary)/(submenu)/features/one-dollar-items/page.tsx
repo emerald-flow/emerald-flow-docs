@@ -16,6 +16,9 @@ const feature = features["one-dollar-items"];
 export const metadata: Metadata = {
   title: feature.title,
   description: `${feature.title} ${feature.description}`,
+  alternates: {
+    canonical: pages.features["one-dollar-items"].url,
+  },
 };
 
 export default function Page() {

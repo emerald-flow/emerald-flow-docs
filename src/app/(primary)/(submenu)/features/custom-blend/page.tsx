@@ -16,6 +16,9 @@ const feature = features["custom-blend"];
 export const metadata: Metadata = {
   title: feature.title,
   description: `${feature.title} ${feature.description}`,
+  alternates: {
+    canonical: pages.features["custom-blend"].url,
+  },
 };
 
 export default function Page() {

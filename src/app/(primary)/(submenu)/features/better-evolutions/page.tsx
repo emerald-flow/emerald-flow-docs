@@ -10,12 +10,16 @@ import { placeholder } from "~/lib/generated/placeholders/better-evolutions";
 import { sootheBell } from "~/lib/generated/sprites/sootheBell";
 import { SeeAlso } from "~/components/see-also";
 import type { Metadata } from "next";
+import { pages } from "~/lib/menu-items";
 
 const feature = features["better-evolutions"];
 
 export const metadata: Metadata = {
   title: feature.title,
   description: `${feature.title} ${feature.description}`,
+  alternates: {
+    canonical: pages.features["better-evolutions"].url,
+  },
 };
 
 export default function Page() {

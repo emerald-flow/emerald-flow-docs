@@ -11,12 +11,16 @@ import { pokedex } from "~/lib/generated/sprites/pokedex";
 import { cn } from "~/lib/utils";
 import { SeeAlso } from "~/components/see-also";
 import type { Metadata } from "next";
+import { pages } from "~/lib/menu-items";
 
 const feature = features["physical-special-split"];
 
 export const metadata: Metadata = {
   title: feature.title,
   description: `${feature.title} ${feature.description}`,
+  alternates: {
+    canonical: pages.features["physical-special-split"].url,
+  },
 };
 
 export default function Page() {

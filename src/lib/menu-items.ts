@@ -63,7 +63,7 @@ type Section = [string] | [string, string[]];
 
 type Sections = Section[];
 
-type MenuItemContent<T extends string = string, U extends string = string> = {
+type MenuItemContent<T extends string = string, U extends string = ""> = {
   title: T;
   url: U extends ""
     ? `${KebabCaseUrl<T>}`

@@ -18,6 +18,9 @@ const feature = features["fast-eggs"];
 export const metadata: Metadata = {
   title: feature.title,
   description: `${feature.title} ${feature.description}`,
+  alternates: {
+    canonical: pages.features["fast-eggs"].url,
+  },
 };
 
 export default function Page() {

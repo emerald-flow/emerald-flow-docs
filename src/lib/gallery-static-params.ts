@@ -36,6 +36,9 @@ function getMetadata<T extends keyof typeof gallery>({
   return {
     title: `${kebabToString(id as string)} | ${features[feature].title} | Gallery`,
     description: galleryMeta[feature][id] as string,
+    alternates: {
+      canonical: `/gallery/${feature}/${id as string}`,
+    },
   };
 }
 

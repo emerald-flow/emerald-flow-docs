@@ -7,12 +7,16 @@ import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/forget-hms";
 import { SeeAlso } from "~/components/see-also";
 import type { Metadata } from "next";
+import { pages } from "~/lib/menu-items";
 
 const feature = features["forget-hms"];
 
 export const metadata: Metadata = {
   title: feature.title,
   description: `${feature.title} ${feature.description}`,
+  alternates: {
+    canonical: pages.features["forget-hms"].url,
+  },
 };
 
 export default function Page() {

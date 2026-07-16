@@ -10,12 +10,16 @@ import { noEv } from "~/lib/generated/sprites/noEv";
 import { pomeg } from "~/lib/generated/sprites/pomeg";
 import { SeeAlso } from "~/components/see-also";
 import type { Metadata } from "next";
+import { pages } from "~/lib/menu-items";
 
 const feature = features["ev-training"];
 
 export const metadata: Metadata = {
   title: feature.title,
   description: `${feature.title} ${feature.description}`,
+  alternates: {
+    canonical: pages.features["ev-training"].url,
+  },
 };
 
 export default function Page() {

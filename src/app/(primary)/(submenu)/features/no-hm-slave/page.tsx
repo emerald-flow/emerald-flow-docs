@@ -13,12 +13,16 @@ import { frontierSymbol } from "~/lib/generated/sprites/frontierSymbol";
 import { startButton } from "~/lib/generated/sprites/startButton";
 import { SeeAlso } from "~/components/see-also";
 import type { Metadata } from "next";
+import { pages } from "~/lib/menu-items";
 
 const feature = features["no-hm-slave"];
 
 export const metadata: Metadata = {
   title: feature.title,
   description: `${feature.title} ${feature.description}`,
+  alternates: {
+    canonical: pages.features["no-hm-slave"].url,
+  },
 };
 
 export default function Page() {

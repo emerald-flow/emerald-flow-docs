@@ -9,12 +9,16 @@ import { placeholder } from "~/lib/generated/placeholders/music";
 import { signPost } from "~/lib/generated/sprites/signPost";
 import { SeeAlso } from "~/components/see-also";
 import type { Metadata } from "next";
+import { pages } from "~/lib/menu-items";
 
 const feature = features.music;
 
 export const metadata: Metadata = {
   title: feature.title,
   description: `${feature.title} ${feature.description}`,
+  alternates: {
+    canonical: pages.features.music.url,
+  },
 };
 
 export default function Page() {

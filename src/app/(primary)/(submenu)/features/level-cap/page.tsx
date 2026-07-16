@@ -12,12 +12,16 @@ import { rareCandy } from "~/lib/generated/sprites/rareCandy";
 import { gymSign } from "~/lib/generated/sprites/gymSign";
 import { SeeAlso } from "~/components/see-also";
 import type { Metadata } from "next";
+import { pages } from "~/lib/menu-items";
 
 const feature = features["level-cap"];
 
 export const metadata: Metadata = {
   title: feature.title,
   description: `${feature.title} ${feature.description}`,
+  alternates: {
+    canonical: pages.features["level-cap"].url,
+  },
 };
 
 export default function Page() {

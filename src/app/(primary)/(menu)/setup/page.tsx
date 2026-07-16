@@ -10,6 +10,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Setup",
   description: "Learn how to setup Emerald Flow.",
+  alternates: {
+    canonical: pages.setup.url,
+  },
 };
 
 export default function Page() {

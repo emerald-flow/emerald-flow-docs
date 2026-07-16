@@ -21,6 +21,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Features",
   description: `List of opt-in enhancement features for ${TITLE}.`,
+  alternates: {
+    canonical: pages.features.url,
+  },
 };
 
 export default function Page() {

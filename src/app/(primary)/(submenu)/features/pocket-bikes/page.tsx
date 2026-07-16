@@ -10,12 +10,16 @@ import { rydel } from "~/lib/generated/sprites/rydel";
 import { startButton } from "~/lib/generated/sprites/startButton";
 import { SeeAlso } from "~/components/see-also";
 import type { Metadata } from "next";
+import { pages } from "~/lib/menu-items";
 
 const feature = features["pocket-bikes"];
 
 export const metadata: Metadata = {
   title: feature.title,
   description: `${feature.title} ${feature.description}`,
+  alternates: {
+    canonical: pages.features["pocket-bikes"].url,
+  },
 };
 
 export default function Page() {
