@@ -6,6 +6,9 @@ import {
 import { AppSidebar } from "~/components/app-sidebar";
 import { ModeToggle } from "~/components/mode-toggle";
 import { Footer } from "~/components/footer";
+import { Button } from "~/components/ui/button";
+import { Github } from "~/components/github";
+import Link from "next/link";
 
 export default function Layout({
   children,
@@ -20,7 +23,12 @@ export default function Layout({
             className="dark:bg-sidebar/95 sidebar-toggle"
             popoverTarget="no-js-sidebar"
           />
-          <div className="ml-auto">
+          <div className="ml-auto flex gap-2">
+            <Link href="https://github.com/emerald-flow" target="_blank">
+              <Button variant="outline" className="dark:bg-sidebar/95">
+                <Github />
+              </Button>
+            </Link>
             <ModeToggle />
           </div>
         </header>
