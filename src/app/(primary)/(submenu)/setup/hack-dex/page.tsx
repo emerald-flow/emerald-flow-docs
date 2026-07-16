@@ -4,6 +4,7 @@ import { pages } from "~/lib/menu-items";
 import { TITLE } from "~/lib/project-meta";
 
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Hack-dex",
@@ -19,6 +20,13 @@ export default function Page() {
 `
 ## ${pages.setup["hack-dex"].title}
 
+`
+}
+</Md>
+<Link href="https://www.hackdex.app/hack/emerald-flow" className="mx-auto" target="_blank"><img width="190" height="60" src="https://www.hackdex.app/img/badge-dark.png" alt="Download now at hackdex.app" /></Link>
+<Md>
+{
+`
 Hack Dex is an online web-based ROM hack patch hosting and patching
 platform. Here's a step-by-step process to patch your game with
 Hack Dex.
