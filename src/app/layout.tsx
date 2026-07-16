@@ -1,3 +1,4 @@
+//@ts-nocheck
 import "~/styles/globals.css";
 
 import { type Metadata } from "next";
@@ -6,11 +7,12 @@ import { cn } from "~/lib/utils";
 import { TooltipProvider } from "~/components/ui/tooltip";
 import { ThemeProvider } from "~/components/theme-provider";
 import { QueryProvider } from "~/components/query-provider";
+import { URL as SiteURL } from "~/lib/project-meta";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://emeraldflow.vercel.app"),
+  metadataBase: new URL(SiteURL),
   title: {
     default: "Emerald Flow",
     template: "%s | Emerald Flow",

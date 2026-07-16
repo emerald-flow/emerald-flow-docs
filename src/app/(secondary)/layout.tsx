@@ -1,5 +1,3 @@
-import "~/styles/globals.css";
-
 import { PageWrapper } from "~/components/page-wrapper";
 
 export default function Layout(props: Readonly<{ children: React.ReactNode }>) {
