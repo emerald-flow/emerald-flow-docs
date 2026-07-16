@@ -11,9 +11,16 @@ import { fishingRod } from "~/lib/generated/sprites/fishingRod";
 import { pages } from "~/lib/menu-items";
 import { signPost } from "~/lib/generated/sprites/signPost";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["always-feebas"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["always-feebas"];
   const img = feebas;
   const alt = "Feebas sprite";
   // prettier-ignore
@@ -33,7 +40,7 @@ blobBgColor="bg-yellow-500"
 >
 {
 `
-**${feature.title}** lets you encounter Feebas by fishing anywhere on Route 119.
+**${feature.title}** ${feature.description}
 
 All tiles on the Route 119 river are now capable of triggering a Feebas encounter.
 `

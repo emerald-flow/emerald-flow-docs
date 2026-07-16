@@ -9,9 +9,16 @@ import { placeholder } from "~/lib/generated/placeholders/custom-blend";
 import { blender } from "~/lib/generated/sprites/blender";
 import { pages } from "~/lib/menu-items";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["custom-blend"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["custom-blend"];
   const img = oran;
   const alt = "Oran berry item sprite";
   // prettier-ignore
@@ -32,7 +39,7 @@ className="scale-80"
 >
 {
 `
-**${feature.title}** lets you choose berries on behalf of the NPCs.
+**${feature.title}** ${feature.description}
 
 This allows you to craft Pokéblocks of your choice.
 `

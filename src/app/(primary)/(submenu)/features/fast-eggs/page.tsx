@@ -11,9 +11,16 @@ import { slugma } from "~/lib/generated/sprites/slugma";
 import { oldman } from "~/lib/generated/sprites/oldman";
 import { pages } from "~/lib/menu-items";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["fast-eggs"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["fast-eggs"];
   const img = cycling;
   const alt = "May cycling sprite";
   // prettier-ignore
@@ -32,7 +39,7 @@ alt={alt}
 >
 {
 `
-**${feature.title}** speeds up both Egg generation and Egg hatching.
+**${feature.title}** ${feature.description}
 `
 }
 </HeroMd>

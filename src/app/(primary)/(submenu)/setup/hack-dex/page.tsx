@@ -3,6 +3,13 @@ import { Md } from "~/components/markdown";
 import { pages } from "~/lib/menu-items";
 import { TITLE } from "~/lib/project-meta";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Hack-dex",
+  description: `Learn how to setup ${TITLE} with Hack-dex.`,
+};
+
 export default function Page() {
   // prettier-ignore
   return (

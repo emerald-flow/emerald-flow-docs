@@ -8,9 +8,16 @@ import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/pocket-heal";
 import { startButton } from "~/lib/generated/sprites/startButton";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["pocket-heal"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["pocket-heal"];
   const img = joy;
   const alt = "Nurse joy sprite";
   // prettier-ignore
@@ -30,8 +37,8 @@ blobBgColor="bg-pink-500"
 >
 {
 `
-**${feature.title}** lets you Heal your party like in the 
-Pokémon Center, remotely.
+**${feature.title}** ${feature.description}
+
 `
 }
 </HeroMd>

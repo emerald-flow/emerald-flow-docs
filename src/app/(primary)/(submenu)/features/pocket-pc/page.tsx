@@ -8,9 +8,16 @@ import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/pocket-pc";
 import { startButton } from "~/lib/generated/sprites/startButton";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["pocket-pc"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["pocket-pc"];
   const img = pc;
   const alt = "PC sprite";
   // prettier-ignore
@@ -29,8 +36,8 @@ alt={alt}
 >
 {
 `
-**${feature.title}** lets you use the PC available in the 
-Pokémon Center, remotely.
+**${feature.title}** ${feature.description}
+
 `
 }
 </HeroMd>

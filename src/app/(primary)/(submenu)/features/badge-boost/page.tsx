@@ -6,9 +6,16 @@ import { badges } from "~/lib/generated/sprites/badges";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/badge-boost";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["badge-boost"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["badge-boost"];
   const img = badges;
   const alt = "Badges sprite";
   // prettier-ignore
@@ -27,8 +34,7 @@ alt={alt}
 >
 {
 `
-**${feature.title}** lets you toggle the stat boosts 
-provided by Gym badges on the player's Pokémon.
+**${feature.title}** ${feature.description}
 
 Disabling badge boosts makes in-game battles more closely 
 match Link Battles and Battle Frontier battles, where badge boosts 

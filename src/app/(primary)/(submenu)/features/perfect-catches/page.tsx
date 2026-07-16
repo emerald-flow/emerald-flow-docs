@@ -8,9 +8,16 @@ import { pokeball } from "~/lib/generated/sprites/pokeball";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/perfect-catches";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["perfect-catches"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["perfect-catches"];
   const img = masterball;
   const alt = "Master ball item sprite";
   // prettier-ignore
@@ -31,8 +38,7 @@ className="scale-80"
 >
 {
 `
-**${feature.title}** guarantees that every Poké Ball 
-successfully catches a wild Pokémon.
+**${feature.title}** ${feature.description}
 `
 }
 </HeroMd>

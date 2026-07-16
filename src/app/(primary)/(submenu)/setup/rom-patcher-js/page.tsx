@@ -3,6 +3,12 @@ import { Md } from "~/components/markdown";
 
 import { pages } from "~/lib/menu-items";
 import { TITLE } from "~/lib/project-meta";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Rom-patcher-JS",
+  description: `Learn how to setup ${TITLE} with Rom-patcher-JS`,
+};
 
 export default function Page() {
   // prettier-ignore

@@ -8,9 +8,16 @@ import { pokeball } from "~/lib/generated/sprites/pokeball";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/permanent-repel";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["permanent-repel"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["permanent-repel"];
   const img = repel;
   const alt = "Repel item sprite";
   // prettier-ignore
@@ -29,7 +36,7 @@ alt={alt}
 >
 {
 `
-**${feature.title}** replaces repeated use of Repel items with a simple toggle.
+**${feature.title}** ${feature.description}
 
 When enabled, Repel remains active indefinitely until you choose to turn it off.
 `

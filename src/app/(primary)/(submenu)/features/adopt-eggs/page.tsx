@@ -11,9 +11,16 @@ import { oak } from "~/lib/generated/sprites/oak";
 import { pages } from "~/lib/menu-items";
 import { cycling } from "~/lib/generated/sprites/cycling";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["adopt-eggs"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["adopt-eggs"];
   const img = egg;
   const alt = "Egg sprite";
   // prettier-ignore
@@ -34,8 +41,7 @@ blobBgColor="bg-lime-500"
 >
 {
 `
-**${feature.title}** lets you obtain Pokémon that 
-would otherwise be late or unavailable through normal gameplay.
+**${feature.title}** ${feature.description}
 
 Visit the Day Care to adopt legitimate Eggs containing Pokémon from across the Kanto, Johto, and Hoenn regions.
 `

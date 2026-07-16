@@ -10,9 +10,16 @@ import { arrows } from "~/lib/generated/sprites/arrows";
 import { physicalSpecial } from "~/lib/generated/sprites/physicalSpecial";
 import { ppUp } from "~/lib/generated/sprites/ppUp";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["better-summary"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["better-summary"];
   const img = pokedex;
   const alt = "Pokédex sprite";
   // prettier-ignore
@@ -32,7 +39,7 @@ blobBgColor="bg-rose-500"
 >
 {
 `
-**${feature.title}** enhances the Pokémon summary screen with additional information.
+**${feature.title}** ${feature.description}
 
 View nature modifiers, move damage categories, and hidden Pokémon stats directly from the summary screen.
 `

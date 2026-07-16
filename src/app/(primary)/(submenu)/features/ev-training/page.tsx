@@ -9,9 +9,16 @@ import { placeholder } from "~/lib/generated/placeholders/ev-training";
 import { noEv } from "~/lib/generated/sprites/noEv";
 import { pomeg } from "~/lib/generated/sprites/pomeg";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["ev-training"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["ev-training"];
   const img = ppUp;
   const alt = "Vitamin item sprite";
   // prettier-ignore
@@ -31,8 +38,7 @@ blobBgColor="bg-purple-500"
 >
 {
 `
-**${feature.title}** lets you customize how Effort Values (EVs) 
-are earned and trained throughout the game.
+**${feature.title}** ${feature.description}
 
 Choose between vanilla EV training, disabling EV gains entirely, 
 or an enhanced Vitamin mode for faster and more convenient EV training.

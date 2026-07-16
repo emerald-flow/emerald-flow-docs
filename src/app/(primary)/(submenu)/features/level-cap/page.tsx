@@ -11,9 +11,16 @@ import { placeholder } from "~/lib/generated/placeholders/level-cap";
 import { rareCandy } from "~/lib/generated/sprites/rareCandy";
 import { gymSign } from "~/lib/generated/sprites/gymSign";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["level-cap"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["level-cap"];
   const img = badges;
   const alt = "Gym sign sprite";
   // prettier-ignore
@@ -33,8 +40,7 @@ blobBgColor="bg-sky-500"
 >
 {
 `
-**${feature.title}** lets you enforce a global level cap 
-across all experience gains, including battles, day care and rare candies.
+**${feature.title}** ${feature.description}
 
 Train without accidentally overleveling, 
 and keep every major battle at its intended difficulty.

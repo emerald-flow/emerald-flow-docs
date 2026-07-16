@@ -12,9 +12,16 @@ import { tm } from "~/lib/generated/sprites/tm";
 import { frontierSymbol } from "~/lib/generated/sprites/frontierSymbol";
 import { startButton } from "~/lib/generated/sprites/startButton";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["no-hm-slave"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["no-hm-slave"];
   const img = zigzagoon;
   const alt = "Zigzagoon sprite";
   // prettier-ignore
@@ -34,7 +41,7 @@ blobBgColor="bg-amber-500"
 >
 {
 `
-**${feature.title}** removes the need to teach HM moves to your Pokémon.
+**${feature.title}** ${feature.description}
 
 HM moves behave similarly to [Secret Techniques](https://bulbapedia.bulbagarden.net/wiki/Secret_Technique) 
 from **Pokémon: Let's Go, Pikachu! and Pokémon: Let's Go, Eevee!**

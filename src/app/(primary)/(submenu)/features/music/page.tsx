@@ -8,9 +8,16 @@ import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/music";
 import { signPost } from "~/lib/generated/sprites/signPost";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features.music;
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features.music;
   const img = flute;
   const alt = "PokéFlute item sprite";
   // prettier-ignore
@@ -31,7 +38,7 @@ className="scale-80"
 >
 {
 `
-**${feature.title}** lets you toggle the game's background music on or off.
+**${feature.title}** ${feature.description}
 
 Turn off background music while keeping all sound effects, Pokémon cries, and menu sounds.
 `

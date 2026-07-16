@@ -10,9 +10,16 @@ import { running } from "~/lib/generated/sprites/running";
 import { fluffyTail } from "~/lib/generated/sprites/fluffyTail";
 import { pages } from "~/lib/menu-items";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["better-safari"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["better-safari"];
   const img = safariball;
   const alt = "Safari ball item sprite";
   // prettier-ignore
@@ -33,7 +40,7 @@ className="scale-80"
 >
 {
 `
-**${feature.title}** removes the Safari Zone's timing limits.
+**${feature.title}** ${feature.description}
 
 The Step counter and the Safari ball counter will be disabled.
 `

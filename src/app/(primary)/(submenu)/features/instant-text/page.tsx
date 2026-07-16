@@ -6,9 +6,16 @@ import { interrobang } from "~/lib/generated/sprites/interrobang";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/instant-text";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["instant-text"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["instant-text"];
   const img = interrobang;
   const alt = "Unown interrobang sprite";
   // prettier-ignore
@@ -30,7 +37,7 @@ className="scale-80"
 >
 {
 `
-**${feature.title}** displays all dialogue instantly, bypassing the game's normal text speed.
+**${feature.title}** ${feature.description}
 `
 }
 </HeroMd>

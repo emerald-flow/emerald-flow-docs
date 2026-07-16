@@ -9,9 +9,16 @@ import { placeholder } from "~/lib/generated/placeholders/auto-blend";
 import { pages } from "~/lib/menu-items";
 import { oran } from "~/lib/generated/sprites/oran";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["auto-blend"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["auto-blend"];
   const img = blender;
   const alt = "Blender sprite";
   // prettier-ignore
@@ -32,7 +39,7 @@ className="scale-80"
 >
 {
 `
-**${feature.title}** automates the berry blending mini game.
+**${feature.title}** ${feature.description}
 
 It applies to both the player and the NPCs, resulting in perfect berry blends.
 `

@@ -16,6 +16,12 @@ import { Md } from "~/components/markdown";
 import { HeroMd } from "~/components/hero";
 import { bag } from "~/lib/generated/sprites/bag";
 import { TITLE } from "~/lib/project-meta";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Features",
+  description: `List of opt-in enhancement features for ${TITLE}.`,
+};
 
 export default function Page() {
   const img = bag;
@@ -72,7 +78,7 @@ function Option({
   index,
   className,
 }: {
-  option: (typeof featureList)[number][1];
+  option: (typeof featureList)[number][2];
   index: number;
   className?: string;
 }) {
@@ -111,7 +117,7 @@ function FeaturesTable() {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {featureList.map(([title, option], i) => (
+        {featureList.map(([title, _, option], i) => (
           <TableRow key={`feature_${i}`}>
             <TableCell className="border-r">
               <MutedLink

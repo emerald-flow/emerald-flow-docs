@@ -9,9 +9,16 @@ import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/better-evolutions";
 import { sootheBell } from "~/lib/generated/sprites/sootheBell";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["better-evolutions"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["better-evolutions"];
   const img = rareCandy;
   const alt = "Rare candy item sprite";
   // prettier-ignore
@@ -31,8 +38,7 @@ blobBgColor="bg-blue-500"
 >
 {
 `
-**${feature.title}** adds more convenient ways to evolve Pokémon 
-that normally require trading or friendship.
+**${feature.title}** ${feature.description}
 
 Choose between simplified level-based evolutions or held-item level-up 
 evolutions while preserving every original evolution method.

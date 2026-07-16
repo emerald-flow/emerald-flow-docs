@@ -6,9 +6,16 @@ import { tm } from "~/lib/generated/sprites/tm";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/infinite-tms";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["infinite-tms"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["infinite-tms"];
   const img = tm;
   const alt = "TM item sprite";
   // prettier-ignore
@@ -29,8 +36,7 @@ className="scale-80"
 >
 {
 `
-**${feature.title}** lets you reuse TMs 
-without consuming them after a single use.
+**${feature.title}** ${feature.description}
 `
 }
 </HeroMd>

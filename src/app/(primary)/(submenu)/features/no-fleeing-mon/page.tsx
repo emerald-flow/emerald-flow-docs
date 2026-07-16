@@ -11,9 +11,16 @@ import { camper } from "~/lib/generated/sprites/camper";
 import { pages } from "~/lib/menu-items";
 import { safariball } from "~/lib/generated/sprites/safariball";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["no-fleeing-mon"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["no-fleeing-mon"];
   const img = fluffyTail;
   const alt = "Fluffy tail item sprite";
   // prettier-ignore
@@ -33,7 +40,7 @@ blobBgColor="bg-amber-500"
 >
 {
 `
-**${feature.title}** prevents Roaming Pokémon and Safari Zone Pokémon from fleeing from battles.
+**${feature.title}** ${feature.description}
 `
 }
 </HeroMd>

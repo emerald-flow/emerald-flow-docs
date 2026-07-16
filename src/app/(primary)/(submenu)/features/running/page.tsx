@@ -9,9 +9,16 @@ import { bButton } from "~/lib/generated/sprites/bButton";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/running";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features.running;
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features.running;
   const img = running;
   const alt = "Brendan running sprite";
   // prettier-ignore
@@ -30,7 +37,7 @@ alt={alt}
 >
 {
 `
-**${feature.title}** lets you customize how your character runs.
+**${feature.title}** ${feature.description}
 
 Choose whether running is available indoors, 
 or remove the need to hold the B Button altogether.

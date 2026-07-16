@@ -5,6 +5,12 @@ import { Md } from "~/components/markdown";
 import { pages } from "~/lib/menu-items";
 import { setup } from "~/lib/generated/sprites/setup";
 import { TITLE } from "~/lib/project-meta";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Setup",
+  description: "Learn how to setup Emerald Flow.",
+};
 
 export default function Page() {
   const img = setup;

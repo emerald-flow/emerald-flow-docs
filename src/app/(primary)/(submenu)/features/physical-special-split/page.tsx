@@ -10,9 +10,16 @@ import { AlertMd } from "~/components/alerts";
 import { pokedex } from "~/lib/generated/sprites/pokedex";
 import { cn } from "~/lib/utils";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["physical-special-split"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["physical-special-split"];
   const img = physicalSpecial;
   const alt = "Physical-special item sprite";
   // prettier-ignore
@@ -32,8 +39,7 @@ blobBgColor="bg-purple-500"
 >
 {
 `
-**${feature.title}** updates every move to use the modern damage 
-system introduced in Generation IV.
+**${feature.title}** ${feature.description}
 
 Instead of damage being determined solely by move type, 
 each move is individually classified as Physical, Special, or Status.

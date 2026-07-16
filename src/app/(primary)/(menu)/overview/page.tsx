@@ -3,6 +3,11 @@ import { Md } from "~/components/markdown";
 import { pages } from "~/lib/menu-items";
 import { birch } from "~/lib/generated/sprites/birch";
 import { TITLE } from "~/lib/project-meta";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Overview",
+};
 
 export default function Page() {
   const img = birch;

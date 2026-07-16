@@ -9,9 +9,16 @@ import { placeholder } from "~/lib/generated/placeholders/instant-fishing";
 import { feebas } from "~/lib/generated/sprites/feebas";
 import { pages } from "~/lib/menu-items";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["instant-fishing"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["instant-fishing"];
   const img = fishingRod;
   const alt = "Super rod item sprite";
   // prettier-ignore
@@ -31,7 +38,7 @@ blobBgColor="bg-blue-500"
 >
 {
 `
-**${feature.title}** automates the fishing timing mini game.
+**${feature.title}** ${feature.description}
 `
 }
 </HeroMd>

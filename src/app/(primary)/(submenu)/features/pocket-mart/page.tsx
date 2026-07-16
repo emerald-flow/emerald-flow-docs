@@ -10,9 +10,16 @@ import { startButton } from "~/lib/generated/sprites/startButton";
 import { amuletCoin } from "~/lib/generated/sprites/amuletCoin";
 import { pages } from "~/lib/menu-items";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["pocket-mart"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["pocket-mart"];
   const img = clerk;
   const alt = "Clerk sprite";
   // prettier-ignore
@@ -32,8 +39,7 @@ blobBgColor="bg-blue-500"
 >
 {
 `
-**${feature.title}** lets you access the
-PokéMart, remotely.
+**${feature.title}** ${feature.description}
 `
 }
 </HeroMd>

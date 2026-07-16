@@ -25,6 +25,7 @@ const startScreenText = <T extends string>(str: T) =>
 export const featureList = [
   [
     "Permanent Repel",
+    "replaces repeated use of Repel items with a simple toggle.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -35,6 +36,7 @@ export const featureList = [
   ],
   [
     "Running",
+    "lets you customize how your character runs.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -46,6 +48,7 @@ export const featureList = [
   ],
   [
     "Level Cap",
+    "lets you enforce a global level cap across all experience gains, including battles, day care and rare candies.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -56,6 +59,7 @@ export const featureList = [
   ],
   [
     "No HM Slave",
+    "removes the need to teach HM moves to your Pokémon.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -66,6 +70,7 @@ export const featureList = [
   ],
   [
     "Better Summary",
+    "enhances the Pokémon summary screen with additional good to know information.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -76,6 +81,7 @@ export const featureList = [
   ],
   [
     "Physical-Special Split",
+    "updates every move to use the modern damage system introduced in Generation IV.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -86,6 +92,7 @@ export const featureList = [
   ],
   [
     "Pocket Tutor",
+    "lets your Pokémon learn every move they could legitimately know from a single menu.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -96,6 +103,7 @@ export const featureList = [
   ],
   [
     "Better Evolutions",
+    "adds more convenient ways to evolve Pokémon that normally require trading or friendship.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -107,6 +115,7 @@ export const featureList = [
   ],
   [
     "Adopt Eggs",
+    "lets you obtain Pokémon that would otherwise be late or unavailable through normal gameplay.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -117,6 +126,7 @@ export const featureList = [
   ],
   [
     "Pocket PC",
+    "lets you use the PC available in the Pokémon Center, remotely.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -127,6 +137,7 @@ export const featureList = [
   ],
   [
     "Pocket Heal",
+    "lets you Heal your party like in the Pokémon Center, remotely.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -137,6 +148,7 @@ export const featureList = [
   ],
   [
     "Forget HMs",
+    "lets you replace HM moves on a Pokémon learning a new move.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -147,6 +159,7 @@ export const featureList = [
   ],
   [
     "Infinite TMs",
+    "lets you reuse TMs without consuming them after a single use.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -157,6 +170,7 @@ export const featureList = [
   ],
   [
     "Pocket Mart",
+    "lets you access the PokéMart, remotely.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -167,6 +181,7 @@ export const featureList = [
   ],
   [
     "One Dollar Items",
+    "lets you purchase every item sold in a PokéMart for $1.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -177,6 +192,7 @@ export const featureList = [
   ],
   [
     "Pocket Bikes",
+    "lets you swap Bikes, remotely.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -187,6 +203,7 @@ export const featureList = [
   ],
   [
     "Auto Blend",
+    "automates the berry blending mini game.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -197,6 +214,7 @@ export const featureList = [
   ],
   [
     "Custom Blend",
+    "lets you choose berries on behalf of the NPCs.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -207,6 +225,7 @@ export const featureList = [
   ],
   [
     "Badge Boost",
+    "lets you toggle the stat boosts provided by Gym badges on the player's Pokémon.",
     getOptions({
       options: [
         ["Off", "Badge boosts are now turned off"],
@@ -217,6 +236,7 @@ export const featureList = [
   ],
   [
     "EV Training",
+    "lets you customize how Effort Values (EVs) are earned and trained throughout the game.",
     getOptions({
       options: [
         ["Off", "Any EV gains are turned off"],
@@ -228,6 +248,7 @@ export const featureList = [
   ],
   [
     "Perfect Catches",
+    "guarantees that every Poké Ball successfully catches a wild Pokémon.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -238,6 +259,7 @@ export const featureList = [
   ],
   [
     "Fast Eggs",
+    "speeds up both Egg generation and Egg hatching.",
     getOptions({
       options: [
         ["1x", VANILLA_GAMEPLAY],
@@ -249,6 +271,7 @@ export const featureList = [
   ],
   [
     "Instant Fishing",
+    "automates the fishing timing mini game.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -259,6 +282,7 @@ export const featureList = [
   ],
   [
     "Always Feebas",
+    "lets you encounter Feebas by fishing anywhere on Route 119.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -269,6 +293,7 @@ export const featureList = [
   ],
   [
     "Better Safari",
+    "removes the Safari Zone's timing limits.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -279,6 +304,7 @@ export const featureList = [
   ],
   [
     "No Fleeing Mon",
+    "prevents Roaming Pokémon and Safari Zone Pokémon from fleeing from battles.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -289,6 +315,7 @@ export const featureList = [
   ],
   [
     "Instant Text",
+    "displays all dialogue instantly, bypassing the game's normal text speed.",
     getOptions({
       options: [
         ["Off", VANILLA_GAMEPLAY],
@@ -299,6 +326,7 @@ export const featureList = [
   ],
   [
     "Music",
+    "lets you toggle the game's background music on or off.",
     getOptions({
       options: [
         ["Off", "Background music stops playing"],
@@ -311,11 +339,12 @@ export const featureList = [
 
 const getFeatures = <T extends FeatureList>(sections: T) => {
   return sections.reduce(
-    (acc, [section, { defaultOption, options }]) => {
+    (acc, [section, sectionDescription, { defaultOption, options }]) => {
       const sectionName = getKebabCase(section);
       acc[sectionName] = {
         id: sectionName,
         title: section,
+        description: sectionDescription,
         options: options.map(([title, description]) => ({
           title,
           description,
@@ -346,7 +375,7 @@ type Options<T extends Option[] = Option[]> = {
   options: T;
   defaultOption: NoInfer<T>[number][0];
 };
-type FeatureList = [string, Options][];
+type FeatureList = [string, string, Options][];
 
 type FeatureTitles<
   T extends FeatureList = typeof featureList,
@@ -398,9 +427,10 @@ type Features<
             {
               id: `${KebabCase<R[0]>}`;
               title: R[0];
-              defaultOption: R[1]["defaultOption"];
-              options: CleanOptions<R[1]["options"]>;
-            } & AccumulateOptions<R[1]["options"]>
+              description: R[1];
+              defaultOption: R[2]["defaultOption"];
+              options: CleanOptions<R[2]["options"]>;
+            } & AccumulateOptions<R[2]["options"]>
           >;
         }
       >

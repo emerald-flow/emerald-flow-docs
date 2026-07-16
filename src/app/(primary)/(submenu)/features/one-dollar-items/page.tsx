@@ -9,9 +9,16 @@ import { placeholder } from "~/lib/generated/placeholders/one-dollar-items";
 import { clerk } from "~/lib/generated/sprites/clerk";
 import { pages } from "~/lib/menu-items";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["one-dollar-items"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["one-dollar-items"];
   const img = amuletCoin;
   const alt = "Amulet coin item sprite";
   // prettier-ignore
@@ -31,7 +38,7 @@ blobBgColor="bg-yellow-500"
 >
 {
 `
-**${feature.title}** lets you purchase every item sold in a PokéMart for $1.
+**${feature.title}** ${feature.description}
 `
 }
 </HeroMd>

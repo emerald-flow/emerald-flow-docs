@@ -10,9 +10,16 @@ import { tm } from "~/lib/generated/sprites/tm";
 import { egg } from "~/lib/generated/sprites/egg";
 import { startButton } from "~/lib/generated/sprites/startButton";
 import { SeeAlso } from "~/components/see-also";
+import type { Metadata } from "next";
+
+const feature = features["pocket-tutor"];
+
+export const metadata: Metadata = {
+  title: feature.title,
+  description: `${feature.title} ${feature.description}`,
+};
 
 export default function Page() {
-  const feature = features["pocket-tutor"];
   const img = heartscale;
   const alt = "Heartscale item sprite";
   // prettier-ignore
@@ -32,8 +39,7 @@ blobBgColor="bg-sky-500"
 >
 {
 `
-**${feature.title}** lets your Pokémon learn every move 
-they could legitimately know from a single menu.
+**${feature.title}** ${feature.description}
 
 It only offers moves your Pokémon can legally learn 
 based on its species, evolution stage, and current level.
