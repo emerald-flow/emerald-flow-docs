@@ -79,7 +79,6 @@ The following pages cover two ways to set up your game:
 
 - [${pages.setup["quick-patch"].title} (Best ⭐)](${pages.setup["quick-patch"].url})
 - [${pages.setup["rom-patcher-js"].title}](${pages.setup["rom-patcher-js"].url})
-- [${pages.setup["hack-dex"].title}](${pages.setup["hack-dex"].url})
 `
 }
 </Md>

@@ -1,6 +1,6 @@
 export const TITLE = "Emerald Flow";
 
-export const VERSION = "1.0.0-beta.0";
+export const VERSION = "1.0.0-beta.1";
 
 export const URL = "https://emeraldflow.vercel.app";
 
