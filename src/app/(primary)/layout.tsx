@@ -9,6 +9,8 @@ import { Footer } from "~/components/footer";
 import { Button } from "~/components/ui/button";
 import { Github } from "~/components/github";
 import Link from "next/link";
+import { Toaster } from "~/components/ui/sonner";
+import { NewRelease } from "~/components/new-release";
 
 export default function Layout({
   children,
@@ -23,6 +25,8 @@ export default function Layout({
             className="dark:bg-sidebar/95 sidebar-toggle"
             popoverTarget="no-js-sidebar"
           />
+          <Toaster />
+          <NewRelease />
           <div className="ml-auto flex gap-2">
             <Link href="https://github.com/emerald-flow" target="_blank">
               <Button variant="outline" className="dark:bg-sidebar/95">
