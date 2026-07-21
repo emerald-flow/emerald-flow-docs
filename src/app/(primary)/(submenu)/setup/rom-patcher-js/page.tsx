@@ -2,7 +2,7 @@ import { ExternalLink } from "~/components/external-link";
 import { Md } from "~/components/markdown";
 
 import { pages } from "~/lib/menu-items";
-import { TITLE } from "~/lib/project-meta";
+import { TITLE, VERSION } from "~/lib/project-meta";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -24,7 +24,7 @@ Here's a step-by-step process to patch your game with Rom Patcher JS.
 `
 }
 </Md>
-<ExternalLink className="mx-auto" href="https://github.com/emerald-flow/emerald-flow-release/releases/tag/v1.0.0-beta.0">
+<ExternalLink className="mx-auto" href={`https://github.com/emerald-flow/emerald-flow-release/releases/tag/v${VERSION}`}>
 {TITLE}
 </ExternalLink>
 <Md>
