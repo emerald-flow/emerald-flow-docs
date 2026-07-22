@@ -63,15 +63,6 @@ Only background music is affected. Sound effects are unaffected.
 `
 }
 </FeatureNotes.NoteMd>
-<FeatureNotes.NoteMd src={signPost} alt="Sign post sprite">
-{
-`
-**Map Transition** 
-
-Changes take effect after entering a new map or area.
-`
-}
-</FeatureNotes.NoteMd>
 </FeatureNotes>
 <Options>
 {

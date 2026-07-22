@@ -10,13 +10,14 @@ export const Note = ({
   children,
   alt,
   src,
+  className,
 }: PropsWithChildren<
   Pick<ComponentProps<typeof Image>, "src" | "alt" | "className">
 >) => {
   return (
     <div className="flex flex-row items-center gap-4 py-2">
       <Image
-        className="shrink-0"
+        className={cn("shrink-0", className)}
         src={src}
         alt={alt}
         unoptimized

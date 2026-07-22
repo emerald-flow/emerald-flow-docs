@@ -314,6 +314,18 @@ export const featureList = [
     } as const),
   ],
   [
+    "Pokenav Call",
+    "changes the behaviour of the Pokénav call receiver.",
+    getOptions({
+      options: [
+        ["Notify", "Plays only a notification sound"],
+        ["On", VANILLA_GAMEPLAY],
+        ["Silent", "Silently handles the call"],
+      ],
+      defaultOption: "On",
+    } as const),
+  ],
+  [
     "Instant Text",
     "displays all dialogue instantly, bypassing the game's normal text speed.",
     getOptions({
