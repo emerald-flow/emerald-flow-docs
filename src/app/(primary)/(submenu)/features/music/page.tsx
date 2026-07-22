@@ -6,7 +6,6 @@ import { features } from "~/lib/feature-list";
 import { flute } from "~/lib/generated/sprites/flute";
 import { FeaturesGallery } from "~/components/features-gallery";
 import { placeholder } from "~/lib/generated/placeholders/music";
-import { signPost } from "~/lib/generated/sprites/signPost";
 import { SeeAlso } from "~/components/see-also";
 import type { Metadata } from "next";
 import { pages } from "~/lib/menu-items";
