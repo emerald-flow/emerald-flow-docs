@@ -412,6 +412,13 @@ export const gallery = {
       path: "/assets/gallery/no-fleeing-mon/result.webp",
     },
   ],
+  "pokenav-call": [
+    {
+      name: "option-menu",
+      id: "option-menu.31ba49ca",
+      path: "/assets/gallery/pokenav-call/option-menu.webp",
+    },
+  ],
   "instant-text": [
     {
       name: "option-menu",
@@ -768,6 +775,12 @@ export const galleryObj = {
     result: {
       id: "result.eb400598",
       index: 2,
+    },
+  },
+  "pokenav-call": {
+    "option-menu": {
+      id: "option-menu.31ba49ca",
+      index: 0,
     },
   },
   "instant-text": {

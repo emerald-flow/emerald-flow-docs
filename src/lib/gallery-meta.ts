@@ -132,6 +132,9 @@ export const galleryMeta = {
     "go-near": "Reaching maximum proximity with a Safari encounter",
     result: "Safari Pokémon not fleeing",
   },
+  "pokenav-call": {
+    "option-menu": "Pokénav Call in the option menu",
+  },
   "instant-text": {
     "option-menu": "Instant Text in the option menu",
   },

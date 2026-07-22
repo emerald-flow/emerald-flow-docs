@@ -7,7 +7,13 @@ type SeeAlso = {
 export const seeAlso = {
   "permanent-repel": ["running"],
 
-  running: ["permanent-repel", "pocket-bikes", "instant-text"],
+  running: [
+    "permanent-repel",
+    "pocket-bikes",
+    "instant-text",
+    "pokenav-call",
+    "music",
+  ],
 
   "level-cap": [
     "better-summary",
@@ -77,7 +83,9 @@ export const seeAlso = {
 
   "no-fleeing-mon": ["better-safari", "perfect-catches"],
 
-  "instant-text": ["music", "running"],
+  "pokenav-call": ["music", "running", "instant-text"],
 
-  music: ["instant-text", "running"],
+  "instant-text": ["music", "running", "pokenav-call"],
+
+  music: ["instant-text", "running", "pokenav-call"],
 } as const satisfies SeeAlso;

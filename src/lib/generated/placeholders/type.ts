@@ -26,6 +26,7 @@ import type { placeholder as InstantFishing } from "./instant-fishing";
 import type { placeholder as AlwaysFeebas } from "./always-feebas";
 import type { placeholder as BetterSafari } from "./better-safari";
 import type { placeholder as NoFleeingMon } from "./no-fleeing-mon";
+import type { placeholder as PokenavCall } from "./pokenav-call";
 import type { placeholder as InstantText } from "./instant-text";
 import type { placeholder as Music } from "./music";
 
@@ -56,6 +57,7 @@ export type Placeholders = {
   "always-feebas": typeof AlwaysFeebas;
   "better-safari": typeof BetterSafari;
   "no-fleeing-mon": typeof NoFleeingMon;
+  "pokenav-call": typeof PokenavCall;
   "instant-text": typeof InstantText;
   music: typeof Music;
 };
