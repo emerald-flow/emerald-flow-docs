@@ -1,6 +1,8 @@
 export const TITLE = "Emerald Flow";
 
-export const VERSION = "1.0.0-beta.2";
+export const VERSION = "1.0.0-beta.3";
+
+export const VERSION_RELEASE_DATE = "Jul 26, 2026";
 
 export const URL = "https://emeraldflow.vercel.app";
 

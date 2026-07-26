@@ -3,6 +3,7 @@ import { pages } from "~/lib/menu-items";
 import type { Metadata } from "next";
 import { LatestPill } from "~/components/pills";
 import { ExternalLink } from "~/components/external-link";
+import { VERSION, VERSION_RELEASE_DATE } from "~/lib/project-meta";
 
 export const metadata: Metadata = {
   title: "Changelog",
@@ -20,26 +21,29 @@ export default function Page() {
 `
 ## ${pages.changelog.title}
 
-### v1.0.0-beta.2 (Jul 23, 2026)
+### v${VERSION} (${VERSION_RELEASE_DATE})
 `}
 </Md>
 <ul className="ml-4 flex list-disc flex-col [&>li]:not-last:pb-4">
 <li>
 <div className="flex items-center gap-2">
-<ExternalLink href="https://github.com/emerald-flow/emerald-flow-release/releases#release-v1.0.0-beta.2">
-v1.0.0-beta.2
+<ExternalLink href={`https://github.com/emerald-flow/emerald-flow-release/releases#release-v${VERSION}`}>
+v{VERSION}
 </ExternalLink> 
 <LatestPill />
 </div>
 </li>
-<li>
-Added the <strong>Pokenav Call</strong> feature.
-</li>
-<li>Fixed an issue where the background music reset after riding the Cable Car.</li>
+<li>Fixes an issue related to the <strong>Pokenav Call</strong> feature where the player freezes on receiving a call.</li>
 </ul>
 <Md>
 {
 `
+### v1.0.0-beta.2 (Jul 23, 2026)
+
+- [v1.0.0-beta.2](https://github.com/emerald-flow/emerald-flow-release/releases#release-v1.0.0-beta.2)
+- Added the **Pokenav Call** feature.
+- Fixed an issue where the background music reset after riding the Cable Car.
+
 ### v1.0.0-beta.1 (Jul 17, 2026)
 
 - [v1.0.0-beta.1](https://github.com/emerald-flow/emerald-flow-release/releases#release-v1.0.0-beta.1)

@@ -9,6 +9,7 @@ import { placeholder } from "~/lib/generated/placeholders/music";
 import { SeeAlso } from "~/components/see-also";
 import type { Metadata } from "next";
 import { pages } from "~/lib/menu-items";
+import { AlertMd } from "~/components/alerts";
 
 const feature = features.music;
 
@@ -63,6 +64,18 @@ Only background music is affected. Sound effects are unaffected.
 }
 </FeatureNotes.NoteMd>
 </FeatureNotes>
+<AlertMd variant="note">
+{
+`
+Music changes are applied immediately in real time. 
+If you toggle music from the title screen's Options menu, the game will begin playing the background music 
+associated with your current save's location before you continue playing. 
+
+This is a harmless side effect of 
+applying the setting instantly and is kept intentionally for consistency with the in-game behavior.
+`
+}
+</AlertMd>
 <Options>
 {
 feature.options.map((option, i)=>
