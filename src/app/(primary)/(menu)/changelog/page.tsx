@@ -3,10 +3,11 @@ import { pages } from "~/lib/menu-items";
 import type { Metadata } from "next";
 import { LatestPill } from "~/components/pills";
 import { ExternalLink } from "~/components/external-link";
-import { VERSION, VERSION_RELEASE_DATE } from "~/lib/project-meta";
+import { TITLE, VERSION, VERSION_RELEASE_DATE } from "~/lib/project-meta";
 
 export const metadata: Metadata = {
   title: "Changelog",
+  description: `Learn what changed in ${TITLE}.`,
   alternates: {
     canonical: pages.changelog.url,
   },

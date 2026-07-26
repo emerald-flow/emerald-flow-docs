@@ -1,9 +1,11 @@
 import { Md } from "~/components/markdown";
 import { pages } from "~/lib/menu-items";
 import type { Metadata } from "next";
+import { TITLE } from "~/lib/project-meta";
 
 export const metadata: Metadata = {
   title: "Acknowledgements",
+  description: `Learn what it took to build ${TITLE}.`,
   alternates: {
     canonical: pages.acknowledgements.url,
   },
