@@ -8,36 +8,36 @@ import { cn } from "~/lib/utils";
 import { TooltipProvider } from "~/components/ui/tooltip";
 import { ThemeProvider } from "~/components/theme-provider";
 import { QueryProvider } from "~/components/query-provider";
-import { URL as SiteURL } from "~/lib/project-meta";
+import { URL as SiteURL, TITLE } from "~/lib/project-meta";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+
+const description =
+  "A lightweight, opt-in, quality-of-life and enhancement patch for Pokémon Emerald.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SiteURL),
   title: {
-    default: "Emerald Flow",
+    default: TITLE,
     template: "%s | Emerald Flow",
   },
   alternates: {
     canonical: "/",
   },
-  description:
-    "An open-source, opt-in enhancement project that modernizes Pokémon Emerald while preserving its original experience.",
-  applicationName: "Emerald Flow",
+  description,
+  applicationName: TITLE,
   openGraph: {
     type: "website",
     url: "/",
-    siteName: "Emerald Flow",
-    title: "Emerald Flow",
-    description:
-      "An open-source, opt-in enhancement project that modernizes Pokémon Emerald while preserving its original experience.",
+    siteName: TITLE,
+    title: TITLE,
+    description,
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Emerald Flow",
-    description:
-      "An open-source, opt-in enhancement project that modernizes Pokémon Emerald while preserving its original experience.",
+    title: TITLE,
+    description,
   },
 };
 
